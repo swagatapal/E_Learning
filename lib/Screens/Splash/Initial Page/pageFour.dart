@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../Core/Utils/Common Widget/commonInitialPage.dart';
 
 class PageFour extends StatelessWidget {
