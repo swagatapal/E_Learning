@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class InitialPage extends StatelessWidget {
+class CommonInitialPage extends StatelessWidget {
   final String titleText;
   final String subtitleText;
   final String image;
 
-  const InitialPage(
+  const CommonInitialPage(
       {super.key,
       required this.titleText,
       required this.subtitleText,

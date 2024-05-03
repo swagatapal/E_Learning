@@ -7,10 +7,8 @@ class PageFour extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenSize = MediaQuery.of(context).size;
-    double containerWidth = screenSize.width;
     return const Scaffold(
-      body: InitialPage(
+      body: CommonInitialPage(
         titleText: 'Personalize Your Learning Path',
         subtitleText:
             'Customize your learning with progress tracking, and interactive activities.',
