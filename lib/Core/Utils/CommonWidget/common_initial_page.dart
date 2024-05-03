@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 
 class CommonInitialPage extends StatelessWidget {
-  final String titleText;
-  final String subtitleText;
-  final String image;
+  final String? titleText;
+  final String? subtitleText;
+  final String? image;
 
-  const CommonInitialPage(
-      {super.key,
-      required this.titleText,
-      required this.subtitleText,
-      required this.image});
+  const CommonInitialPage({
+    super.key,
+    this.titleText,
+    this.subtitleText,
+    this.image,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +41,7 @@ class CommonInitialPage extends StatelessWidget {
                       ]),
                 ),
                 Image.asset(
-                  image,
+                  image ?? "",
                   height: containerWidth * 0.7,
                   width: containerWidth * 0.5,
                 ),
@@ -51,7 +52,7 @@ class CommonInitialPage extends StatelessWidget {
             height: 15,
           ),
           Text(
-            titleText,
+            titleText ?? "",
             textAlign: TextAlign.center,
             style: TextStyle(
                 fontSize: 32.0,
@@ -63,7 +64,7 @@ class CommonInitialPage extends StatelessWidget {
             height: 15,
           ),
           Text(
-            subtitleText,
+            subtitleText ?? "",
             textAlign: TextAlign.center,
             style: const TextStyle(
                 fontFamily: "Roboto",

@@ -1,6 +1,8 @@
 
 import 'package:e_learning/Screens/Auth/View/login_page.dart';
 import 'package:e_learning/Screens/Splash/InitialPage/page_four.dart';
+import 'package:e_learning/Screens/Auth/View/option_page.dart';
+import 'package:e_learning/Screens/Splash/InitialPage/page_four.dart';
 import 'package:e_learning/Screens/Splash/InitialPage/page_one.dart';
 import 'package:e_learning/Screens/Splash/InitialPage/page_three.dart';
 import 'package:e_learning/Screens/Splash/InitialPage/page_two.dart';
@@ -53,6 +55,15 @@ class InitialHome extends StatelessWidget {
             ),
             CommonButton(
               onClicked: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const OptionPage(),
+                  ),
+                );
+              },
+              label: "CONTINUE",
+              onClicked: () {
               },
               label: "Continue",
               buttonHeight: containerWidth * 0.06,
@@ -60,11 +71,9 @@ class InitialHome extends StatelessWidget {
               fontSize: 20,
             ),
             InkWell(
-              onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>const LogIn()));
-              },
+              onTap: () {},
               child: Text(
-                "skip",
+                "SKIP",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     fontSize: 18.0,
