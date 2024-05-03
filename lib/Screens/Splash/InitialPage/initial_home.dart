@@ -1,12 +1,13 @@
+import 'package:e_learning/Screens/Auth/View/option_page.dart';
+import 'package:e_learning/Screens/Splash/InitialPage/page_four.dart';
 import 'package:e_learning/Screens/Splash/InitialPage/page_one.dart';
 import 'package:e_learning/Screens/Splash/InitialPage/page_three.dart';
-import 'package:e_learning/Screens/Splash/initial%20page/pagefour.dart';
+import 'package:e_learning/Screens/Splash/InitialPage/page_two.dart';
 import 'package:e_learning/core/utils/helper/appColors.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../../Core/Utils/CommonWidget/common_button.dart';
-import '../initial page/pageTwo.dart';
 
 class InitialHome extends StatelessWidget {
   final _controller = PageController();
@@ -49,8 +50,15 @@ class InitialHome extends StatelessWidget {
               ),
             ),
             CommonButton(
-              onClicked: () {},
-              label: "Continue",
+              onClicked: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const OptionPage(),
+                  ),
+                );
+              },
+              label: "CONTINUE",
               buttonHeight: containerWidth * 0.06,
               buttonWidth: containerWidth * 0.8,
               fontSize: 20,
@@ -58,7 +66,7 @@ class InitialHome extends StatelessWidget {
             InkWell(
               onTap: () {},
               child: Text(
-                "skip",
+                "SKIP",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     fontSize: 18.0,
