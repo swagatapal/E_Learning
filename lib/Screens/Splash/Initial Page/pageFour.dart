@@ -1,5 +1,6 @@
-import 'package:e_learning/Screens/Splash/Initial%20Page/Common%20Initial%20Page/initialPage.dart';
 import 'package:flutter/material.dart';
+
+import '../../../Core/Utils/Common Widget/commonInitialPage.dart';
 
 class PageFour extends StatelessWidget {
   const PageFour({super.key});

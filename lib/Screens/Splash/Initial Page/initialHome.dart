@@ -9,21 +9,21 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class InitialHome extends StatelessWidget {
   final _controller = PageController();
-  InitialHome({super.key});
 
+  InitialHome({super.key});
 
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     double containerWidth = screenSize.height;
-    return  Scaffold(
+    return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(30.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             SizedBox(
-              height: containerWidth*0.7,
+              height: containerWidth * 0.7,
               child: PageView(
                 controller: _controller,
                 children: const [
@@ -47,25 +47,28 @@ class InitialHome extends StatelessWidget {
                 jumpScale: 2,
               ),
             ),
-
             CommonButton(
-              onClicked: (){},
+              onClicked: () {},
               label: "Continue",
-              buttonHeight:containerWidth*0.06,
+              buttonHeight: containerWidth * 0.06,
               buttonWidth: containerWidth * 0.8,
               fontSize: 20,
             ),
-
             InkWell(
-              onTap: (){},
-              child: Text("skip", textAlign: TextAlign.center,style: TextStyle(fontSize: 18.0,
-                      fontWeight: FontWeight.w500,
-                      color: Theme.of(context).colorScheme.onBackground,
-                      fontFamily: 'Roboto',
-                      decoration: TextDecoration.underline),),
+              onTap: () {},
+              child: Text(
+                "skip",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.w500,
+                    color: Theme.of(context).colorScheme.onBackground,
+                    fontFamily: 'Roboto',
+                    decoration: TextDecoration.underline),
+              ),
             ),
           ],
-            ),
+        ),
       ),
     );
   }

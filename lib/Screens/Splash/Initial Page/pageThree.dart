@@ -17,12 +17,11 @@ class PageThree extends StatelessWidget {
               alignment: Alignment.center,
               children: [
                 Container(
-                   height: containerWidth*0.7,
-                  width: containerWidth*0.5,
+                  height: containerWidth * 0.7,
+                  width: containerWidth * 0.5,
                   decoration: BoxDecoration(
                       color: Theme.of(context).colorScheme.onBackground,
-                      borderRadius:
-                          const BorderRadius.all(Radius.circular(55)),
+                      borderRadius: const BorderRadius.all(Radius.circular(55)),
                       boxShadow: [
                         BoxShadow(
                           color: Theme.of(context).colorScheme.onBackground,
@@ -34,8 +33,8 @@ class PageThree extends StatelessWidget {
                 ),
                 Image.asset(
                   'assets/images/p2.png',
-                   height: containerWidth*0.7,
-                  width: containerWidth*0.5,
+                  height: containerWidth * 0.7,
+                  width: containerWidth * 0.5,
                 ),
               ],
             ),

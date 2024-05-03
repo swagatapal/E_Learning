@@ -1,14 +1,21 @@
 import 'package:flutter/material.dart';
 
-class PageFour extends StatelessWidget {
-  const PageFour({super.key});
+class InitialPage extends StatelessWidget {
+  final String titleText;
+  final String subtitleText;
+  final String image;
+
+  const InitialPage(
+      {super.key,
+      required this.titleText,
+      required this.subtitleText,
+      required this.image});
 
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     double containerWidth = screenSize.width;
     return Scaffold(
-      
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -18,12 +25,11 @@ class PageFour extends StatelessWidget {
               alignment: Alignment.center,
               children: [
                 Container(
-                  height: containerWidth*0.7,
-                  width: containerWidth*0.5,
+                  height: containerWidth * 0.7,
+                  width: containerWidth * 0.5,
                   decoration: BoxDecoration(
                       color: Theme.of(context).colorScheme.onBackground,
-                      borderRadius:
-                          const BorderRadius.all(Radius.circular(55)),
+                      borderRadius: const BorderRadius.all(Radius.circular(55)),
                       boxShadow: [
                         BoxShadow(
                           color: Theme.of(context).colorScheme.onBackground,
@@ -34,9 +40,9 @@ class PageFour extends StatelessWidget {
                       ]),
                 ),
                 Image.asset(
-                  'assets/images/p1.png',
-                  height: containerWidth*0.7,
-                  width: containerWidth*0.5,
+                  image,
+                  height: containerWidth * 0.7,
+                  width: containerWidth * 0.5,
                 ),
               ],
             ),
@@ -45,7 +51,7 @@ class PageFour extends StatelessWidget {
             height: 15,
           ),
           Text(
-            "Personalize Your Learning Path",
+            titleText,
             textAlign: TextAlign.center,
             style: TextStyle(
                 fontSize: 32.0,
@@ -56,10 +62,10 @@ class PageFour extends StatelessWidget {
           const SizedBox(
             height: 15,
           ),
-          const Text(
-            "Customize your learning with progress tracking, and interactive activities.",
+          Text(
+            subtitleText,
             textAlign: TextAlign.center,
-            style: TextStyle(
+            style: const TextStyle(
                 fontFamily: "Roboto",
                 fontWeight: FontWeight.w500,
                 fontSize: 14),
