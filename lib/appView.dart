@@ -1,4 +1,4 @@
-import 'package:e_learning/Screens/Splash/View/splashScreen.dart';
+import 'package:e_learning/Screens/Splash/View/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 class MyAppView extends StatelessWidget {
