@@ -2,7 +2,6 @@
 import 'package:e_learning/Screens/Auth/View/login_page.dart';
 import 'package:e_learning/Screens/Splash/InitialPage/page_four.dart';
 import 'package:e_learning/Screens/Auth/View/option_page.dart';
-import 'package:e_learning/Screens/Splash/InitialPage/page_four.dart';
 import 'package:e_learning/Screens/Splash/InitialPage/page_one.dart';
 import 'package:e_learning/Screens/Splash/InitialPage/page_three.dart';
 import 'package:e_learning/Screens/Splash/InitialPage/page_two.dart';
@@ -63,15 +62,20 @@ class InitialHome extends StatelessWidget {
                 );
               },
               label: "CONTINUE",
-              onClicked: () {
-              },
-              label: "Continue",
               buttonHeight: containerWidth * 0.06,
               buttonWidth: containerWidth * 0.8,
               fontSize: 20,
             ),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const LogIn(),
+                  ),
+                );
+
+              },
               child: Text(
                 "SKIP",
                 textAlign: TextAlign.center,
