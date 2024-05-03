@@ -1,12 +1,11 @@
-import 'package:e_learning/Screens/Splash/Initial%20Page/pageFour.dart';
-import 'package:e_learning/Screens/Splash/Initial%20Page/pageOne.dart';
-import 'package:e_learning/Screens/Splash/Initial%20Page/pageThree.dart';
-import 'package:e_learning/Screens/Splash/Initial%20Page/pageTwo.dart';
+import 'package:e_learning/Core/Utils/Common%20Widget/commonButton.dart';
+import 'package:e_learning/Screens/Splash/initial%20page/pageOne.dart';
+import 'package:e_learning/Screens/Splash/initial%20page/pageThree.dart';
+import 'package:e_learning/Screens/Splash/initial%20page/pageTwo.dart';
+import 'package:e_learning/Screens/Splash/initial%20page/pagefour.dart';
+import 'package:e_learning/core/utils/helper/appColors.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-
-import '../../../Core/Utils/Common Widget/commonButton.dart';
-import '../../../Core/Utils/Helper/appColors.dart';
 
 class InitialHome extends StatelessWidget {
   final _controller = PageController();
