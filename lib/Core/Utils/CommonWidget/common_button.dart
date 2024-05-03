@@ -1,4 +1,4 @@
-import 'package:e_learning/core/utils/helper/appColors.dart';
+import 'package:e_learning/core/utils/helper/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bounce/flutter_bounce.dart';
 

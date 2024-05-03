@@ -1,4 +1,4 @@
-import 'package:e_learning/Core/Utils/Helper/appColors.dart';
+import 'package:e_learning/Core/Utils/Helper/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class AppDecoration {

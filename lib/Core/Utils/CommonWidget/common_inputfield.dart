@@ -1,6 +1,6 @@
-import 'package:e_learning/Core/Utils/Helper/appColors.dart';
+import 'package:e_learning/Core/Utils/Helper/app_colors.dart';
 import 'package:e_learning/Core/Utils/Helper/app_decoration.dart';
-import 'package:e_learning/Core/Utils/Helper/elearning_icon.dart';
+import 'package:e_learning/Core/Utils/Helper/e_learning_icon.dart';
 import 'package:e_learning/Core/Utils/Helper/screen_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
