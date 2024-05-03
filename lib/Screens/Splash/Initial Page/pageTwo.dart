@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 
-class PageFour extends StatelessWidget {
-  const PageFour({super.key});
+class PageTwo extends StatelessWidget {
+  const PageTwo({super.key});
 
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     double containerWidth = screenSize.width;
     return Scaffold(
-      
       body: Padding(
         padding: const EdgeInsets.all(30.0),
         child: Column(
@@ -20,8 +19,8 @@ class PageFour extends StatelessWidget {
                 alignment: Alignment.center,
                 children: [
                   Container(
-                    height: containerWidth*0.7,
-                    width: containerWidth*0.5,
+                    height: containerWidth * 0.7,
+                    width: containerWidth * 0.5,
                     decoration: BoxDecoration(
                         color: Theme.of(context).colorScheme.onBackground,
                         borderRadius:
@@ -36,9 +35,9 @@ class PageFour extends StatelessWidget {
                         ]),
                   ),
                   Image.asset(
-                    'assets/images/p1.png',
-                    height: containerWidth*0.7,
-                    width: containerWidth*0.5,
+                    'assets/images/p3.png',
+                    height: containerWidth * 0.7,
+                    width: containerWidth * 0.5,
                   ),
                 ],
               ),
@@ -47,7 +46,7 @@ class PageFour extends StatelessWidget {
               height: 15,
             ),
             Text(
-              "Personalize Your Learning Path",
+              "Embark on Your Learning Adventure",
               textAlign: TextAlign.center,
               style: TextStyle(
                   fontSize: 32.0,
@@ -59,7 +58,7 @@ class PageFour extends StatelessWidget {
               height: 15,
             ),
             const Text(
-              "Customize your learning with progress tracking, and interactive activities.",
+              "Explore interactive lessons, quizzes, and multimedia content to enhance your understanding.",
               textAlign: TextAlign.center,
               style: TextStyle(
                   fontFamily: "Roboto",

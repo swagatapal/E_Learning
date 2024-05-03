@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
 
-class PageThree extends StatelessWidget {
-  const PageThree({super.key});
+class InitialPage extends StatelessWidget {
+  final String titleText;
+  final String subtitleText;
+  final String image;
+
+  const InitialPage({
+    super.key,
+    required this.titleText,
+    required this.subtitleText,
+    required this.image,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +28,8 @@ class PageThree extends StatelessWidget {
                 alignment: Alignment.center,
                 children: [
                   Container(
-                     height: containerWidth*0.7,
-                    width: containerWidth*0.5,
+                    height: containerWidth * 0.7,
+                    width: containerWidth * 0.5,
                     decoration: BoxDecoration(
                         color: Theme.of(context).colorScheme.onBackground,
                         borderRadius:
@@ -35,9 +44,9 @@ class PageThree extends StatelessWidget {
                         ]),
                   ),
                   Image.asset(
-                    'assets/images/p2.png',
-                     height: containerWidth*0.7,
-                    width: containerWidth*0.5,
+                    image,
+                    height: containerWidth * 0.7,
+                    width: containerWidth * 0.5,
                   ),
                 ],
               ),
@@ -46,7 +55,7 @@ class PageThree extends StatelessWidget {
               height: 15,
             ),
             Text(
-              "Engage with Expert Instructors",
+              titleText ?? "",
               textAlign: TextAlign.center,
               style: TextStyle(
                   fontSize: 32.0,
@@ -57,10 +66,10 @@ class PageThree extends StatelessWidget {
             const SizedBox(
               height: 15,
             ),
-            const Text(
-              "Connect with knowledgeable tutors for personalized guidance.",
+            Text(
+              subtitleText ?? "",
               textAlign: TextAlign.center,
-              style: TextStyle(
+              style: const TextStyle(
                   fontFamily: "Roboto",
                   fontWeight: FontWeight.w500,
                   fontSize: 14),

@@ -19,8 +19,8 @@ class PageOne extends StatelessWidget {
                 alignment: Alignment.topLeft,
                 children: [
                   Container(
-                    height: containerWidth*0.68,
-                    width: containerWidth*0.5,
+                    height: containerWidth * 0.68,
+                    width: containerWidth * 0.5,
                     decoration: BoxDecoration(
                         color: Theme.of(context).colorScheme.onBackground,
                         borderRadius:
@@ -36,8 +36,8 @@ class PageOne extends StatelessWidget {
                   ),
                   Image.asset(
                     'assets/images/p4.png',
-                    height: containerWidth*0.75,
-                    width: containerWidth*0.57,
+                    height: containerWidth * 0.75,
+                    width: containerWidth * 0.57,
                   ),
                 ],
               ),
