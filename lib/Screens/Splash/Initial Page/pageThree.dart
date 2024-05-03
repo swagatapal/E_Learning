@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class PageTwo extends StatelessWidget {
-  const PageTwo({super.key});
+class PageThree extends StatelessWidget {
+  const PageThree({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,12 +17,11 @@ class PageTwo extends StatelessWidget {
               alignment: Alignment.center,
               children: [
                 Container(
-                  height: containerWidth*0.7,
-                  width: containerWidth*0.5,
+                  height: containerWidth * 0.7,
+                  width: containerWidth * 0.5,
                   decoration: BoxDecoration(
                       color: Theme.of(context).colorScheme.onBackground,
-                      borderRadius:
-                          const BorderRadius.all(Radius.circular(55)),
+                      borderRadius: const BorderRadius.all(Radius.circular(55)),
                       boxShadow: [
                         BoxShadow(
                           color: Theme.of(context).colorScheme.onBackground,
@@ -33,9 +32,9 @@ class PageTwo extends StatelessWidget {
                       ]),
                 ),
                 Image.asset(
-                  'assets/images/p3.png',
-                  height: containerWidth*0.7,
-                  width: containerWidth*0.5,
+                  'assets/images/p2.png',
+                  height: containerWidth * 0.7,
+                  width: containerWidth * 0.5,
                 ),
               ],
             ),
@@ -44,7 +43,7 @@ class PageTwo extends StatelessWidget {
             height: 15,
           ),
           Text(
-            "Embark on Your Learning Adventure",
+            "Engage with Expert Instructors",
             textAlign: TextAlign.center,
             style: TextStyle(
                 fontSize: 32.0,
@@ -56,7 +55,7 @@ class PageTwo extends StatelessWidget {
             height: 15,
           ),
           const Text(
-            "Explore interactive lessons, quizzes, and multimedia content to enhance your understanding.",
+            "Connect with knowledgeable tutors for personalized guidance.",
             textAlign: TextAlign.center,
             style: TextStyle(
                 fontFamily: "Roboto",

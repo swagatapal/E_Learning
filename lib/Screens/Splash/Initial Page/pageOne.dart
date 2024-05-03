@@ -1,29 +1,27 @@
 import 'package:flutter/material.dart';
 
-class PageFour extends StatelessWidget {
-  const PageFour({super.key});
+class PageOne extends StatelessWidget {
+  const PageOne({super.key});
 
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     double containerWidth = screenSize.width;
     return Scaffold(
-      
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Center(
             child: Stack(
-              alignment: Alignment.center,
+              alignment: Alignment.topLeft,
               children: [
                 Container(
-                  height: containerWidth*0.7,
-                  width: containerWidth*0.5,
+                  height: containerWidth * 0.68,
+                  width: containerWidth * 0.5,
                   decoration: BoxDecoration(
                       color: Theme.of(context).colorScheme.onBackground,
-                      borderRadius:
-                          const BorderRadius.all(Radius.circular(55)),
+                      borderRadius: const BorderRadius.all(Radius.circular(52)),
                       boxShadow: [
                         BoxShadow(
                           color: Theme.of(context).colorScheme.onBackground,
@@ -34,9 +32,9 @@ class PageFour extends StatelessWidget {
                       ]),
                 ),
                 Image.asset(
-                  'assets/images/p1.png',
-                  height: containerWidth*0.7,
-                  width: containerWidth*0.5,
+                  'assets/images/p4.png',
+                  height: containerWidth * 0.75,
+                  width: containerWidth * 0.57,
                 ),
               ],
             ),
@@ -45,7 +43,7 @@ class PageFour extends StatelessWidget {
             height: 15,
           ),
           Text(
-            "Personalize Your Learning Path",
+            "Enter the World of E-Learning",
             textAlign: TextAlign.center,
             style: TextStyle(
                 fontSize: 32.0,
@@ -57,7 +55,7 @@ class PageFour extends StatelessWidget {
             height: 15,
           ),
           const Text(
-            "Customize your learning with progress tracking, and interactive activities.",
+            "Begin your educational journey with access to a diverse range of courses.",
             textAlign: TextAlign.center,
             style: TextStyle(
                 fontFamily: "Roboto",

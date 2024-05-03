@@ -12,9 +12,6 @@ class AppColors {
   //General
   static const Color primaryButtonColor = Color(0xFF00707E);
 
-
   static const Color white = Color(0xFFFFFFFF);
   static const Color circleBackground = Color(0xFFD9EFF2);
-
-
 }

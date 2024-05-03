@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 
-class PageOne extends StatelessWidget {
-  const PageOne({super.key});
+class CommonInitialPage extends StatelessWidget {
+  final String titleText;
+  final String subtitleText;
+  final String image;
+
+  const CommonInitialPage(
+      {super.key,
+      required this.titleText,
+      required this.subtitleText,
+      required this.image});
 
   @override
   Widget build(BuildContext context) {
@@ -14,15 +22,14 @@ class PageOne extends StatelessWidget {
         children: [
           Center(
             child: Stack(
-              alignment: Alignment.topLeft,
+              alignment: Alignment.center,
               children: [
                 Container(
-                  height: containerWidth*0.68,
-                  width: containerWidth*0.5,
+                  height: containerWidth * 0.7,
+                  width: containerWidth * 0.5,
                   decoration: BoxDecoration(
                       color: Theme.of(context).colorScheme.onBackground,
-                      borderRadius:
-                          const BorderRadius.all(Radius.circular(52)),
+                      borderRadius: const BorderRadius.all(Radius.circular(55)),
                       boxShadow: [
                         BoxShadow(
                           color: Theme.of(context).colorScheme.onBackground,
@@ -33,9 +40,9 @@ class PageOne extends StatelessWidget {
                       ]),
                 ),
                 Image.asset(
-                  'assets/images/p4.png',
-                  height: containerWidth*0.75,
-                  width: containerWidth*0.57,
+                  image,
+                  height: containerWidth * 0.7,
+                  width: containerWidth * 0.5,
                 ),
               ],
             ),
@@ -44,7 +51,7 @@ class PageOne extends StatelessWidget {
             height: 15,
           ),
           Text(
-            "Enter the World of E-Learning",
+            titleText,
             textAlign: TextAlign.center,
             style: TextStyle(
                 fontSize: 32.0,
@@ -55,10 +62,10 @@ class PageOne extends StatelessWidget {
           const SizedBox(
             height: 15,
           ),
-          const Text(
-            "Begin your educational journey with access to a diverse range of courses.",
+          Text(
+            subtitleText,
             textAlign: TextAlign.center,
-            style: TextStyle(
+            style: const TextStyle(
                 fontFamily: "Roboto",
                 fontWeight: FontWeight.w500,
                 fontSize: 14),
