@@ -1,3 +1,4 @@
+import 'package:e_learning/Core/Utils/CommonWidget/common_inputfield.dart';
 import 'package:flutter/material.dart';
 
 class LogIn extends StatefulWidget {
@@ -10,6 +11,13 @@ class LogIn extends StatefulWidget {
 class _LogInState extends State<LogIn> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: Column(
+        children: [
+          const SizedBox(height: 150,),
+          CommonTextFormField(),
+        ],
+      ),
+    );
   }
 }
