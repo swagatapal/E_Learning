@@ -121,7 +121,7 @@ class _CommonTextFormFieldState extends State<CommonTextFormField> {
                       fillColor: widget.fillColors,
                       labelText: widget.labelText,
                       hintText: widget.hintText,
-                      labelStyle: const TextStyle(color: Colors.white),
+                      labelStyle: const TextStyle(color: AppColors.colorSecondaryText2),
                       border: InputBorder.none,
                       alignLabelWithHint: true,
                       isDense: true,
