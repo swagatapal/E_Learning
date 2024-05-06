@@ -20,141 +20,139 @@ class _LogInState extends State<LogIn> {
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     double containerWidth = screenSize.height;
-    return SafeArea(
-      child: Scaffold(
-        resizeToAvoidBottomInset: false,
-        body: Padding(
-          padding: const EdgeInsets.only(
-              left: 20.0, right: 20.0, bottom: 20, top: 40),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              InkWell(
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                  child: Image.asset(
-                    "assets/images/arrow-back.png",
-                    height: 30,
-                    width: 30,
-                  )),
-              const CommonTitleText(
-                heading: 'SIGN IN',
-                subHeading:
-                    'Sign in to access your personalized learning journey',
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              const CommonHeadingText(
-                textName: 'Email Here',
-              ),
-              const SizedBox(height: 5),
-              CommonTextFormField(
-                hintText: " youremail@gmail.com",
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              const CommonHeadingText(
-                textName: 'Password',
-              ),
-              const SizedBox(height: 5),
-              CommonTextFormField(
-                hintText: " *************************",
-              ),
-              const SizedBox(height: 5),
-              Align(
-                alignment: Alignment.centerRight,
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const ResetPassword(),
-                      ),
-                    );
-                  },
-                  child: const Text(
-                    "Forgot Password?",
-                    style: TextStyle(
-                      fontFamily: 'Roboto',
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                      color: AppColors.colorSecondaryText2,
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+      body: Padding(
+        padding: const EdgeInsets.only(
+            left: 20.0, right: 20.0, bottom: 20, top: 40),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            InkWell(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: Image.asset(
+                  "assets/images/arrow-back.png",
+                  height: 30,
+                  width: 30,
+                )),
+            const CommonTitleText(
+              heading: 'SIGN IN',
+              subHeading:
+                  'Sign in to access your personalized learning journey',
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            const CommonHeadingText(
+              textName: 'Email Here',
+            ),
+            const SizedBox(height: 5),
+            CommonTextFormField(
+              hintText: " youremail@gmail.com",
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            const CommonHeadingText(
+              textName: 'Password',
+            ),
+            const SizedBox(height: 5),
+            CommonTextFormField(
+              hintText: " *************************",
+            ),
+            const SizedBox(height: 5),
+            Align(
+              alignment: Alignment.centerRight,
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ResetPassword(),
                     ),
+                  );
+                },
+                child: const Text(
+                  "Forgot Password?",
+                  style: TextStyle(
+                    fontFamily: 'Roboto',
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                    color: AppColors.colorSecondaryText2,
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 20,
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            CommonButton(
+              onClicked: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const HomeConfig()));
+              },
+              label: "SIGN IN ",
+              buttonHeight: containerWidth * 0.06,
+              buttonWidth: containerWidth * 0.8,
+              fontSize: 20,
+            ),
+            const SizedBox(
+              height: 50,
+            ),
+            Center(
+              child: Text(
+                "--------- Or Sign In with ---------",
+                style: TextStyle(
+                    fontFamily: 'Roboto',
+                    fontWeight: FontWeight.w600,
+                    color: Theme.of(context).colorScheme.onBackground,
+                    fontSize: 14),
               ),
-              CommonButton(
-                onClicked: () {
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Image.asset("assets/images/facebook.png", ),
+            const SizedBox(
+              height: 10,
+            ),
+            Image.asset("assets/images/google.png"),
+            const Spacer(),
+            Center(
+              child: GestureDetector(
+                onTap: () {
                   Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const HomeConfig()));
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const SignUpPage(),
+                    ),
+                  );
                 },
-                label: "SIGN IN ",
-                buttonHeight: containerWidth * 0.06,
-                buttonWidth: containerWidth * 0.8,
-                fontSize: 20,
-              ),
-              const SizedBox(
-                height: 50,
-              ),
-              Center(
-                child: Text(
-                  "--------- Or Sign In with ---------",
-                  style: TextStyle(
-                      fontFamily: 'Roboto',
-                      fontWeight: FontWeight.w600,
-                      color: Theme.of(context).colorScheme.onBackground,
-                      fontSize: 14),
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Image.asset("assets/images/facebook.png"),
-              const SizedBox(
-                height: 10,
-              ),
-              Image.asset("assets/images/google.png"),
-              const Spacer(),
-              Center(
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const SignUpPage(),
+                child: RichText(
+                    text: TextSpan(
+                        text: 'Don’t have an  Account? ',
+                        style: const TextStyle(
+                            color: AppColors.colorSecondaryText2,
+                            fontSize: 14.0,
+                            fontFamily: 'Roboto'),
+                        children: <TextSpan>[
+                      TextSpan(
+                        text: 'Sign Up here',
+                        style: TextStyle(
+                            color: Theme.of(context).colorScheme.onBackground,
+                            fontWeight: FontWeight.w800,
+                            fontSize: 14,
+                            fontFamily: 'Roboto'),
                       ),
-                    );
-                  },
-                  child: RichText(
-                      text: TextSpan(
-                          text: 'Don’t have an  Account? ',
-                          style: const TextStyle(
-                              color: AppColors.colorSecondaryText2,
-                              fontSize: 14.0,
-                              fontFamily: 'Roboto'),
-                          children: <TextSpan>[
-                        TextSpan(
-                          text: 'Sign Up here',
-                          style: TextStyle(
-                              color: Theme.of(context).colorScheme.onBackground,
-                              fontWeight: FontWeight.w800,
-                              fontSize: 14,
-                              fontFamily: 'Roboto'),
-                        ),
-                      ])),
-                ),
+                    ])),
               ),
-              const SizedBox(height: 20),
-            ],
-          ),
+            ),
+            const SizedBox(height: 20),
+          ],
         ),
       ),
     );
