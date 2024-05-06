@@ -1,3 +1,4 @@
+import 'package:e_learning/Screens/Auth/View/login_page.dart';
 import 'package:flutter/material.dart';
 import '../../../Core/Utils/CommonWidget/common_button.dart';
 import '../../../Core/Utils/CommonWidget/common_inputfield.dart';
@@ -106,7 +107,7 @@ class SignUpPage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const SignUpPage(),
+                      builder: (context) => const LogIn(),
                     ),
                   );
                 },
@@ -119,7 +120,7 @@ class SignUpPage extends StatelessWidget {
                             fontFamily: 'Roboto'),
                         children: <TextSpan>[
                       TextSpan(
-                        text: 'Sign Up here',
+                        text: 'Sign In here',
                         style: TextStyle(
                             color: Theme.of(context).colorScheme.onBackground,
                             fontWeight: FontWeight.w800,

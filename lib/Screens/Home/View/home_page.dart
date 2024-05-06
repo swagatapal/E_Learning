@@ -32,9 +32,10 @@ class _HomePageState extends State<HomePage> {
                                 fontFamily: 'Roboto'),
                             children: <TextSpan>[
                           TextSpan(
-                            text: '  Sidara',
+                            text: 'Sidara',
                             style: TextStyle(
-                                color: Theme.of(context).colorScheme.onBackground,
+                                color:
+                                    Theme.of(context).colorScheme.onBackground,
                                 fontWeight: FontWeight.w600,
                                 fontSize: 20,
                                 fontFamily: 'Roboto'),
@@ -74,6 +75,7 @@ class _HomePageState extends State<HomePage> {
                     },
                   ),
                 ),
+                const SizedBox(height: 10),
                 HomeHeadingText(isVisible: true, headingName: "Categories"),
                 SizedBox(
                   height: ScreenUtils().screenWidth(context) * 0.13,
@@ -85,9 +87,20 @@ class _HomePageState extends State<HomePage> {
                     },
                   ),
                 ),
+                const SizedBox(height: 10),
                 HomeHeadingText(
                     isVisible: true, headingName: "Suggestions for You"),
-                const SuggestionsItem(),
+                const SizedBox(height: 10),
+                SizedBox(
+                  height: ScreenUtils().screenWidth(context) * 0.13,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 5,
+                    itemBuilder: (BuildContext context, int index) {
+                      return const SuggestionsItem();
+                    },
+                  ),
+                ),
               ],
             ),
           ),
@@ -244,7 +257,7 @@ class CategoryItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(
         top: 8.0,
-        left: 8,
+        left: 8.0,
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
