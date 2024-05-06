@@ -24,7 +24,7 @@ class _LogInState extends State<LogIn> {
       resizeToAvoidBottomInset: false,
       body: Padding(
         padding: const EdgeInsets.only(
-            left: 20.0, right: 20.0, bottom: 20, top: 40),
+            left: 20.0, right: 20.0, bottom: 20, top: 80),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
