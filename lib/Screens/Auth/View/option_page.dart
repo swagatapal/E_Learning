@@ -1,5 +1,6 @@
 import 'package:e_learning/Core/Utils/CommonWidget/common_button.dart';
 import 'package:e_learning/Screens/Auth/View/login_page.dart';
+import 'package:e_learning/Screens/Auth/View/sign_up_page.dart';
 import 'package:flutter/material.dart';
 
 class OptionPage extends StatelessWidget {
@@ -60,7 +61,14 @@ class OptionPage extends StatelessWidget {
                   buttonWidth: containerWidth * 0.38,
                 ),
                 CommonButton(
-                  onClicked: () {},
+                  onClicked: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SignUpPage(),
+                      ),
+                    );
+                  },
                   label: 'SIGN UP',
                   buttonHeight: containerWidth * 0.13,
                   buttonWidth: containerWidth * 0.38,
