@@ -30,8 +30,10 @@ class _MyCourseTabState extends State<MyCourseTab> {
                   unselectedLabelColor: Colors.transparent,
                   tabs: [
                     Tab(
-                        child: MyCourseTabContainer(categoryName: "Saved Courses")),
-                    Tab(child: MyCourseTabContainer(categoryName: "In Progress")),
+                        child: MyCourseTabContainer(
+                            categoryName: "Saved Courses")),
+                    Tab(child:
+                            MyCourseTabContainer(categoryName: "In Progress")),
                     Tab(child: MyCourseTabContainer(categoryName: "Completed")),
                   ],
                 ),
