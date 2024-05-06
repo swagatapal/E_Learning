@@ -9,7 +9,7 @@ class SuggestionsItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 8.0, right: 8),
+      padding: const EdgeInsets.only(top: 8.0, right: 8.0),
       child: Container(
         width: ScreenUtils().screenWidth(context) * 0.4,
         decoration: BoxDecoration(
@@ -19,10 +19,11 @@ class SuggestionsItem extends StatelessWidget {
           color: Colors.white,
           boxShadow: [
             BoxShadow(
-                // color:  Colors.blueGrey.withOpacity(0.4),
-                color: AppColors.colorSecondaryText2.withOpacity(0.2),
-                offset: const Offset(0.0, 3.0),
-                blurRadius: 8.0)
+              // color:  Colors.blueGrey.withOpacity(0.4),
+              color: AppColors.colorSecondaryText2.withOpacity(0.2),
+              offset: const Offset(0.0, 3.0),
+              blurRadius: 8.0,
+            )
           ],
         ),
         child: Padding(
