@@ -13,8 +13,14 @@ class HomeConfig extends StatefulWidget {
 class _HomeConfigState extends State<HomeConfig> {
   final PersistentTabController _controller =
       PersistentTabController(initialIndex: 0);
+
   List<Widget> _buildScreens() {
-    return [const HomePage(), SettingsScreen(), MyCourseScreen(), ProfileScrren()];
+    return [
+      const HomePage(),
+      const SettingsScreen(),
+      const MyCourseScreen(),
+      const ProfileScreen(),
+    ];
   }
 
   List<PersistentBottomNavBarItem> _navBarsItems() {
@@ -62,15 +68,16 @@ class _HomeConfigState extends State<HomeConfig> {
       screens: _buildScreens(),
       items: _navBarsItems(),
       confineInSafeArea: true,
-      backgroundColor: Theme.of(context)
-          .colorScheme
-          .onBackground, // Default is Colors.white.
-      handleAndroidBackButtonPress: true, // Default is true.
-      resizeToAvoidBottomInset:
-          true, // This needs to be true if you want to move up the screen when keyboard appears. Default is true.
-      stateManagement: true, // Default is true.
-      hideNavigationBarWhenKeyboardShows:
-          true, // Recommended to set 'resizeToAvoidBottomInset' as true while using this argument. Default is true.
+      backgroundColor: Theme.of(context).colorScheme.onBackground,
+      // Default is Colors.white.
+      handleAndroidBackButtonPress: true,
+      // Default is true.
+      resizeToAvoidBottomInset: true,
+      // This needs to be true if you want to move up the screen when keyboard appears. Default is true.
+      stateManagement: true,
+      // Default is true.
+      hideNavigationBarWhenKeyboardShows: true,
+      // Recommended to set 'resizeToAvoidBottomInset' as true while using this argument. Default is true.
       decoration: const NavBarDecoration(
         borderRadius: BorderRadius.only(
             topLeft: Radius.circular(10), topRight: Radius.circular(10.0)),
@@ -100,7 +107,7 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Text("Home Screen"),
     );
   }
@@ -111,7 +118,7 @@ class SettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Text("Settings Screen"),
     );
   }
@@ -122,18 +129,18 @@ class MyCourseScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Text("Settings Screen"),
     );
   }
 }
 
-class ProfileScrren extends StatelessWidget {
-  const ProfileScrren({super.key});
+class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Text("Settings Screen"),
     );
   }
