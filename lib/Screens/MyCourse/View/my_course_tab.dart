@@ -21,10 +21,13 @@ class _MyCourseTabState extends State<MyCourseTab> {
         initialIndex: 1,
         child: Scaffold(
           body: Padding(
-            padding: EdgeInsets.only(top: 8.0, left: 10, right: 10),
+            padding: EdgeInsets.only(top: 20.0, left: 20.0, right: 20.0),
             child: Column(
               children: [
-                MyCourseHeading(),
+                Padding(
+                  padding: EdgeInsets.only(bottom: 20.0),
+                  child: MyCourseHeading(),
+                ),
                 TabBar(
                   labelPadding: EdgeInsets.zero,
                   labelColor: Colors.transparent,
@@ -35,7 +38,8 @@ class _MyCourseTabState extends State<MyCourseTab> {
                     Tab(
                         child: MyCourseTabContainer(
                             categoryName: "Saved Courses")),
-                    Tab(child:
+                    Tab(
+                        child:
                             MyCourseTabContainer(categoryName: "In Progress")),
                     Tab(child: MyCourseTabContainer(categoryName: "Completed")),
                   ],
