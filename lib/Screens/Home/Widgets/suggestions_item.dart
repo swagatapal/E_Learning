@@ -43,10 +43,11 @@ class SuggestionsItem extends StatelessWidget {
                   Text(
                     "UI/UX Design Essentials",
                     style: TextStyle(
-                        fontFamily: 'Roboto',
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                        color: Theme.of(context).colorScheme.onBackground),
+                      fontFamily: 'Roboto',
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      color: Theme.of(context).colorScheme.onBackground,
+                    ),
                   ),
                   const Text(
                     "Tech Innovations University",
