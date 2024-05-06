@@ -47,9 +47,9 @@ class _MyCourseTabState extends State<MyCourseTab> {
                 Expanded(
                   child: TabBarView(
                     children: [
-                      Center(child: SavedCourse()),
-                      Center(child: InProgress()),
-                      Center(child: CompletedPage()),
+                      SavedCourse(),
+                      InProgress(),
+                      CompletedPage(),
                     ],
                   ),
                 ),
