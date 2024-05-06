@@ -10,6 +10,6 @@ class SavedCourse extends StatefulWidget {
 class _SavedCourseState extends State<SavedCourse> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold();
   }
 }
