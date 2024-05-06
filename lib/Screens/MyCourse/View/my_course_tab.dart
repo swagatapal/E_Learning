@@ -1,4 +1,3 @@
-import 'package:e_learning/Screens/Home/Widgets/category_item.dart';
 import 'package:e_learning/Screens/MyCourse/Widgets/my_course_heading.dart';
 import 'package:e_learning/Screens/MyCourse/Widgets/my_course_tab_container.dart';
 import 'package:flutter/material.dart';
@@ -13,30 +12,27 @@ class MyCourseTab extends StatefulWidget {
 class _MyCourseTabState extends State<MyCourseTab> {
   @override
   Widget build(BuildContext context) {
-    return  const SafeArea(
+    return const SafeArea(
       child: DefaultTabController(
         length: 3,
         initialIndex: 1,
         child: Scaffold(
           body: Padding(
-            padding:  EdgeInsets.only(top: 8.0, left: 10, right: 10),
+            padding: EdgeInsets.only(top: 8.0, left: 10, right: 10),
             child: Column(
-
               children: [
                 MyCourseHeading(),
                 TabBar(
                   labelPadding: EdgeInsets.zero,
-                labelColor:Colors.transparent,
+                  labelColor: Colors.transparent,
                   indicatorColor: Colors.transparent,
                   indicatorSize: TabBarIndicatorSize.tab,
-                unselectedLabelColor: Colors.transparent,
-
+                  unselectedLabelColor: Colors.transparent,
                   tabs: [
-                    Tab(child: MyCourseTabContainer(categoryName:"Saved Courses")),
-                    Tab(child: MyCourseTabContainer(categoryName:"In Progress")),
-                    Tab(child: MyCourseTabContainer(categoryName:"Completed")),
-
-
+                    Tab(
+                        child: MyCourseTabContainer(categoryName: "Saved Courses")),
+                    Tab(child: MyCourseTabContainer(categoryName: "In Progress")),
+                    Tab(child: MyCourseTabContainer(categoryName: "Completed")),
                   ],
                 ),
                 Expanded(
