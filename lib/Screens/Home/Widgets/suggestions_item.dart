@@ -31,12 +31,36 @@ class SuggestionsItem extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Image.asset(
-                "assets/images/testImage1.png",
-                height: 100,
-                width: 150,
-                fit: BoxFit.cover,
+              Stack(
+                alignment: Alignment.topRight,
+                children: [
+                  Image.asset(
+                    "assets/images/testImage1.png",
+                    height: 100,
+                    width: 150,
+                    fit: BoxFit.cover,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 6.0, right: 6),
+                    child: Container(
+                      height: 30,
+                      width: 30,
+                      decoration:  BoxDecoration(
+                        color: Colors.transparent.withOpacity(0.1),
+                        borderRadius: const BorderRadius.all(Radius.circular(8)),
+                      ),
+                      child:Center(child: Image.asset("assets/images/bookmark2.png", height: 25,width: 15,)) ,
+                    ),
+                  ),
+                ],
               ),
+
+              // Image.asset(
+              //   "assets/images/testImage1.png",
+              //   height: 100,
+              //   width: 150,
+              //   fit: BoxFit.cover,
+              // ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
