@@ -3,6 +3,7 @@ import 'package:e_learning/Core/Utils/CommonWidget/common_inputfield.dart';
 import 'package:e_learning/Screens/Auth/View/common_heading_text.dart';
 import 'package:e_learning/Screens/Auth/View/common_title_text.dart';
 import 'package:e_learning/Screens/Auth/View/reset_password.dart';
+import 'package:e_learning/Screens/Auth/View/sign_up_page.dart';
 import 'package:e_learning/Screens/home/View/home_config.dart';
 import 'package:e_learning/core/utils/helper/app_colors.dart';
 import 'package:flutter/material.dart';
@@ -123,23 +124,33 @@ class _LogInState extends State<LogIn> {
               Image.asset("assets/images/google.png"),
               const Spacer(),
               Center(
-                child: RichText(
-                    text: TextSpan(
-                        text: 'Don’t have an  Account? ',
-                        style: const TextStyle(
-                            color: AppColors.colorSecondaryText2,
-                            fontSize: 14.0,
-                            fontFamily: 'Roboto'),
-                        children: <TextSpan>[
-                      TextSpan(
-                        text: 'Sign Up here',
-                        style: TextStyle(
-                            color: Theme.of(context).colorScheme.onBackground,
-                            fontWeight: FontWeight.w800,
-                            fontSize: 14,
-                            fontFamily: 'Roboto'),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SignUpPage(),
                       ),
-                    ])),
+                    );
+                  },
+                  child: RichText(
+                      text: TextSpan(
+                          text: 'Don’t have an  Account? ',
+                          style: const TextStyle(
+                              color: AppColors.colorSecondaryText2,
+                              fontSize: 14.0,
+                              fontFamily: 'Roboto'),
+                          children: <TextSpan>[
+                        TextSpan(
+                          text: 'Sign Up here',
+                          style: TextStyle(
+                              color: Theme.of(context).colorScheme.onBackground,
+                              fontWeight: FontWeight.w800,
+                              fontSize: 14,
+                              fontFamily: 'Roboto'),
+                        ),
+                      ])),
+                ),
               ),
               const SizedBox(height: 20),
             ],
