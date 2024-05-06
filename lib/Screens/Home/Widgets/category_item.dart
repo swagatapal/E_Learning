@@ -11,8 +11,8 @@ class CategoryItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(
         top: 8.0,
-        left: 8.0,
-        right: 8.0,
+        left: 20.0,
+
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,

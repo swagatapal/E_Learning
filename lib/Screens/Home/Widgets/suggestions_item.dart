@@ -21,7 +21,7 @@ class SuggestionsItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 8.0, right: 8.0),
+      padding: const EdgeInsets.only(top: 8.0, left: 20.0,),
       child: Container(
         width: ScreenUtils().screenWidth(context) * 0.4,
         decoration: BoxDecoration(
@@ -64,7 +64,7 @@ class SuggestionsItem extends StatelessWidget {
                       ),
                       child: Center(
                           child: Image.asset(
-                        image,
+                        "assets/images/bookmark2.png",
                         height: 25,
                         width: 15,
                       )),
