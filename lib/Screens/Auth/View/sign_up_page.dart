@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../Core/Utils/CommonWidget/common_button.dart';
 import '../../../Core/Utils/CommonWidget/common_inputfield.dart';
 import '../../../Core/Utils/Helper/app_colors.dart';
@@ -18,7 +17,7 @@ class SignUpPage extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       body: Padding(
         padding:
-            const EdgeInsets.only(left: 20.0, right: 20.0, bottom: 20, top: 40),
+            const EdgeInsets.only(left: 20.0, right: 20.0, bottom: 20, top: 50),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -83,9 +82,7 @@ class SignUpPage extends StatelessWidget {
               buttonWidth: containerWidth * 0.8,
               fontSize: 20,
             ),
-            const SizedBox(
-              height: 30,
-            ),
+            const SizedBox(height: 30),
             Center(
               child: Text(
                 "--------- Or Sign Up with ---------",
@@ -100,9 +97,7 @@ class SignUpPage extends StatelessWidget {
               height: 20,
             ),
             Image.asset("assets/images/facebook.png"),
-            const SizedBox(
-              height: 10,
-            ),
+            const SizedBox(height: 10),
             Image.asset("assets/images/google.png"),
             const Spacer(),
             Center(

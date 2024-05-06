@@ -96,7 +96,7 @@ class _LogInState extends State<LogIn> {
                       MaterialPageRoute(
                           builder: (context) => const HomeConfig()));
                 },
-                label: "Sign in ",
+                label: "SIGN IN ",
                 buttonHeight: containerWidth * 0.06,
                 buttonWidth: containerWidth * 0.8,
                 fontSize: 20,
