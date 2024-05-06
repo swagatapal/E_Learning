@@ -12,7 +12,7 @@ class AppDecoration {
 
   static InputDecoration sFormField = InputDecoration(
     contentPadding:
-        const EdgeInsets.only(left: 18.0, bottom: 15.0, top: 15.0, right: 18),
+        const EdgeInsets.only(left: 18.0, bottom: 12.0, top: 12.0, right: 18),
     filled: true,
     // fillColor: AppColors.colorTextBox,
     errorStyle: const TextStyle(
@@ -42,7 +42,7 @@ class AppDecoration {
 
     errorMaxLines: 1,
     floatingLabelStyle: const TextStyle(
-        color: AppColors.white,
+        color: AppColors.colorSecondaryText2,
         fontSize: 18.0,
         fontFamily: 'Roboto',
         fontWeight: FontWeight.w600),
@@ -51,8 +51,8 @@ class AppDecoration {
         fontSize: 14.0,
         fontFamily: 'Roboto',
         fontWeight: FontWeight.w400),
-    hintStyle: TextStyle(
-        color: AppColors.white.withOpacity(0.5),
+    hintStyle: const TextStyle(
+        color: AppColors.colorSecondaryText2,
         fontSize: 14.0,
         fontFamily: 'Roboto',
         height: 0,

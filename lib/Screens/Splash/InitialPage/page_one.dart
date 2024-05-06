@@ -1,3 +1,4 @@
+import 'package:e_learning/Core/Utils/CommonWidget/common_initial_page.dart';
 import 'package:flutter/material.dart';
 
 class PageOne extends StatelessWidget {
@@ -5,65 +6,71 @@ class PageOne extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenSize = MediaQuery.of(context).size;
-    double containerWidth = screenSize.width;
-    return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Center(
-            child: Stack(
-              alignment: Alignment.topLeft,
-              children: [
-                Container(
-                  height: containerWidth * 0.68,
-                  width: containerWidth * 0.5,
-                  decoration: BoxDecoration(
-                      color: Theme.of(context).colorScheme.onBackground,
-                      borderRadius: const BorderRadius.all(Radius.circular(52)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Theme.of(context).colorScheme.onBackground,
-                          spreadRadius: 3,
-                          blurRadius: 1,
-                          offset: const Offset(0, 1),
-                        ),
-                      ]),
-                ),
-                Image.asset(
-                  'assets/images/p4.png',
-                  height: containerWidth * 0.75,
-                  width: containerWidth * 0.57,
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(
-            height: 15,
-          ),
-          Text(
-            "Enter the World of E-Learning",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-                fontSize: 32.0,
-                fontWeight: FontWeight.bold,
-                color: Theme.of(context).colorScheme.onBackground,
-                fontFamily: 'Roboto'),
-          ),
-          const SizedBox(
-            height: 15,
-          ),
-          const Text(
-            "Begin your educational journey with access to a diverse range of courses.",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-                fontFamily: "Roboto",
-                fontWeight: FontWeight.w500,
-                fontSize: 14),
-          ),
-        ],
+    return const Scaffold(
+      body:  CommonInitialPage(
+        titleText: 'Enter the World of E-Learning',
+        subtitleText:
+            'Begin your educational journey with access to a diverse range of courses.',
+        image: 'assets/images/p4.png',
       ),
+      
+      
+      // Column(
+      //   mainAxisAlignment: MainAxisAlignment.center,
+      //   crossAxisAlignment: CrossAxisAlignment.center,
+      //   children: [
+      //     Center(
+      //       child: Stack(
+      //         alignment: Alignment.topLeft,
+      //         children: [
+      //           Container(
+      //             height: containerWidth * 0.68,
+      //             width: containerWidth * 0.5,
+      //             decoration: BoxDecoration(
+      //                 color: Theme.of(context).colorScheme.onBackground,
+      //                 borderRadius: const BorderRadius.all(Radius.circular(52)),
+      //                 boxShadow: [
+      //                   BoxShadow(
+      //                     color: Theme.of(context).colorScheme.onBackground,
+      //                     spreadRadius: 3,
+      //                     blurRadius: 1,
+      //                     offset: const Offset(0, 1),
+      //                   ),
+      //                 ]),
+      //           ),
+      //           Image.asset(
+      //             'assets/images/p4.png',
+      //             height: containerWidth * 0.75,
+      //             width: containerWidth * 0.57,
+      //           ),
+      //         ],
+      //       ),
+      //     ),
+      //     const SizedBox(
+      //       height: 15,
+      //     ),
+      //     Text(
+      //       "Enter the World of E-Learning",
+      //       textAlign: TextAlign.center,
+      //       style: TextStyle(
+      //           fontSize: 32.0,
+      //           fontWeight: FontWeight.bold,
+      //           color: Theme.of(context).colorScheme.onBackground,
+      //           fontFamily: 'Roboto'),
+      //     ),
+      //     const SizedBox(
+      //       height: 15,
+      //     ),
+      //     const Text(
+      //       "Begin your educational journey with access to a diverse range of courses.",
+      //       textAlign: TextAlign.center,
+      //       style: TextStyle(
+      //           fontFamily: "Roboto",
+      //           fontWeight: FontWeight.w500,
+      //           fontSize: 14),
+      //     ),
+      //   ],
+      // ),
     );
   }
 }

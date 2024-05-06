@@ -22,37 +22,37 @@ class InitialHome extends StatelessWidget {
     final screenSize = MediaQuery.of(context).size;
     double containerWidth = screenSize.height;
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(30.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            SizedBox(
-              height: containerWidth * 0.7,
-              child: PageView(
-                controller: _controller,
-                children: const [
-                  PageOne(),
-                  PageTwo(),
-                  PageThree(),
-                  PageFour(),
-                ],
-              ),
-            ),
-            SmoothPageIndicator(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          SizedBox(
+            height: containerWidth * 0.7,
+            child: PageView(
               controller: _controller,
-              count: 4,
-              effect: JumpingDotEffect(
-                activeDotColor: Theme.of(context).colorScheme.onBackground,
-                dotColor: AppColors.circleBackground,
-                dotHeight: 15,
-                dotWidth: 20,
-                spacing: 10,
-                //verticalOffset: 50,
-                jumpScale: 2,
-              ),
+              children: const [
+                PageOne(),
+                PageTwo(),
+                PageThree(),
+                PageFour(),
+              ],
             ),
-            CommonButton(
+          ),
+          SmoothPageIndicator(
+            controller: _controller,
+            count: 4,
+            effect: JumpingDotEffect(
+              activeDotColor: Theme.of(context).colorScheme.onBackground,
+              dotColor: AppColors.circleBackground,
+              dotHeight: 15,
+              dotWidth: 20,
+              spacing: 10,
+              //verticalOffset: 50,
+              jumpScale: 2,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 30.0, right: 30),
+            child: CommonButton(
               onClicked: () {
                 Navigator.push(
                   context,
@@ -66,29 +66,29 @@ class InitialHome extends StatelessWidget {
               buttonWidth: containerWidth * 0.8,
               fontSize: 20,
             ),
-            InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const LogIn(),
-                  ),
-                );
-
-              },
-              child: Text(
-                "SKIP",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.w500,
-                    color: Theme.of(context).colorScheme.onBackground,
-                    fontFamily: 'Roboto',
-                    decoration: TextDecoration.underline),
-              ),
+          ),
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const LogIn(),
+                ),
+              );
+      
+            },
+            child: Text(
+              "SKIP",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.w500,
+                  color: Theme.of(context).colorScheme.onBackground,
+                  fontFamily: 'Roboto',
+                  decoration: TextDecoration.underline),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
