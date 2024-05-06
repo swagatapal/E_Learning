@@ -1,5 +1,8 @@
+import 'package:e_learning/Screens/MyCourse/Widgets/completed_page.dart';
+import 'package:e_learning/Screens/MyCourse/Widgets/in_progress.dart';
 import 'package:e_learning/Screens/MyCourse/Widgets/my_course_heading.dart';
 import 'package:e_learning/Screens/MyCourse/Widgets/my_course_tab_container.dart';
+import 'package:e_learning/Screens/MyCourse/Widgets/saved_course.dart';
 import 'package:flutter/material.dart';
 
 class MyCourseTab extends StatefulWidget {
@@ -38,9 +41,9 @@ class _MyCourseTabState extends State<MyCourseTab> {
                 Expanded(
                   child: TabBarView(
                     children: [
-                      Center(child: Text('Page 1')),
-                      Center(child: Text('Page 2')),
-                      Center(child: Text('Page 3')),
+                      Center(child: SavedCourse()),
+                      Center(child: InProgress()),
+                      Center(child: CompletedPage()),
                     ],
                   ),
                 ),
