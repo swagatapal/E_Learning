@@ -1,3 +1,4 @@
+import 'package:e_learning/Screens/MyCourse/View/my_course_tab.dart';
 import 'package:e_learning/Screens/home/View/home_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,7 @@ class _HomeConfigState extends State<HomeConfig> {
   List<Widget> _buildScreens() {
     return [
       const HomePage(),
-      const SettingsScreen(),
+      const MyCourseTab(),
       const MyCourseScreen(),
       const ProfileScreen(),
     ];
@@ -113,16 +114,7 @@ class MainScreen extends StatelessWidget {
   }
 }
 
-class SettingsScreen extends StatelessWidget {
-  const SettingsScreen({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Text("Settings Screen"),
-    );
-  }
-}
 
 class MyCourseScreen extends StatelessWidget {
   const MyCourseScreen({super.key});
