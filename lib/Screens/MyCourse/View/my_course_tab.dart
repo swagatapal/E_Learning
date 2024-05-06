@@ -30,49 +30,68 @@ class _MyCourseTabState extends State<MyCourseTab>
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 3,
-      child: Scaffold(
-        appBar: AppBar(
-          actions: const [
-            MyCourseHeading(),
-          ],
-          bottom: TabBar(
-            controller: tabController,
-            padding: const EdgeInsets.symmetric(horizontal: 10.0),
-            labelPadding: EdgeInsets.zero,
-            indicatorColor: Colors.transparent,
-            indicatorSize: TabBarIndicatorSize.tab,
-            isScrollable: false,
-            unselectedLabelStyle: Theme.of(context)
-                .textTheme
-                .bodyLarge!
-                .copyWith(color: Colors.black),
-            labelStyle: Theme.of(context)
-                .textTheme
-                .bodyLarge!
-                .copyWith(color: Colors.white),
-            indicator: const BoxDecoration(
-              color: Color(0xFF00707E),
-              borderRadius: BorderRadius.all(Radius.circular(30)),
+    return SafeArea(
+      child: DefaultTabController(
+        length: 3,
+        child: Scaffold(
+          body: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Column(
+              children: [
+                const MyCourseHeading(),
+                const SizedBox(height: 15,),
+                TabBar(
+                  controller: tabController,
+                  padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                  labelPadding: EdgeInsets.zero,
+                  indicatorColor: Colors.transparent,
+                  indicatorSize: TabBarIndicatorSize.tab,
+                  isScrollable: false,
+                  unselectedLabelStyle: Theme.of(context)
+                      .textTheme
+                      .bodyLarge!
+                      .copyWith(color: Colors.black),
+                  labelStyle: Theme.of(context)
+                      .textTheme
+                      .bodyLarge!
+                      .copyWith(color: Colors.white),
+                  indicator: const BoxDecoration(
+                    color: Color(0xFF00707E),
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
+                  ),
+                  tabs: const [
+                    Tab(child: MyCourseTabContainer(categoryName: "Saved Courses")),
+                    Tab(child: MyCourseTabContainer(categoryName: "In Progress")),
+                    Tab(child: MyCourseTabContainer(categoryName: "Completed")),
+                  ],
+                ),
+                Expanded(
+                  child: TabBarView(
+                    controller: tabController,
+                    children:  [
+                      const SavedCourse(),
+                      ListView.builder(
+                        itemCount: 3,
+                          itemBuilder: (context, index){
+                          return const InProgress();
+                          }),
+
+
+                      const CompletedPage(),
+                    ],
+                  ),
+                ),
+
+              ],
             ),
-            tabs: const [
-              Tab(child: MyCourseTabContainer(categoryName: "Saved Courses")),
-              Tab(child: MyCourseTabContainer(categoryName: "In Progress")),
-              Tab(child: MyCourseTabContainer(categoryName: "Completed")),
-            ],
           ),
-        ),
-        body: Expanded(
-          child: TabBarView(
-            controller: tabController,
-            children: const [
-              SavedCourse(),
-              InProgress(),
-              CompletedPage(),
-            ],
+      
+      
+      
+      
           ),
-        ),
+      
+        
       ),
     );
   }
