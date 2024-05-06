@@ -75,7 +75,13 @@ class _HomePageState extends State<HomePage> {
                       child: ListView.builder(
                         itemCount: 2,
                         itemBuilder: (BuildContext context, int index) {
-                          return const ContinueWatchingItem();
+                          return const ContinueWatchingItem(
+                            image: 'assets/images/testImage1.png',
+                            title: 'UI/UX Design Essentials',
+                            subtitle: 'Tech Innovations University',
+                            rating: '4.9',
+                            percentageCompleted: '79% Completed',
+                          );
                         },
                       ),
                     ),
@@ -87,7 +93,8 @@ class _HomePageState extends State<HomePage> {
                   const SizedBox(height: 10),
                   Padding(
                     padding: const EdgeInsets.only(left: 20.0, right: 20.0),
-                    child: HomeHeadingText(isVisible: true, headingName: "Categories"),
+                    child: HomeHeadingText(
+                        isVisible: true, headingName: "Categories"),
                   ),
                   SizedBox(
                     height: ScreenUtils().screenWidth(context) * 0.13,
@@ -95,13 +102,16 @@ class _HomePageState extends State<HomePage> {
                       scrollDirection: Axis.horizontal,
                       itemCount: 5,
                       itemBuilder: (BuildContext context, int index) {
-                        return const CategoryItem();
+                        return const CategoryItem(
+                          text: 'Logitech Mouse',
+                        );
                       },
                     ),
                   ),
                   const SizedBox(height: 10),
                   Padding(
-                    padding: const EdgeInsets.only(left: 20.0, top: 10.0, right: 20.0),
+                    padding: const EdgeInsets.only(
+                        left: 20.0, top: 10.0, right: 20.0),
                     child: HomeHeadingText(
                         isVisible: true, headingName: "Suggestions for You"),
                   ),
@@ -112,13 +122,19 @@ class _HomePageState extends State<HomePage> {
                       scrollDirection: Axis.horizontal,
                       itemCount: 5,
                       itemBuilder: (BuildContext context, int index) {
-                        return const SuggestionsItem();
+                        return const SuggestionsItem(
+                          image: 'assets/images/testImage1.png',
+                          title: 'Branding and Identity Design',
+                          subtitle: 'Innovation and Design School',
+                          rating: '4.9',
+                        );
                       },
                     ),
                   ),
                   const SizedBox(height: 10),
                   Padding(
-                    padding: const EdgeInsets.only(left: 20.0, top: 10.0, right: 20.0),
+                    padding: const EdgeInsets.only(
+                        left: 20.0, top: 10.0, right: 20.0),
                     child: HomeHeadingText(
                         isVisible: true, headingName: "Top Courses"),
                   ),
@@ -129,7 +145,12 @@ class _HomePageState extends State<HomePage> {
                       scrollDirection: Axis.horizontal,
                       itemCount: 5,
                       itemBuilder: (BuildContext context, int index) {
-                        return const SuggestionsItem();
+                        return const SuggestionsItem(
+                          image: 'assets/images/testImage1.png',
+                          title: 'Typography and Layout Design',
+                          subtitle: 'Visual Communication College',
+                          rating: '4.4',
+                        );
                       },
                     ),
                   ),

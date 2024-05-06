@@ -4,7 +4,19 @@ import '../../../Core/Utils/Helper/app_colors.dart';
 import '../../../Core/Utils/Helper/screen_utils.dart';
 
 class SuggestionsItem extends StatelessWidget {
-  const SuggestionsItem({super.key});
+  final String image;
+  final String title;
+
+  final String subtitle;
+  final String rating;
+
+  const SuggestionsItem({
+    super.key,
+    required this.image,
+    required this.title,
+    required this.subtitle,
+    required this.rating,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +47,7 @@ class SuggestionsItem extends StatelessWidget {
                 alignment: Alignment.topRight,
                 children: [
                   Image.asset(
-                    "assets/images/testImage1.png",
+                    image,
                     height: 100,
                     width: 150,
                     fit: BoxFit.cover,
@@ -52,7 +64,7 @@ class SuggestionsItem extends StatelessWidget {
                       ),
                       child: Center(
                           child: Image.asset(
-                        "assets/images/bookmark2.png",
+                        image,
                         height: 25,
                         width: 15,
                       )),
@@ -60,18 +72,11 @@ class SuggestionsItem extends StatelessWidget {
                   ),
                 ],
               ),
-
-              // Image.asset(
-              //   "assets/images/testImage1.png",
-              //   height: 100,
-              //   width: 150,
-              //   fit: BoxFit.cover,
-              // ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "UI/UX Design Essentials",
+                    title,
                     style: TextStyle(
                       fontFamily: 'Roboto',
                       fontSize: 14,
@@ -79,9 +84,9 @@ class SuggestionsItem extends StatelessWidget {
                       color: Theme.of(context).colorScheme.onBackground,
                     ),
                   ),
-                  const Text(
-                    "Tech Innovations University",
-                    style: TextStyle(
+                  Text(
+                    subtitle,
+                    style: const TextStyle(
                         fontFamily: 'Roboto',
                         color: AppColors.primaryButtonColor,
                         fontSize: 8,
@@ -97,9 +102,9 @@ class SuggestionsItem extends StatelessWidget {
                       const SizedBox(
                         width: 5,
                       ),
-                      const Text(
-                        "4.7",
-                        style: TextStyle(
+                      Text(
+                        rating,
+                        style: const TextStyle(
                             fontFamily: 'Roboto',
                             fontSize: 10,
                             color: AppColors.primaryButtonColor),
