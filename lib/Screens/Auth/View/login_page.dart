@@ -2,6 +2,7 @@ import 'package:e_learning/Core/Utils/CommonWidget/common_button.dart';
 import 'package:e_learning/Core/Utils/CommonWidget/common_inputfield.dart';
 import 'package:e_learning/Screens/Auth/View/common_heading_text.dart';
 import 'package:e_learning/Screens/Auth/View/common_title_text.dart';
+import 'package:e_learning/Screens/Auth/View/reset_password.dart';
 import 'package:e_learning/Screens/home/View/home_config.dart';
 import 'package:e_learning/core/utils/helper/app_colors.dart';
 import 'package:flutter/material.dart';
@@ -23,15 +24,19 @@ class _LogInState extends State<LogIn> {
         resizeToAvoidBottomInset: false,
         body: Padding(
           padding: const EdgeInsets.only(
-              left: 20.0, right: 20.0, bottom: 20, top: 50),
+              left: 20.0, right: 20.0, bottom: 20, top: 40),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               InkWell(
-                onTap: (){
-                  Navigator.pop(context);
-                },
-                child: Image.asset("assets/images/arrow-back.png", height: 30,width: 30,)),
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Image.asset(
+                    "assets/images/arrow-back.png",
+                    height: 30,
+                    width: 30,
+                  )),
               const CommonTitleText(
                 heading: 'SIGN IN',
                 subHeading:
@@ -43,6 +48,7 @@ class _LogInState extends State<LogIn> {
               const CommonHeadingText(
                 textName: 'Email Here',
               ),
+              const SizedBox(height: 5),
               CommonTextFormField(
                 hintText: " youremail@gmail.com",
               ),
@@ -52,18 +58,30 @@ class _LogInState extends State<LogIn> {
               const CommonHeadingText(
                 textName: 'Password',
               ),
+              const SizedBox(height: 5),
               CommonTextFormField(
                 hintText: " *************************",
               ),
-              const Align(
+              const SizedBox(height: 5),
+              Align(
                 alignment: Alignment.centerRight,
-                child: Text(
-                  "Forgot Password?",
-                  style: TextStyle(
-                    fontFamily: 'Roboto',
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500,
-                    color: AppColors.colorSecondaryText2,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ResetPassword(),
+                      ),
+                    );
+                  },
+                  child: const Text(
+                    "Forgot Password?",
+                    style: TextStyle(
+                      fontFamily: 'Roboto',
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
+                      color: AppColors.colorSecondaryText2,
+                    ),
                   ),
                 ),
               ),
@@ -72,7 +90,10 @@ class _LogInState extends State<LogIn> {
               ),
               CommonButton(
                 onClicked: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>const HomeConfig()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const HomeConfig()));
                 },
                 label: "Sign in ",
                 buttonHeight: containerWidth * 0.06,
@@ -119,7 +140,8 @@ class _LogInState extends State<LogIn> {
                             fontFamily: 'Roboto'),
                       ),
                     ])),
-              )
+              ),
+              const SizedBox(height: 20),
             ],
           ),
         ),

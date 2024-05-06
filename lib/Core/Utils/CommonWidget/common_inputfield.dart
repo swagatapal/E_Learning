@@ -67,7 +67,7 @@ class _CommonTextFormFieldState extends State<CommonTextFormField> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: ScreenUtils().screenWidth(context),
       child: Row(
         children: [
@@ -121,7 +121,8 @@ class _CommonTextFormFieldState extends State<CommonTextFormField> {
                       fillColor: widget.fillColors,
                       labelText: widget.labelText,
                       hintText: widget.hintText,
-                      labelStyle: const TextStyle(color: AppColors.colorSecondaryText2),
+                      labelStyle:
+                          const TextStyle(color: AppColors.colorSecondaryText2),
                       border: InputBorder.none,
                       alignLabelWithHint: true,
                       isDense: true,
