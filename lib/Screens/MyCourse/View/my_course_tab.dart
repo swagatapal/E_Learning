@@ -12,49 +12,65 @@ class MyCourseTab extends StatefulWidget {
   State<MyCourseTab> createState() => _MyCourseTabState();
 }
 
-class _MyCourseTabState extends State<MyCourseTab> {
+class _MyCourseTabState extends State<MyCourseTab>
+    with SingleTickerProviderStateMixin {
+  TabController? tabController;
+
+  @override
+  void initState() {
+    tabController = TabController(length: 3, vsync: this);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    tabController?.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
-      child: DefaultTabController(
-        length: 3,
-        initialIndex: 1,
-        child: Scaffold(
-          body: Padding(
-            padding: EdgeInsets.only(top: 20.0, left: 20.0, right: 20.0),
-            child: Column(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(bottom: 20.0),
-                  child: MyCourseHeading(),
-                ),
-                TabBar(
-                  labelPadding: EdgeInsets.zero,
-                  labelColor: Colors.transparent,
-                  indicatorColor: Colors.transparent,
-                  indicatorSize: TabBarIndicatorSize.tab,
-                  unselectedLabelColor: Colors.transparent,
-                  tabs: [
-                    Tab(
-                        child: MyCourseTabContainer(
-                            categoryName: "Saved Courses")),
-                    Tab(
-                        child:
-                            MyCourseTabContainer(categoryName: "In Progress")),
-                    Tab(child: MyCourseTabContainer(categoryName: "Completed")),
-                  ],
-                ),
-                Expanded(
-                  child: TabBarView(
-                    children: [
-                      SavedCourse(),
-                      InProgress(),
-                      CompletedPage(),
-                    ],
-                  ),
-                ),
-              ],
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          actions: const [
+            MyCourseHeading(),
+          ],
+          bottom: TabBar(
+            controller: tabController,
+            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+            labelPadding: EdgeInsets.zero,
+            indicatorColor: Colors.transparent,
+            indicatorSize: TabBarIndicatorSize.tab,
+            isScrollable: false,
+            unselectedLabelStyle: Theme.of(context)
+                .textTheme
+                .bodyLarge!
+                .copyWith(color: Colors.black),
+            labelStyle: Theme.of(context)
+                .textTheme
+                .bodyLarge!
+                .copyWith(color: Colors.white),
+            indicator: const BoxDecoration(
+              color: Color(0xFF00707E),
+              borderRadius: BorderRadius.all(Radius.circular(30)),
             ),
+            tabs: const [
+              Tab(child: MyCourseTabContainer(categoryName: "Saved Courses")),
+              Tab(child: MyCourseTabContainer(categoryName: "In Progress")),
+              Tab(child: MyCourseTabContainer(categoryName: "Completed")),
+            ],
+          ),
+        ),
+        body: Expanded(
+          child: TabBarView(
+            controller: tabController,
+            children: const [
+              SavedCourse(),
+              InProgress(),
+              CompletedPage(),
+            ],
           ),
         ),
       ),
