@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import '../../../Core/Utils/Helper/app_colors.dart';
 
 class CategoryItem extends StatelessWidget {
-  const CategoryItem({super.key});
+  final String text;
+  const CategoryItem({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,7 @@ class CategoryItem extends StatelessWidget {
               borderRadius: BorderRadius.circular(20.0),
             ),
             child: Text(
-              "Graphic Design",
+              text,
               style: TextStyle(
                   fontSize: 12.0,
                   color: Theme.of(context).colorScheme.onBackground,

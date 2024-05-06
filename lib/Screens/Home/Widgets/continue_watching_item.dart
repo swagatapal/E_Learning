@@ -3,7 +3,20 @@ import '../../../Core/Utils/Helper/app_colors.dart';
 import '../../../Core/Utils/Helper/screen_utils.dart';
 
 class ContinueWatchingItem extends StatelessWidget {
-  const ContinueWatchingItem({super.key});
+  final String image;
+  final String title;
+  final String subtitle;
+  final String rating;
+  final String percentageCompleted;
+
+  const ContinueWatchingItem({
+    super.key,
+    required this.image,
+    required this.title,
+    required this.subtitle,
+    required this.rating,
+    required this.percentageCompleted,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +43,7 @@ class ContinueWatchingItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Image.asset(
-                "assets/images/testImage1.png",
+                image,
                 height: 100,
                 width: 100,
                 fit: BoxFit.cover,
@@ -39,16 +52,16 @@ class ContinueWatchingItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "UI/UX Design Essentials",
+                    title,
                     style: TextStyle(
                         fontFamily: 'Roboto',
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
                         color: Theme.of(context).colorScheme.onBackground),
                   ),
-                  const Text(
-                    "Tech Innovations University",
-                    style: TextStyle(
+                  Text(
+                    subtitle,
+                    style: const TextStyle(
                         fontFamily: 'Roboto',
                         color: AppColors.primaryButtonColor,
                         fontSize: 8,
@@ -64,9 +77,9 @@ class ContinueWatchingItem extends StatelessWidget {
                       const SizedBox(
                         width: 5,
                       ),
-                      const Text(
-                        "4.7",
-                        style: TextStyle(
+                      Text(
+                        rating,
+                        style: const TextStyle(
                             fontFamily: 'Roboto',
                             fontSize: 10,
                             color: AppColors.primaryButtonColor),
@@ -86,9 +99,9 @@ class ContinueWatchingItem extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 5),
-                  const Text(
-                    "79% Completed",
-                    style: TextStyle(
+                  Text(
+                    percentageCompleted,
+                    style: const TextStyle(
                       fontFamily: 'Roboto',
                       fontSize: 10,
                       color: AppColors.colorSecondaryText2,
