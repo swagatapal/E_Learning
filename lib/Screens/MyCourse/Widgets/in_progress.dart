@@ -15,7 +15,7 @@ class _InProgressState extends State<InProgress> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 15.0),
+      padding: const EdgeInsets.only(top: 15.0, left: 20, right: 20),
       child: Container(
         width: ScreenUtils().screenWidth(context)*0.8,
         decoration: BoxDecoration(
