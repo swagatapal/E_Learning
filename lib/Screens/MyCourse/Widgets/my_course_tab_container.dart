@@ -9,7 +9,7 @@ class MyCourseTabContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 10),
+      margin: const EdgeInsets.symmetric(horizontal: 5),
       alignment: Alignment.center,
       decoration: BoxDecoration(
         border: Border.all(color: AppColors.primaryButtonColor),
@@ -18,7 +18,7 @@ class MyCourseTabContainer extends StatelessWidget {
       child: Text(
         categoryName,
         style: TextStyle(
-            fontSize: 15.0,
+            fontSize: 13.0,
             color: Theme.of(context).colorScheme.onBackground,
             fontWeight: FontWeight.w500,
             fontFamily: 'Roboto'),
