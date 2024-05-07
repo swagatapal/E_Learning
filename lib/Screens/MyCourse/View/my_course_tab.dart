@@ -39,71 +39,61 @@ class _MyCourseTabState extends State<MyCourseTab>
             child: Column(
               children: [
                 const MyCourseHeading(),
-                const SizedBox(height: 15,),
+                const SizedBox(height: 15),
                 TabBar(
                   controller: tabController,
-                  padding: const EdgeInsets.symmetric(horizontal: 10.0),
                   labelPadding: EdgeInsets.zero,
                   indicatorColor: Colors.transparent,
-                  indicatorSize: TabBarIndicatorSize.tab,
+                  indicatorSize: TabBarIndicatorSize.label,
                   isScrollable: false,
                   unselectedLabelStyle: Theme.of(context)
                       .textTheme
-                      .bodyLarge!
+                      .bodyMedium!
                       .copyWith(color: Colors.black),
                   labelStyle: Theme.of(context)
                       .textTheme
-                      .bodyLarge!
+                      .bodyMedium!
                       .copyWith(color: Colors.white),
                   indicator: const BoxDecoration(
                     color: Color(0xFF00707E),
                     borderRadius: BorderRadius.all(Radius.circular(30)),
                   ),
                   tabs: const [
-                    Tab(child: MyCourseTabContainer(categoryName: "Saved Courses")),
-                    Tab(child: MyCourseTabContainer(categoryName: "In Progress")),
+                    Tab(
+                        child: MyCourseTabContainer(
+                            categoryName: "Saved Courses")),
+                    Tab(
+                        child:
+                            MyCourseTabContainer(categoryName: "In Progress")),
                     Tab(child: MyCourseTabContainer(categoryName: "Completed")),
                   ],
                 ),
                 Expanded(
                   child: TabBarView(
                     controller: tabController,
-                    children:  [
+                    children: [
                       ListView.builder(
                           itemCount: 3,
-                          itemBuilder: (context, index){
+                          itemBuilder: (context, index) {
                             return const SavedCourse();
                           }),
-
-                      ListView.builder(
-                        itemCount: 3,
-                          itemBuilder: (context, index){
-                          return const InProgress();
-                          }),
-
                       ListView.builder(
                           itemCount: 3,
-                          itemBuilder: (context, index){
+                          itemBuilder: (context, index) {
+                            return const InProgress();
+                          }),
+                      ListView.builder(
+                          itemCount: 3,
+                          itemBuilder: (context, index) {
                             return const CompletedPage();
                           }),
-
-
-
-
                     ],
                   ),
                 ),
-
               ],
             ),
           ),
-      
-      
-      
-      
-          ),
-      
-        
+        ),
       ),
     );
   }
