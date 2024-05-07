@@ -1,3 +1,4 @@
+import 'package:e_learning/Core/Utils/Helper/app_colors.dart';
 import 'package:e_learning/Screens/MyCourse/Widgets/completed_page.dart';
 import 'package:e_learning/Screens/MyCourse/Widgets/in_progress.dart';
 import 'package:e_learning/Screens/MyCourse/Widgets/my_course_heading.dart';
@@ -92,7 +93,27 @@ class _MyCourseTabState extends State<MyCourseTab>
               ],
             ),
           ),
+          floatingActionButton: FloatingActionButton.extended(
+            // backgroundColor: Colors.transparent.withOpacity(0.7),
+            backgroundColor: AppColors.primaryButtonColor,
+            shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(40.0)),
+            onPressed: (){
+
+            },
+            label: const Text(
+              'Explore More',
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
+                  fontFamily: "Roboto"
+              ),
+            ),
+
+          ),
         ),
+
       ),
     );
   }
