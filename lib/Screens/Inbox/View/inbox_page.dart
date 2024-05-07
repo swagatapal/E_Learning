@@ -1,6 +1,7 @@
-import 'package:flutter/cupertino.dart';
+import 'package:e_learning/Screens/Inbox/Widget/chat_section.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
+import '../../../Core/Utils/Helper/screen_utils.dart';
 
 class InboxPage extends StatefulWidget {
   const InboxPage({super.key});
@@ -44,6 +45,21 @@ class _InboxPageState extends State<InboxPage> {
                     height: 25,
                     width: 15,
                   )),
+                ),
+              ),
+              SizedBox(
+                height: ScreenUtils().screenWidth(context) * 0.7,
+                child: ListView.builder(
+                  itemCount: 5,
+                  itemBuilder: (BuildContext context, int index) {
+                    return const ChatSection(
+                      image: "assets/testImage1.png",
+                      name: 'Daniel',
+                      message: "Hello! Good Morning.",
+                      time: "7:00 pm",
+                      messageCount: 03,
+                    );
+                  },
                 ),
               ),
             ],
