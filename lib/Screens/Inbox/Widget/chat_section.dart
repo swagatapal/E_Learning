@@ -1,6 +1,8 @@
+import 'package:e_learning/Core/Utils/Helper/screen_utils.dart';
+import 'package:e_learning/core/utils/helper/app_colors.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import '../../../Core/Utils/Helper/app_colors.dart';
+import 'package:flutter/widgets.dart';
 
 class ChatSection extends StatelessWidget {
   final String image;
@@ -19,51 +21,94 @@ class ChatSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          CircleAvatar(
-            child: Text(image),
-          ),
-          const SizedBox(width: 16),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      name,
-                      style: const TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      time,
-                      style: const TextStyle(color: Colors.grey),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 4),
-                Text(message),
-              ],
-            ),
-          ),
-          if (messageCount > 0)
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-              decoration: BoxDecoration(
-                color: Colors.teal[300],
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Text(
-                messageCount.toString(),
-                style: const TextStyle(color: Colors.white),
+    return Column(
+      children: [
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(
+              height: 70,
+              width: 70,
+              child: Image.asset(
+                image,
+                fit: BoxFit.cover,
               ),
             ),
-        ],
-      ),
+            const SizedBox(width: 16),
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        name,
+                        style:  TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontFamily: "Roboto",
+                          fontSize: 16,
+                          color: Theme.of(context).colorScheme.onBackground
+                          ),
+                      ),
+                      Text(
+                        message,
+                        style: const TextStyle(
+                          color: AppColors.colorSecondaryText2,
+                          fontFamily: "Roboto",
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      if (messageCount > 0)
+                        Container(
+                          height: 30,
+                          width: 30,
+                          decoration: BoxDecoration(
+                            color:AppColors.primaryButtonColor,
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                          child: Center(
+                            child: Text(
+                              messageCount.toString(),
+                              style: const TextStyle(
+                                color: Colors.white
+                                ),
+                            ),
+                          ),
+                        ),
+                      Text(
+                        time,
+                        style: const TextStyle(
+                          color: AppColors.colorSecondaryText2,
+                          fontFamily: "Roboto",
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(
+          height: 5,
+        ),
+        Container(
+          height: 1,
+          width: ScreenUtils().screenWidth(context),
+          color: AppColors.primaryButtonColor,
+        ),
+        const SizedBox(
+          height: 5,
+        ),
+      ],
     );
   }
 }

@@ -17,11 +17,8 @@ class MyCourseTabContainer extends StatelessWidget {
       ),
       child: Text(
         categoryName,
-        style: TextStyle(
-            fontSize: 13.0,
-            color: Theme.of(context).colorScheme.onBackground,
-            fontWeight: FontWeight.w500,
-            fontFamily: 'Roboto'),
+        style: const TextStyle(
+            fontSize: 13.0, fontWeight: FontWeight.w500, fontFamily: 'Roboto'),
       ),
     );
   }

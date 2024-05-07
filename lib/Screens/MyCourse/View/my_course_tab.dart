@@ -46,10 +46,11 @@ class _MyCourseTabState extends State<MyCourseTab>
                 labelPadding: EdgeInsets.zero,
                 indicatorSize: TabBarIndicatorSize.label,
                 indicator: const BoxDecoration(
-                  color: Color(0xFF00707E),
-                  borderRadius: BorderRadius.all(Radius.circular(30)),
+                  color: AppColors.primaryButtonColor,
+                  borderRadius:  BorderRadius.all(Radius.circular(30)),
                 ),
                 labelColor: Colors.white,
+                unselectedLabelColor: Colors.black,
                 tabs: const [
                   Tab(
                       child:

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import '../../../../Core/Utils/Helper/screen_utils.dart';
 import '../../Widgets/category_item.dart';
 
@@ -8,22 +9,50 @@ class SeeAllCategories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Categories")),
-      body: SizedBox(
-        height: ScreenUtils().screenWidth(context) * 5.5,
-        child: GridView.builder(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3,
-            mainAxisSpacing: 10.0,
-            crossAxisSpacing: 8.0,
-          ),
-          padding: const EdgeInsets.all(8.0),
-          itemCount: 20,
-          itemBuilder: (context, index) {
-            return const CategoryItem(
-              text: 'Logitech Mouse',
-            );
-          },
+      body: Padding(
+        padding: const EdgeInsets.only(right: 20.0),
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 40, left: 15.0, right: 15.0),
+              child: Row(
+                children: [
+                  InkWell(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: Image.asset(
+                        "assets/images/arrow-back.png",
+                        height: 30,
+                        width: 30,
+                      )),
+                  const SizedBox(width: 10.0),
+                  Text(
+                    "Suggestions for You",
+                    style: TextStyle(
+                        color: Theme.of(context).colorScheme.onBackground,
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.w500,
+                        fontFamily: 'Roboto'),
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: GridView.count(
+                crossAxisCount: 2,
+                childAspectRatio: 3,
+                children: List.generate(
+                  9,
+                  (index) {
+                    return const CategoryItem(
+                      text: 'Logitech Mouse',
+                    );
+                  },
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );

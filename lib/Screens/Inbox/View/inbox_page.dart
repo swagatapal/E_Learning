@@ -1,7 +1,6 @@
 import 'package:e_learning/Screens/Inbox/Widget/chat_section.dart';
+import 'package:e_learning/core/utils/helper/app_colors.dart';
 import 'package:flutter/material.dart';
-
-import '../../../Core/Utils/Helper/screen_utils.dart';
 
 class InboxPage extends StatefulWidget {
   const InboxPage({super.key});
@@ -16,7 +15,8 @@ class _InboxPageState extends State<InboxPage> {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
+          padding:
+              const EdgeInsets.only(top: 30, left: 20, right: 20, bottom: 10),
           child: Column(
             children: [
               Align(
@@ -33,31 +33,32 @@ class _InboxPageState extends State<InboxPage> {
               Align(
                 alignment: Alignment.topRight,
                 child: Container(
-                  height: 30,
-                  width: 30,
-                  decoration: BoxDecoration(
-                    color: Colors.transparent.withOpacity(0.1),
-                    borderRadius: const BorderRadius.all(Radius.circular(8)),
-                  ),
-                  child: Center(
-                      child: Image.asset(
-                    "assets/images/search_icon.png",
-                    height: 25,
-                    width: 15,
-                  )),
-                ),
+                    height: 40,
+                    width: 40,
+                    decoration: BoxDecoration(
+                      color: Colors.transparent.withOpacity(0.1),
+                      borderRadius: const BorderRadius.all(Radius.circular(8)),
+                    ),
+                    child: const Center(
+                        child: Icon(
+                      Icons.search_sharp,
+                      color: AppColors.primaryButtonColor,
+                      size: 30,
+                    ))),
               ),
-              SizedBox(
-                height: ScreenUtils().screenWidth(context) * 0.7,
+              const SizedBox(
+                height: 10,
+              ),
+              Expanded(
                 child: ListView.builder(
-                  itemCount: 5,
+                  itemCount: 15,
                   itemBuilder: (BuildContext context, int index) {
                     return const ChatSection(
-                      image: "assets/testImage1.png",
+                      image: "assets/images/testImage2.png",
                       name: 'Daniel',
                       message: "Hello! Good Morning.",
                       time: "7:00 pm",
-                      messageCount: 03,
+                      messageCount: 23,
                     );
                   },
                 ),
