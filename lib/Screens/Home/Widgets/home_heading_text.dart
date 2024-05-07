@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import '../../../Core/Utils/Helper/app_colors.dart';
 
-
 // ignore: must_be_immutable
 class HomeHeadingText extends StatelessWidget {
   bool isVisible = true;
   final String headingName;
+  final String? subHeadingName;
+  final void Function()? onTap;
 
   HomeHeadingText({
     super.key,
     required this.isVisible,
     required this.headingName,
+    this.subHeadingName,
+    this.onTap,
   });
 
   @override
@@ -26,11 +29,11 @@ class HomeHeadingText extends StatelessWidget {
               color: Theme.of(context).colorScheme.onBackground,
               fontWeight: FontWeight.w800),
         ),
-        Visibility(
-          visible: isVisible,
-          child: const Text(
-            "See All",
-            style: TextStyle(
+        InkWell(
+          onTap: onTap,
+          child: Text(
+            subHeadingName ?? "",
+            style: const TextStyle(
                 fontFamily: 'Roboto',
                 fontSize: 10,
                 color: AppColors.colorSecondaryText2,

@@ -1,4 +1,7 @@
 import 'package:e_learning/Core/Utils/Helper/screen_utils.dart';
+import 'package:e_learning/Screens/Home/Categories/View/see_all_categories.dart';
+import 'package:e_learning/Screens/Home/SuggestionsForYou/View/see_all_suggestions.dart';
+import 'package:e_learning/Screens/Home/TopCourse/View/see_all_top_course.dart';
 import 'package:e_learning/core/utils/helper/app_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -71,7 +74,9 @@ class _HomePageState extends State<HomePage> {
                       ),
                       const SizedBox(height: 20),
                       HomeHeadingText(
-                          isVisible: false, headingName: "Continue Watching"),
+                        isVisible: false,
+                        headingName: "Continue Watching",
+                      ),
                       SizedBox(
                         height: ScreenUtils().screenWidth(context) * 0.7,
                         child: ListView.builder(
@@ -96,7 +101,18 @@ class _HomePageState extends State<HomePage> {
                     Padding(
                       padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                       child: HomeHeadingText(
-                          isVisible: true, headingName: "Categories"),
+                        isVisible: true,
+                        headingName: "Categories",
+                        subHeadingName: "See All",
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const SeeAllCategories(),
+                            ),
+                          );
+                        },
+                      ),
                     ),
                     SizedBox(
                       height: ScreenUtils().screenWidth(context) * 0.13,
@@ -115,7 +131,18 @@ class _HomePageState extends State<HomePage> {
                       padding: const EdgeInsets.only(
                           left: 20.0, top: 10.0, right: 20.0),
                       child: HomeHeadingText(
-                          isVisible: true, headingName: "Suggestions for You"),
+                        isVisible: true,
+                        headingName: "Suggestions for You",
+                        subHeadingName: "See All",
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const SeeAllSuggestions(),
+                            ),
+                          );
+                        },
+                      ),
                     ),
                     const SizedBox(height: 5),
                     SizedBox(
@@ -138,7 +165,18 @@ class _HomePageState extends State<HomePage> {
                       padding: const EdgeInsets.only(
                           left: 20.0, top: 10.0, right: 20.0),
                       child: HomeHeadingText(
-                          isVisible: true, headingName: "Top Courses"),
+                        isVisible: true,
+                        headingName: "Top Courses",
+                        subHeadingName: "See All",
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const SeeAllTopCourse(),
+                            ),
+                          );
+                        },
+                      ),
                     ),
                     const SizedBox(height: 5),
                     SizedBox(

@@ -9,7 +9,7 @@ class MyCourseTabContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 5,),
+      margin: const EdgeInsets.symmetric(horizontal: 5),
       alignment: Alignment.center,
       decoration: BoxDecoration(
         border: Border.all(color: AppColors.primaryButtonColor),

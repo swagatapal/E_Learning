@@ -35,85 +35,69 @@ class _MyCourseTabState extends State<MyCourseTab>
       child: DefaultTabController(
         length: 3,
         child: Scaffold(
-          body: Padding(
-            padding: const EdgeInsets.only(bottom: 20.0),
-            child: Column(
-              children: [
-                const MyCourseHeading(),
-                const SizedBox(height: 15),
-                TabBar(
+          body: Column(
+            children: [
+              const MyCourseHeading(),
+              const SizedBox(height: 15),
+              TabBar(
+                controller: tabController,
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 20.0, vertical: 10.0),
+                labelPadding: EdgeInsets.zero,
+                indicatorSize: TabBarIndicatorSize.label,
+                indicator: const BoxDecoration(
+                  color: Color(0xFF00707E),
+                  borderRadius: BorderRadius.all(Radius.circular(30)),
+                ),
+                labelColor: Colors.white,
+                tabs: const [
+                  Tab(
+                      child:
+                          MyCourseTabContainer(categoryName: "Saved Courses")),
+                  Tab(child: MyCourseTabContainer(categoryName: "In Progress")),
+                  Tab(child: MyCourseTabContainer(categoryName: "Completed")),
+                ],
+              ),
+              Expanded(
+                child: TabBarView(
                   controller: tabController,
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-                  labelPadding: EdgeInsets.zero,
-                  indicatorColor: Colors.transparent,
-                  indicatorSize: TabBarIndicatorSize.label,
-                  isScrollable: false,
-                  unselectedLabelStyle: Theme.of(context)
-                      .textTheme
-                      .bodyMedium!
-                      .copyWith(color: Colors.black),
-                  labelStyle: Theme.of(context)
-                      .textTheme
-                      .bodyMedium!
-                      .copyWith(color: Colors.white),
-                  indicator: const BoxDecoration(
-                    color: Color(0xFF00707E),
-                    borderRadius: BorderRadius.all(Radius.circular(30)),
-                  ),
-                  tabs: const [
-                    Tab(
-                        child:
-                            MyCourseTabContainer(categoryName: "Saved Courses")),
-                    Tab(child: MyCourseTabContainer(categoryName: "In Progress")),
-                    Tab(child: MyCourseTabContainer(categoryName: "Completed")),
+                  children: [
+                    ListView.builder(
+                        itemCount: 9,
+                        itemBuilder: (context, index) {
+                          return const SavedCourse();
+                        }),
+                    ListView.builder(
+                        itemCount: 10,
+                        itemBuilder: (context, index) {
+                          return const InProgress();
+                        }),
+                    ListView.builder(
+                        itemCount: 3,
+                        itemBuilder: (context, index) {
+                          return const CompletedPage();
+                        }),
                   ],
                 ),
-                Expanded(
-                  child: TabBarView(
-                    controller: tabController,
-                    children: [
-                      ListView.builder(
-                          itemCount: 9,
-                          itemBuilder: (context, index) {
-                            return const SavedCourse();
-                          }),
-                      ListView.builder(
-                          itemCount: 3,
-                          itemBuilder: (context, index) {
-                            return const InProgress();
-                          }),
-                      ListView.builder(
-                          itemCount: 3,
-                          itemBuilder: (context, index) {
-                            return const CompletedPage();
-                          }),
-                    ],
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
           floatingActionButton: FloatingActionButton.extended(
             // backgroundColor: Colors.transparent.withOpacity(0.7),
             backgroundColor: AppColors.primaryButtonColor,
-            shape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(40.0)),
-            onPressed: (){
-
-            },
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(40.0)),
+            onPressed: () {},
             label: const Text(
               'Explore More',
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 14,
                   fontWeight: FontWeight.w500,
-                  fontFamily: "Roboto"
-              ),
+                  fontFamily: "Roboto"),
             ),
-
           ),
         ),
-
       ),
     );
   }
