@@ -1,3 +1,4 @@
+import 'package:e_learning/Core/Utils/CommonWidget/common_button.dart';
 import 'package:e_learning/Core/Utils/Helper/app_colors.dart';
 import 'package:e_learning/Core/Utils/Helper/screen_utils.dart';
 import 'package:flutter/material.dart';
@@ -93,28 +94,14 @@ class _CompletedPageState extends State<CompletedPage> {
                           fontWeight: FontWeight.w400),
                     ),
                     const SizedBox(height: 10),
-                    SizedBox(
-                      width: ScreenUtils().screenWidth(context) * 0.5,
-                      child: LinearProgressIndicator(
-                        value: 0.6,
-                        backgroundColor: Colors.grey[300],
-                        valueColor: AlwaysStoppedAnimation<Color>(
-                            Theme.of(context).colorScheme.onBackground),
-                        borderRadius: BorderRadius.circular(10),
-                        minHeight: 8,
-                      ),
-                    ),
-                    const SizedBox(height: 5),
-                    const Align(
-                      alignment: Alignment.centerRight,
-                      child: Text(
-                        '79% Completed',
-                        style:  TextStyle(
-                          fontFamily: 'Roboto',
-                          fontSize: 10,
-                          color: AppColors.colorSecondaryText2,
-                        ),
-                      ),
+                    CommonButton(
+                      buttonHeight: ScreenUtils().screenWidth(context) * 0.06,
+                      buttonWidth: ScreenUtils().screenWidth(context) * 0.5,
+                      label: "View  Your  Certificate",
+                      fontSize: 12,
+                      labelFontWeight: FontWeight.w500,
+                      borderRadius: 8,
+
                     ),
                   ],
                 ),

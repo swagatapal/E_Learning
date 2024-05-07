@@ -76,7 +76,7 @@ class _MyCourseTabState extends State<MyCourseTab>
                           }),
 
                       ListView.builder(
-                        itemCount: 3,
+                        itemCount: 9,
                           itemBuilder: (context, index){
                           return const InProgress();
                           }),
@@ -93,6 +93,9 @@ class _MyCourseTabState extends State<MyCourseTab>
                     ],
                   ),
                 ),
+
+
+
 
               ],
             ),
