@@ -4,16 +4,13 @@ import '../../../Core/Utils/Helper/app_colors.dart';
 
 class CategoryItem extends StatelessWidget {
   final String text;
+
   const CategoryItem({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(
-        top: 8.0,
-        left: 20.0,
-
-      ),
+      padding: const EdgeInsets.only(top: 8.0, left: 20.0),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [

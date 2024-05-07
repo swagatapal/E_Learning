@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../../Core/Utils/Helper/screen_utils.dart';
 import '../../Widgets/category_item.dart';
 

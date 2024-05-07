@@ -1,4 +1,6 @@
+import 'package:e_learning/Screens/Inbox/View/inbox_page.dart';
 import 'package:e_learning/Screens/MyCourse/View/my_course_tab.dart';
+import 'package:e_learning/Screens/Profile/View/profile_page.dart';
 import 'package:e_learning/Screens/home/View/home_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -19,8 +21,8 @@ class _HomeConfigState extends State<HomeConfig> {
     return [
       const HomePage(),
       const MyCourseTab(),
-      const MyCourseScreen(),
-      const ProfileScreen(),
+      const InboxPage(),
+      const ProfilePage(),
     ];
   }
 
@@ -99,41 +101,6 @@ class _HomeConfigState extends State<HomeConfig> {
       ),
       navBarStyle:
           NavBarStyle.style1, // Choose the nav bar style with this property.
-    );
-  }
-}
-
-class MainScreen extends StatelessWidget {
-  const MainScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Text("Home Screen"),
-    );
-  }
-}
-
-
-
-class MyCourseScreen extends StatelessWidget {
-  const MyCourseScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Text("Settings Screen"),
-    );
-  }
-}
-
-class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Text("Settings Screen"),
     );
   }
 }
