@@ -69,15 +69,27 @@ class _MyCourseTabState extends State<MyCourseTab>
                   child: TabBarView(
                     controller: tabController,
                     children:  [
-                      const SavedCourse(),
+                      ListView.builder(
+                          itemCount: 3,
+                          itemBuilder: (context, index){
+                            return const SavedCourse();
+                          }),
+
                       ListView.builder(
                         itemCount: 3,
                           itemBuilder: (context, index){
                           return const InProgress();
                           }),
 
+                      ListView.builder(
+                          itemCount: 3,
+                          itemBuilder: (context, index){
+                            return const CompletedPage();
+                          }),
 
-                      const CompletedPage(),
+
+
+
                     ],
                   ),
                 ),
