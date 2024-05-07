@@ -40,6 +40,7 @@ class _MyCourseTabState extends State<MyCourseTab>
               const SizedBox(height: 15),
               TabBar(
                 controller: tabController,
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 labelPadding: EdgeInsets.zero,
                 indicatorColor: Colors.transparent,
                 indicatorSize: TabBarIndicatorSize.label,
@@ -58,11 +59,9 @@ class _MyCourseTabState extends State<MyCourseTab>
                 ),
                 tabs: const [
                   Tab(
-                      child: MyCourseTabContainer(
-                          categoryName: "Saved Courses")),
-                  Tab(
                       child:
-                          MyCourseTabContainer(categoryName: "In Progress")),
+                          MyCourseTabContainer(categoryName: "Saved Courses")),
+                  Tab(child: MyCourseTabContainer(categoryName: "In Progress")),
                   Tab(child: MyCourseTabContainer(categoryName: "Completed")),
                 ],
               ),
