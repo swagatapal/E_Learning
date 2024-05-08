@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import '../../../Core/Utils/CommonWidget/common_button.dart';
 import '../../../Core/Utils/CommonWidget/common_inputfield.dart';
 import '../../Home/Home/View/home_config.dart';
-import 'common_heading_text.dart';
-import 'common_title_text.dart';
+import '../../CommonWidgets/common_heading_text.dart';
+import '../../CommonWidgets/common_title_text.dart';
 
 class ResetPassword extends StatelessWidget {
   const ResetPassword({super.key});

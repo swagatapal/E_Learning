@@ -1,7 +1,7 @@
 import 'package:e_learning/Core/Utils/CommonWidget/common_button.dart';
 import 'package:e_learning/Core/Utils/CommonWidget/common_inputfield.dart';
-import 'package:e_learning/Screens/Auth/View/common_heading_text.dart';
-import 'package:e_learning/Screens/Auth/View/common_title_text.dart';
+import 'package:e_learning/Screens/CommonWidgets/common_heading_text.dart';
+import 'package:e_learning/Screens/CommonWidgets/common_title_text.dart';
 import 'package:e_learning/Screens/Auth/View/reset_password.dart';
 import 'package:e_learning/Screens/Auth/View/sign_up_page.dart';
 import 'package:e_learning/core/utils/helper/app_colors.dart';
