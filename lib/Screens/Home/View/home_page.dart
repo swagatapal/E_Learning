@@ -2,6 +2,7 @@ import 'package:e_learning/Core/Utils/Helper/screen_utils.dart';
 import 'package:e_learning/Screens/Home/Categories/View/see_all_categories.dart';
 import 'package:e_learning/Screens/Home/SuggestionsForYou/View/see_all_suggestions.dart';
 import 'package:e_learning/Screens/Home/TopCourse/View/see_all_top_course.dart';
+import 'package:e_learning/Screens/Notification/View/notification_screen.dart';
 import 'package:e_learning/core/utils/helper/app_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -54,10 +55,20 @@ class _HomePageState extends State<HomePage> {
                                       fontFamily: 'Roboto'),
                                 ),
                               ])),
-                          Image.asset(
-                            "assets/images/notification.png",
-                            height: 30,
-                            width: 20,
+                          InkWell(
+                            onTap: (){
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const NotificationScreen(),
+                                ),
+                              );
+                            },
+                            child: Image.asset(
+                              "assets/images/notification.png",
+                              height: 30,
+                              width: 20,
+                            ),
                           )
                         ],
                       ),

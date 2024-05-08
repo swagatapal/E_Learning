@@ -2,10 +2,35 @@ import 'package:e_learning/Core/Utils/Helper/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class CommonHeader extends StatelessWidget {
-  const CommonHeader({super.key});
+  final String headingName;
+  const CommonHeader({super.key, required this.headingName});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Padding(
+      padding: const EdgeInsets.only(top: 40, left: 15.0, right: 15.0),
+      child: Row(
+        children: [
+          InkWell(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: Image.asset(
+                "assets/images/arrow-back.png",
+                height: 30,
+                width: 30,
+              )),
+          const SizedBox(width: 10.0),
+          Text(
+            headingName,
+            style: TextStyle(
+                color: Theme.of(context).colorScheme.onBackground,
+                fontSize: 20.0,
+                fontWeight: FontWeight.w500,
+                fontFamily: 'Roboto'),
+          ),
+        ],
+      ),
+    );
   }
 }
