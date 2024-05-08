@@ -1,6 +1,5 @@
 import 'package:e_learning/Core/Utils/CommonWidget/common_header.dart';
 import 'package:e_learning/Screens/Notification/Widgets/notification_item.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class NotificationScreen extends StatefulWidget {
@@ -13,7 +12,7 @@ class NotificationScreen extends StatefulWidget {
 class _NotificationScreenState extends State<NotificationScreen> {
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       body: Column(
         children: [
           const CommonHeader(headingName: "Notification"),
@@ -21,17 +20,12 @@ class _NotificationScreenState extends State<NotificationScreen> {
             child: ListView.builder(
               itemCount: 15,
               itemBuilder: (BuildContext context, int index) {
-                return const NotificationItem(
-
-                );
+                return const NotificationItem();
               },
             ),
           ),
-
-
         ],
       ),
-
     );
   }
 }
