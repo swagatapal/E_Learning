@@ -17,6 +17,16 @@ class _NotificationScreenState extends State<NotificationScreen> {
       body: Column(
         children: [
           const CommonHeader(headingName: "Notification"),
+          Expanded(
+            child: ListView.builder(
+              itemCount: 15,
+              itemBuilder: (BuildContext context, int index) {
+                return const NotificationItem(
+
+                );
+              },
+            ),
+          ),
 
 
         ],
