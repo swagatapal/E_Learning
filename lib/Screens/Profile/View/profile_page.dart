@@ -1,4 +1,5 @@
 import 'package:e_learning/Screens/EditProfile/View/edit_profile_page.dart';
+import 'package:e_learning/Screens/Payment/View/payment_overview.dart';
 import 'package:e_learning/Screens/Profile/Widgets/profile_details.dart';
 import 'package:e_learning/Screens/Profile/Widgets/profile_information.dart';
 import 'package:flutter/material.dart';
@@ -43,7 +44,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const EditProfilePage(),
+                      builder: (context) => const PaymentOverview() ,//const EditProfilePage(),
                     ),
                   );
                 },
