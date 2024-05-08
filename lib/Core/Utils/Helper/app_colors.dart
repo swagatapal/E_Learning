@@ -16,4 +16,5 @@ class AppColors {
   static const Color circleBackground = Color(0xFFD9EFF2);
   static const Color colorSecondaryText2 = Color(0xFF7D7D7D);
   static const Color black = Color(0xFF000000);
+  static const Color lightBackground = Color(0xFFD9EFF2);
 }
