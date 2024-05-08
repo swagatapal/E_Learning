@@ -1,4 +1,5 @@
 import 'package:e_learning/Core/Utils/Helper/screen_utils.dart';
+import 'package:e_learning/Screens/CourseDetails/View/course_details.dart';
 import 'package:e_learning/Screens/Home/Categories/View/see_all_categories.dart';
 import 'package:e_learning/Screens/Home/SuggestionsForYou/View/see_all_suggestions.dart';
 import 'package:e_learning/Screens/Home/TopCourse/View/see_all_top_course.dart';
@@ -162,11 +163,19 @@ class _HomePageState extends State<HomePage> {
                         scrollDirection: Axis.horizontal,
                         itemCount: 5,
                         itemBuilder: (BuildContext context, int index) {
-                          return const SuggestionsItem(
+                          return SuggestionsItem(
                             image: 'assets/images/testImage1.png',
                             title: 'Branding and Identity Design',
                             subtitle: 'Innovation and Design School',
                             rating: '4.9',
+                            onTap: (){                          
+                              // Navigator.push(
+                              //   context,
+                              //   MaterialPageRoute(
+                              //     builder: (context) => const CourseDetails(),
+                              //   ),
+                             // );
+                            },
                           );
                         },
                       ),
