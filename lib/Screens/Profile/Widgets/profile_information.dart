@@ -56,9 +56,9 @@ class ProfileInformation extends StatelessWidget {
                 ],
               ),
               Image.asset(
-                "assets/images/edit.png",
-                height: 30,
-                width: 30,
+                "assets/images/edit-fill.png",
+                height: 20,
+                width: 20,
               ),
             ],
           ),

@@ -52,19 +52,19 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
               const ProfileDetails(
                 categoryName: "My Certificates",
-                image: "assets/images/certificate.png",
+                image: "assets/images/certificate-fill.png",
               ),
               const ProfileDetails(
                 categoryName: "Help Center",
-                image: "assets/images/help_center.png",
+                image: "assets/images/help_center-fill.png",
               ),
               const ProfileDetails(
                 categoryName: "Invite Friends",
-                image: "assets/images/invite_friend.png",
+                image: "assets/images/invite_friend-fill.png",
               ),
               const ProfileDetails(
                 categoryName: "Log out",
-                image: "assets/images/logout.png",
+                image: "assets/images/logout-fill.png",
               ),
               const Spacer(),
               const Padding(
