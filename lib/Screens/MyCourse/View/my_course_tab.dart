@@ -69,12 +69,12 @@ class _MyCourseTabState extends State<MyCourseTab>
                           return const SavedCourse();
                         }),
                     ListView.builder(
-                        itemCount: 10,
+                        itemCount: 3,
                         itemBuilder: (context, index) {
                           return const InProgress();
                         }),
                     ListView.builder(
-                        itemCount: 3,
+                        itemCount: 5,
                         itemBuilder: (context, index) {
                           return const CompletedPage();
                         }),
