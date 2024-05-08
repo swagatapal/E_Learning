@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../Notification/View/notification_screen.dart';
+
 class MyCourseHeading extends StatelessWidget {
   const MyCourseHeading({super.key});
 
@@ -18,10 +20,20 @@ class MyCourseHeading extends StatelessWidget {
                 fontWeight: FontWeight.w500,
                 fontFamily: 'Roboto'),
           ),
-          Image.asset(
-            "assets/images/notification.png",
-            height: 30,
-            width: 20,
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const NotificationScreen(),
+                ),
+              );
+            },
+            child: Image.asset(
+              "assets/images/notification.png",
+              height: 30,
+              width: 20,
+            ),
           )
         ],
       ),

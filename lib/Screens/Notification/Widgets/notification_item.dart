@@ -35,7 +35,7 @@ class NotificationItem extends StatelessWidget {
                     borderRadius: BorderRadius.circular(60),
                     color: Theme.of(context).colorScheme.onBackground),
                 child: Padding(
-                  padding: const EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.all(14.0),
                   child: Image.asset(
                     "assets/images/correct_image.png",
                   ),

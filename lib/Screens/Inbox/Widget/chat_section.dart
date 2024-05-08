@@ -42,20 +42,19 @@ class ChatSection extends StatelessWidget {
                     children: [
                       Text(
                         name,
-                        style:  TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontFamily: "Roboto",
-                          fontSize: 16,
-                          color: Theme.of(context).colorScheme.onBackground
-                          ),
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontFamily: "Roboto",
+                            fontSize: 16,
+                            color: Theme.of(context).colorScheme.onBackground),
                       ),
                       Text(
                         message,
                         style: const TextStyle(
-                          color: AppColors.colorSecondaryText2,
-                          fontFamily: "Roboto",
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400),
+                            color: AppColors.colorSecondaryText2,
+                            fontFamily: "Roboto",
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400),
                       ),
                     ],
                   ),
@@ -67,29 +66,26 @@ class ChatSection extends StatelessWidget {
                           height: 25,
                           width: 25,
                           decoration: BoxDecoration(
-                            color:AppColors.primaryButtonColor,
+                            color: AppColors.primaryButtonColor,
                             borderRadius: BorderRadius.circular(30),
                           ),
                           child: Center(
                             child: Text(
                               messageCount.toString(),
                               style: const TextStyle(
-                                fontSize: 8,
+                                  fontSize: 8,
                                   fontFamily: "Roboto",
-                                color: Colors.white
-
-                                ),
+                                  color: Colors.white),
                             ),
                           ),
                         ),
                       Text(
                         time,
                         style: const TextStyle(
-                          color: AppColors.colorSecondaryText2,
-                          fontFamily: "Roboto",
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400
-                        ),
+                            color: AppColors.colorSecondaryText2,
+                            fontFamily: "Roboto",
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400),
                       ),
                     ],
                   ),
