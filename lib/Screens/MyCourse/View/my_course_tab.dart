@@ -1,4 +1,5 @@
 import 'package:e_learning/Core/Utils/Helper/app_colors.dart';
+import 'package:e_learning/Screens/Home/TopCourse/View/see_all_top_course.dart';
 import 'package:e_learning/Screens/MyCourse/Widgets/completed_page.dart';
 import 'package:e_learning/Screens/MyCourse/Widgets/in_progress.dart';
 import 'package:e_learning/Screens/MyCourse/Widgets/my_course_heading.dart';
@@ -88,7 +89,14 @@ class _MyCourseTabState extends State<MyCourseTab>
             backgroundColor: AppColors.primaryButtonColor,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(40.0)),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const SeeAllTopCourse(),
+                ),
+              );
+            },
             label: const Text(
               'Explore More',
               style: TextStyle(
