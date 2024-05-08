@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../Core/Utils/Helper/app_colors.dart';
+import '../../../../Core/Utils/Helper/app_colors.dart';
 
 // ignore: must_be_immutable
 class HomeHeadingText extends StatelessWidget {

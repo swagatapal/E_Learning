@@ -1,8 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import '../../../Core/Utils/Helper/app_colors.dart';
-import '../../../Core/Utils/Helper/screen_utils.dart';
+import '../../../../Core/Utils/Helper/app_colors.dart';
+import '../../../../Core/Utils/Helper/screen_utils.dart';
 
 class ContinueWatchingItem extends StatelessWidget {
   final String image;
@@ -50,7 +48,9 @@ class ContinueWatchingItem extends StatelessWidget {
                 width: 100,
                 fit: BoxFit.cover,
               ),
-              const SizedBox(width: 10,),
+              const SizedBox(
+                width: 10,
+              ),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

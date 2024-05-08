@@ -1,30 +1,28 @@
 import 'package:flutter/material.dart';
+import '../../../../Core/Utils/Helper/app_colors.dart';
+import '../../../../Core/Utils/Helper/screen_utils.dart';
 
-import '../../../Core/Utils/Helper/app_colors.dart';
-import '../../../Core/Utils/Helper/screen_utils.dart';
-
-class SuggestionsCard extends StatelessWidget {
+class SuggestionsItem extends StatelessWidget {
   final String image;
   final String title;
 
   final String subtitle;
   final String rating;
 
-  const SuggestionsCard(
-      {super.key,
-      required this.image,
-      required this.title,
-      required this.subtitle,
-      required this.rating});
+  const SuggestionsItem({
+    super.key,
+    required this.image,
+    required this.title,
+    required this.subtitle,
+    required this.rating,
+  });
 
   @override
   Widget build(BuildContext context) {
-    double wid = ScreenUtils().screenWidth(context);
-
     return Padding(
-      padding: const EdgeInsets.only(bottom: 10),
+      padding: const EdgeInsets.only(left: 20.0, bottom: 10),
       child: Container(
-        // width: ScreenUtils().screenWidth(context) * 0.16,
+        width: ScreenUtils().screenWidth(context) * 0.4,
         decoration: BoxDecoration(
           borderRadius: const BorderRadius.all(
             Radius.circular(15.0),
@@ -49,19 +47,19 @@ class SuggestionsCard extends StatelessWidget {
                 children: [
                   Image.asset(
                     image,
-                    height: wid * 0.3,
-                    width: wid * 0.4,
+                    height: 100,
+                    width: 150,
                     fit: BoxFit.cover,
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 6.0, right: 6.0),
+                    padding: const EdgeInsets.only(top: 6.0, right: 6),
                     child: Container(
                       height: 30,
                       width: 30,
                       decoration: BoxDecoration(
                         color: Colors.transparent.withOpacity(0.1),
                         borderRadius:
-                            const BorderRadius.all(Radius.circular(8.0)),
+                            const BorderRadius.all(Radius.circular(8)),
                       ),
                       child: Center(
                           child: Image.asset(

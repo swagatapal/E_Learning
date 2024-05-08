@@ -1,6 +1,6 @@
 import 'package:e_learning/Core/Utils/CommonWidget/common_header.dart';
 import 'package:flutter/material.dart';
-import '../../Widgets/suggestions_card.dart';
+import '../../Home/Widgets/suggestions_card.dart';
 
 class SeeAllSuggestions extends StatelessWidget {
   const SeeAllSuggestions({super.key});
@@ -10,16 +10,16 @@ class SeeAllSuggestions extends StatelessWidget {
     return Scaffold(
       body: Padding(
         // padding: const EdgeInsets.only(top: 40, bottom: 10.0, left: 15.0, right: 15.0),
-        padding: const EdgeInsets.only(right: 20.0,bottom: 10.0),
+        padding: const EdgeInsets.only(right: 20.0, bottom: 10.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const CommonHeader(headingName: "See All Suggestions",),
-            
+            const CommonHeader(
+              headingName: "See All Suggestions",
+            ),
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.only( left: 15.0),
-
+                padding: const EdgeInsets.only(left: 15.0),
                 child: GridView.count(
                   crossAxisCount: 2,
                   crossAxisSpacing: 10.0,

@@ -4,9 +4,10 @@ import 'package:e_learning/Screens/Auth/View/common_heading_text.dart';
 import 'package:e_learning/Screens/Auth/View/common_title_text.dart';
 import 'package:e_learning/Screens/Auth/View/reset_password.dart';
 import 'package:e_learning/Screens/Auth/View/sign_up_page.dart';
-import 'package:e_learning/Screens/home/View/home_config.dart';
 import 'package:e_learning/core/utils/helper/app_colors.dart';
 import 'package:flutter/material.dart';
+
+import '../../Home/Home/View/home_config.dart';
 
 class LogIn extends StatefulWidget {
   const LogIn({super.key});

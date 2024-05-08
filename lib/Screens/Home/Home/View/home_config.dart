@@ -1,10 +1,11 @@
 import 'package:e_learning/Screens/Inbox/View/inbox_page.dart';
 import 'package:e_learning/Screens/MyCourse/View/my_course_tab.dart';
 import 'package:e_learning/Screens/Profile/View/profile_page.dart';
-import 'package:e_learning/Screens/home/View/home_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
+
+import 'home_page.dart';
 
 class HomeConfig extends StatefulWidget {
   const HomeConfig({super.key});

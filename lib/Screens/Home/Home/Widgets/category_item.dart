@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../../Core/Utils/Helper/app_colors.dart';
+import '../../../../Core/Utils/Helper/app_colors.dart';
 
 class CategoryItem extends StatelessWidget {
   final String text;

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-
 import '../../../Core/Utils/CommonWidget/common_button.dart';
 import '../../../Core/Utils/CommonWidget/common_inputfield.dart';
-import '../../../Core/Utils/Helper/app_colors.dart';
-import '../../home/View/home_config.dart';
+import '../../Home/Home/View/home_config.dart';
 import 'common_heading_text.dart';
 import 'common_title_text.dart';
 
