@@ -7,17 +7,18 @@ class ProfileInformation extends StatelessWidget {
   final String name;
   final String email;
   final String image;
+  final Function()? onTap;
 
   const ProfileInformation(
       {super.key,
       required this.name,
       required this.email,
-      required this.image});
+      required this.image,
+      this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return Row(
-
       children: [
         SizedBox(
           height: 100,
@@ -28,7 +29,6 @@ class ProfileInformation extends StatelessWidget {
           ),
         ),
         const SizedBox(width: 16.0),
-
         Expanded(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -55,16 +55,17 @@ class ProfileInformation extends StatelessWidget {
                   ),
                 ],
               ),
-              Image.asset(
-                "assets/images/edit-fill.png",
-                height: 20,
-                width: 20,
+              InkWell(
+                onTap: onTap,
+                child: Image.asset(
+                  "assets/images/edit-fill.png",
+                  height: 20,
+                  width: 20,
+                ),
               ),
             ],
           ),
         ),
-
-
       ],
     );
   }

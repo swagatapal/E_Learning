@@ -10,6 +10,24 @@ class EditProfilePage extends StatefulWidget {
 class _EditProfilePageState extends State<EditProfilePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.only(left: 14.0, top: 14.0),
+          child: Column(
+            children: [
+              Text(
+                "Edit your Profile",
+                style: TextStyle(
+                    color: Theme.of(context).colorScheme.onBackground,
+                    fontSize: 21.0,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'Roboto'),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

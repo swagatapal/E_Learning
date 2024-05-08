@@ -1,3 +1,4 @@
+import 'package:e_learning/Screens/EditProfile/View/edit_profile_page.dart';
 import 'package:e_learning/Screens/Profile/Widgets/profile_details.dart';
 import 'package:e_learning/Screens/Profile/Widgets/profile_information.dart';
 import 'package:flutter/material.dart';
@@ -34,10 +35,18 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
               ),
               const SizedBox(height: 20.0),
-              const ProfileInformation(
+              ProfileInformation(
                 name: 'Sidra Idrees',
                 email: 'youremail@gmail.com',
                 image: 'assets/images/testImage3.png',
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const EditProfilePage(),
+                    ),
+                  );
+                },
               ),
               const SizedBox(height: 20.0),
               Container(
