@@ -62,12 +62,12 @@ class ChatSection extends StatelessWidget {
                     ],
                   ),
                   Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       if (messageCount > 0)
                         Container(
-                          height: 30,
-                          width: 30,
+                          height: 25,
+                          width: 25,
                           decoration: BoxDecoration(
                             color:AppColors.primaryButtonColor,
                             borderRadius: BorderRadius.circular(30),
@@ -76,7 +76,10 @@ class ChatSection extends StatelessWidget {
                             child: Text(
                               messageCount.toString(),
                               style: const TextStyle(
+                                fontSize: 8,
+                                  fontFamily: "Roboto",
                                 color: Colors.white
+
                                 ),
                             ),
                           ),
