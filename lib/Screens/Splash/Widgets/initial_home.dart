@@ -1,16 +1,14 @@
-
 import 'package:e_learning/Screens/Auth/View/login_page.dart';
-import 'package:e_learning/Screens/Splash/InitialPage/page_four.dart';
 import 'package:e_learning/Screens/Auth/View/option_page.dart';
-import 'package:e_learning/Screens/Splash/InitialPage/page_one.dart';
-import 'package:e_learning/Screens/Splash/InitialPage/page_three.dart';
-import 'package:e_learning/Screens/Splash/InitialPage/page_two.dart';
+import 'package:e_learning/Screens/Splash/Widgets/page_four.dart';
+import 'package:e_learning/Screens/Splash/Widgets/page_one.dart';
+import 'package:e_learning/Screens/Splash/Widgets/page_three.dart';
+import 'package:e_learning/Screens/Splash/Widgets/page_two.dart';
 import 'package:e_learning/core/utils/helper/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../../Core/Utils/CommonWidget/common_button.dart';
-
 
 class InitialHome extends StatelessWidget {
   final _controller = PageController();
@@ -75,7 +73,6 @@ class InitialHome extends StatelessWidget {
                   builder: (context) => const LogIn(),
                 ),
               );
-      
             },
             child: Text(
               "SKIP",
