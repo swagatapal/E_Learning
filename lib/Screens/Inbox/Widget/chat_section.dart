@@ -1,8 +1,6 @@
 import 'package:e_learning/Core/Utils/Helper/screen_utils.dart';
 import 'package:e_learning/core/utils/helper/app_colors.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class ChatSection extends StatelessWidget {
   final String image;
