@@ -8,7 +8,7 @@ class NotificationItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 15.0, right: 15.0, bottom: 10.0),
+      padding: const EdgeInsets.only(left: 15.0, right: 15.0, bottom: 20.0),
       child: Container(
         width: ScreenUtils().screenWidth(context) * 0.8,
         decoration: BoxDecoration(
@@ -38,7 +38,6 @@ class NotificationItem extends StatelessWidget {
                   padding: const EdgeInsets.all(10.0),
                   child: Image.asset(
                     "assets/images/correct_image.png",
-                    fit: BoxFit.contain,
                   ),
                 ),
               ),
