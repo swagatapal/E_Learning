@@ -23,8 +23,7 @@ class CourseDetailsHeading extends StatelessWidget {
                 width: 30,
                 decoration: BoxDecoration(
                   color: Colors.transparent.withOpacity(0.1),
-                  borderRadius:
-                  const BorderRadius.all(Radius.circular(8)),
+                  borderRadius: const BorderRadius.all(Radius.circular(8)),
                 ),
                 child: Center(
                     child: Image.asset(

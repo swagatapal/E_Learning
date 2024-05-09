@@ -1,5 +1,4 @@
 import 'package:e_learning/Core/Utils/CommonWidget/common_button.dart';
-import 'package:e_learning/Core/Utils/Helper/screen_utils.dart';
 import 'package:e_learning/Screens/CourseDetails/Widgets/course_details_body.dart';
 import 'package:e_learning/Screens/CourseDetails/Widgets/course_details_heading.dart';
 import 'package:e_learning/Screens/Home/Home/Widgets/category_item.dart';
@@ -19,8 +18,6 @@ class CourseDetails extends StatefulWidget {
 class _CourseDetailsState extends State<CourseDetails> {
   @override
   Widget build(BuildContext context) {
-    double wid = ScreenUtils().screenWidth(context);
-    double hit = ScreenUtils().screenHeight(context);
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(

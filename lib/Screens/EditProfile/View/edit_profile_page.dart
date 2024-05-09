@@ -1,3 +1,4 @@
+import 'package:e_learning/Screens/EditProfile/Widgets/profile_picture.dart';
 import 'package:flutter/material.dart';
 
 class EditProfilePage extends StatefulWidget {
@@ -24,6 +25,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                     fontWeight: FontWeight.w500,
                     fontFamily: 'Roboto'),
               ),
+              // const ProfilePicture(),
             ],
           ),
         ),

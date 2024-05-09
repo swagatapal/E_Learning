@@ -1,5 +1,4 @@
 import 'package:e_learning/Screens/EditProfile/View/edit_profile_page.dart';
-import 'package:e_learning/Screens/Payment/View/payment_overview.dart';
 import 'package:e_learning/Screens/PolicyAndTermsAndConditions/View/policy.dart';
 import 'package:e_learning/Screens/PolicyAndTermsAndConditions/View/terms_and_conditions.dart';
 import 'package:e_learning/Screens/Profile/Widgets/profile_details.dart';
@@ -48,7 +47,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     context,
                     MaterialPageRoute(
                       builder: (context) =>
-                          const PaymentOverview(), //const EditProfilePage(),
+                          const EditProfilePage(), //const EditProfilePage(),
                     ),
                   );
                 },
@@ -119,15 +118,6 @@ class _ProfilePageState extends State<ProfilePage> {
                   ),
                 ),
               ),
-              // const Padding(
-              //   padding: EdgeInsets.only(bottom: 10.0),
-              //   child: Text(
-              //     "Privacy Policy • Terms and Conditions",
-              //     style: TextStyle(
-              //       color: AppColors.colorSecondaryText2,
-              //     ),
-              //   ),
-              // ),
             ],
           ),
         ),
