@@ -13,10 +13,15 @@ class CourseDetailsHeading extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Image.asset(
-                "assets/images/back_icon_white.png",
-                height: 20,
-                width: 20,
+              InkWell(
+                onTap: (){
+                  Navigator.pop(context);
+                },
+                child: Image.asset(
+                  "assets/images/back_icon_white.png",
+                  height: 20,
+                  width: 20,
+                ),
               ),
               Container(
                 height: 30,

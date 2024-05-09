@@ -30,20 +30,20 @@ class _CourseDetailsState extends State<CourseDetails> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
+                   Text(
                     "Typography and Layout Design",
                     style: TextStyle(
-                        color: AppColors.black,
+                        color: Theme.of(context).colorScheme.onBackground,
                         fontSize: 22.0,
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w700,
                         fontFamily: 'Roboto'),
                   ),
                   const Text(
                     "Visual Communication College",
                     style: TextStyle(
-                        color: AppColors.black,
+                        color: AppColors.primaryButtonColor,
                         fontSize: 18.0,
-                        fontWeight: FontWeight.w200,
+                        fontWeight: FontWeight.w400,
                         fontFamily: 'Roboto'),
                   ),
                   Row(
@@ -62,9 +62,9 @@ class _CourseDetailsState extends State<CourseDetails> {
                           const Text(
                             "3.4k students already enrolled",
                             style: TextStyle(
-                                fontSize: 14,
+                                fontSize: 12,
                                 fontFamily: 'Roboto',
-                                fontWeight: FontWeight.w200,
+                                fontWeight: FontWeight.w400,
                                 color: AppColors.primaryButtonColor),
                           )
                         ],
@@ -86,8 +86,8 @@ class _CourseDetailsState extends State<CourseDetails> {
                     "Course Details",
                     style: TextStyle(
                         color: AppColors.primaryButtonColor,
-                        fontSize: 22.0,
-                        fontWeight: FontWeight.w500,
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.bold,
                         fontFamily: 'Roboto'),
                   ),
                   const SizedBox(
@@ -120,9 +120,10 @@ class _CourseDetailsState extends State<CourseDetails> {
                     trimLines: 2,
                     trimCollapsedText: 'Read more',
                     trimExpandedText: 'Read less',
-                    colorClickableText: Colors.black,
+                    colorClickableText: AppColors.colorSecondaryText2,
                     moreStyle: TextStyle(
                       fontSize: 13,
+                      color: AppColors.primaryButtonColor,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -148,9 +149,10 @@ class _CourseDetailsState extends State<CourseDetails> {
                     "Skills",
                     style: TextStyle(
                         color: AppColors.primaryButtonColor,
-                        fontSize: 22.0,
-                        fontWeight: FontWeight.w500,
-                        fontFamily: 'Roboto'),
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Roboto'
+                        ),
                   ),
                   const Row(
                     children: [
@@ -188,7 +190,8 @@ class _CourseDetailsState extends State<CourseDetails> {
                           color: AppColors.colorSecondaryText2,
                           fontWeight: FontWeight.w400,
                           fontSize: 14.0,
-                          fontFamily: 'Roboto'),
+                          fontFamily: 'Roboto'
+                          ),
                     ),
                   ),
                 ],
