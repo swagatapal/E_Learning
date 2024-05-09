@@ -1,7 +1,10 @@
 import 'package:e_learning/Screens/EditProfile/View/edit_profile_page.dart';
 import 'package:e_learning/Screens/Payment/View/payment_overview.dart';
+import 'package:e_learning/Screens/PolicyAndTermsAndConditions/View/policy.dart';
+import 'package:e_learning/Screens/PolicyAndTermsAndConditions/View/terms_and_conditions.dart';
 import 'package:e_learning/Screens/Profile/Widgets/profile_details.dart';
 import 'package:e_learning/Screens/Profile/Widgets/profile_information.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import '../../../Core/Utils/Helper/app_colors.dart';
@@ -44,7 +47,8 @@ class _ProfilePageState extends State<ProfilePage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const PaymentOverview() ,//const EditProfilePage(),
+                      builder: (context) =>
+                          const PaymentOverview(), //const EditProfilePage(),
                     ),
                   );
                 },
@@ -77,15 +81,53 @@ class _ProfilePageState extends State<ProfilePage> {
                 image: "assets/images/logout-fill.png",
               ),
               const Spacer(),
-              const Padding(
-                padding: EdgeInsets.only(bottom: 10.0),
-                child: Text(
-                  "Privacy Policy • Terms and Conditions",
-                  style: TextStyle(
-                    color: AppColors.colorSecondaryText2,
+              Padding(
+                padding: const EdgeInsets.only(bottom: 10.0),
+                child: RichText(
+                  text: TextSpan(
+                    text: "Privacy Policy •",
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const Policy()));
+                      },
+                    style: TextStyle(
+                        color: Theme.of(context).colorScheme.onBackground,
+                        fontSize: 13.0,
+                        fontWeight: FontWeight.w300,
+                        fontFamily: 'Roboto'),
+                    children: <TextSpan>[
+                      TextSpan(
+                        text: ' Terms and Conditions',
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const TermsAndConditions()));
+                          },
+                        style: TextStyle(
+                            color: Theme.of(context).colorScheme.onBackground,
+                            fontWeight: FontWeight.w300,
+                            fontSize: 13.0,
+                            fontFamily: 'Roboto'),
+                      ),
+                    ],
                   ),
                 ),
               ),
+              // const Padding(
+              //   padding: EdgeInsets.only(bottom: 10.0),
+              //   child: Text(
+              //     "Privacy Policy • Terms and Conditions",
+              //     style: TextStyle(
+              //       color: AppColors.colorSecondaryText2,
+              //     ),
+              //   ),
+              // ),
             ],
           ),
         ),
