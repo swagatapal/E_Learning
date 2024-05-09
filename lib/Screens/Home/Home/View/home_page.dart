@@ -57,11 +57,12 @@ class _HomePageState extends State<HomePage> {
                                 ),
                               ])),
                           InkWell(
-                            onTap: (){
+                            onTap: () {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const NotificationScreen(),
+                                  builder: (context) =>
+                                      const NotificationScreen(),
                                 ),
                               );
                             },
@@ -92,14 +93,22 @@ class _HomePageState extends State<HomePage> {
                       SizedBox(
                         height: ScreenUtils().screenWidth(context) * 0.7,
                         child: ListView.builder(
-                          itemCount: 2,
+                          itemCount: 3,
                           itemBuilder: (BuildContext context, int index) {
-                            return const ContinueWatchingItem(
+                            return ContinueWatchingItem(
                               image: 'assets/images/testImage1.png',
                               title: 'UI/UX Design Essentials',
                               subtitle: 'Tech Innovations University',
                               rating: '4.9',
                               percentageCompleted: '79% Completed',
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const CourseDetails(),
+                                  ),
+                                );
+                              },
                             );
                           },
                         ),
@@ -168,13 +177,13 @@ class _HomePageState extends State<HomePage> {
                             title: 'Branding and Identity Design',
                             subtitle: 'Innovation and Design School',
                             rating: '4.9',
-                            onTap: (){                          
+                            onTap: () {
                               // Navigator.push(
                               //   context,
                               //   MaterialPageRoute(
                               //     builder: (context) => const CourseDetails(),
                               //   ),
-                             // );
+                              // );
                             },
                           );
                         },
