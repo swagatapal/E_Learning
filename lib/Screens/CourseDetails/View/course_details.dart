@@ -1,4 +1,5 @@
 import 'package:e_learning/Core/Utils/CommonWidget/common_button.dart';
+import 'package:e_learning/Screens/CourseContent/View/course_content.dart';
 import 'package:e_learning/Screens/CourseDetails/Widgets/course_details_body.dart';
 import 'package:e_learning/Screens/CourseDetails/Widgets/course_details_heading.dart';
 import 'package:e_learning/Screens/Home/Home/Widgets/category_item.dart';
@@ -30,7 +31,7 @@ class _CourseDetailsState extends State<CourseDetails> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                   Text(
+                  Text(
                     "Typography and Layout Design",
                     style: TextStyle(
                         color: Theme.of(context).colorScheme.onBackground,
@@ -117,11 +118,10 @@ class _CourseDetailsState extends State<CourseDetails> {
                   const ReadMoreText(
                     "Visual Communication College's Typography and Layout Design course explores the art and science of typography and layout composition. Learn how to effectively use typefaces, hierarchy, alignment, and grid systems to create visually compelling designs. Gain hands-on experience in editorial design, branding, and digital layouts ",
                     style: TextStyle(
-                        color: AppColors.colorSecondaryText2,
+                      color: AppColors.colorSecondaryText2,
                       fontFamily: "Roboto",
                       fontSize: 12,
                       fontWeight: FontWeight.w500,
-
                     ),
                     trimMode: TrimMode.Line,
                     trimLines: 4,
@@ -158,8 +158,7 @@ class _CourseDetailsState extends State<CourseDetails> {
                         color: AppColors.primaryButtonColor,
                         fontSize: 18.0,
                         fontWeight: FontWeight.bold,
-                        fontFamily: 'Roboto'
-                        ),
+                        fontFamily: 'Roboto'),
                   ),
                   const Row(
                     children: [
@@ -183,7 +182,8 @@ class _CourseDetailsState extends State<CourseDetails> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const PaymentOverview()),
+                            // builder: (context) => const PaymentOverview()),
+                            builder: (context) => const CourseContent()),
                       );
                     },
                   ),
@@ -197,8 +197,7 @@ class _CourseDetailsState extends State<CourseDetails> {
                           color: AppColors.colorSecondaryText2,
                           fontWeight: FontWeight.w400,
                           fontSize: 14.0,
-                          fontFamily: 'Roboto'
-                          ),
+                          fontFamily: 'Roboto'),
                     ),
                   ),
                 ],

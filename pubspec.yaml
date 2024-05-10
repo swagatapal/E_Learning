@@ -41,6 +41,7 @@ dependencies:
   image_picker: ^1.1.1
   easy_stepper: ^0.8.4
   cross_file_image: ^1.1.0
+  roundcheckbox: ^2.0.5
   
 
 dev_dependencies:
