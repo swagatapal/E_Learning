@@ -31,7 +31,6 @@ class SuggestionsCard extends StatelessWidget {
           color: Colors.white,
           boxShadow: [
             BoxShadow(
-              // color:  Colors.blueGrey.withOpacity(0.4),
               color: AppColors.colorSecondaryText2.withOpacity(0.2),
               offset: const Offset(0.0, 3.0),
               blurRadius: 8.0,

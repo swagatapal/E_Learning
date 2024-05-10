@@ -1,4 +1,5 @@
 import 'package:e_learning/Screens/EditProfile/Widgets/profile_picture.dart';
+import 'package:e_learning/Screens/MyCourse/Widgets/completed_page.dart';
 import 'package:flutter/material.dart';
 
 import '../../../Core/Utils/Helper/app_colors.dart';
@@ -48,26 +49,35 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 ),
                 const SizedBox(height: 10.0),
                 Padding(
-                  padding: const EdgeInsets.only(left: 30.0,right: 30.0,bottom: 20.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Text(
-                        "Edit Your Payment Method",
-                        style: TextStyle(
-                            color: AppColors.primaryButtonColor,
-                            fontSize: 18.0,
-                            fontWeight: FontWeight.w400,
-                            fontFamily: 'Roboto'),
-                      ),
-                      InkWell(
-                        child: Image.asset(
-                          "assets/images/edit-fill.png",
-                          height: 20,
-                          width: 20,
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 20.0, vertical: 20.0),
+                  child: Container(
+                    padding: const EdgeInsets.only(
+                        left: 30.0, right: 30.0, bottom: 10.0, top: 10.0),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: AppColors.primaryButtonColor),
+                      borderRadius: BorderRadius.zero,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text(
+                          "Edit Your Payment Method",
+                          style: TextStyle(
+                              color: AppColors.primaryButtonColor,
+                              fontSize: 18.0,
+                              fontWeight: FontWeight.w400,
+                              fontFamily: 'Roboto'),
                         ),
-                      ),
-                    ],
+                        InkWell(
+                          child: Image.asset(
+                            "assets/images/edit-fill.png",
+                            height: 20,
+                            width: 20,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 Container(
@@ -75,7 +85,9 @@ class _EditProfilePageState extends State<EditProfilePage> {
                   width: ScreenUtils().screenWidth(context),
                   color: AppColors.primaryButtonColor,
                 ),
-                const SizedBox(height: 15.0,),
+                const SizedBox(
+                  height: 15.0,
+                ),
                 const Text(
                   "Progress",
                   style: TextStyle(
@@ -92,6 +104,26 @@ class _EditProfilePageState extends State<EditProfilePage> {
                       fontSize: 18.0,
                       fontWeight: FontWeight.w300,
                       fontFamily: 'Roboto'),
+                ),
+                const SizedBox(
+                  height: 8.0,
+                ),
+                const CompletedPage(),
+                Container(
+                  padding: const EdgeInsets.only(
+                      left: 30.0, right: 30.0, bottom: 10.0, top: 10.0),
+                  decoration: BoxDecoration(
+                    border: Border.all(color: AppColors.primaryButtonColor),
+                    borderRadius: BorderRadius.zero,
+                  ),
+                  child: const Text(
+                    "Continue Learning",
+                    style: TextStyle(
+                        color: AppColors.primaryButtonColor,
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.w400,
+                        fontFamily: 'Roboto'),
+                  ),
                 ),
               ],
             ),
