@@ -1,3 +1,4 @@
+import 'package:e_learning/Core/Utils/Helper/screen_utils.dart';
 import 'package:flutter/material.dart';
 
 class CourseDetailsHeading extends StatelessWidget {
@@ -7,9 +8,12 @@ class CourseDetailsHeading extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Image.asset("assets/images/testImage4.png"),
+        Container(
+          height: ScreenUtils().screenHeight(context)*0.35,
+            width:ScreenUtils().screenWidth(context) ,
+            child: Image.asset("assets/images/testImage4.png",fit: BoxFit.cover,)),
         Padding(
-          padding: const EdgeInsets.all(30.0),
+          padding: const EdgeInsets.only(top: 50.0, left: 30, right: 30),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

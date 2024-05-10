@@ -116,11 +116,18 @@ class _CourseDetailsState extends State<CourseDetails> {
                   // ),
                   const ReadMoreText(
                     "Visual Communication College's Typography and Layout Design course explores the art and science of typography and layout composition. Learn how to effectively use typefaces, hierarchy, alignment, and grid systems to create visually compelling designs. Gain hands-on experience in editorial design, branding, and digital layouts ",
+                    style: TextStyle(
+                        color: AppColors.colorSecondaryText2,
+                      fontFamily: "Roboto",
+                      fontSize: 12,
+                      fontWeight: FontWeight.w500,
+
+                    ),
                     trimMode: TrimMode.Line,
-                    trimLines: 2,
-                    trimCollapsedText: 'Read more',
-                    trimExpandedText: 'Read less',
-                    colorClickableText: AppColors.colorSecondaryText2,
+                    trimLines: 4,
+                    trimCollapsedText: 'Read more..',
+                    trimExpandedText: '..Read less',
+                    colorClickableText: AppColors.black,
                     moreStyle: TextStyle(
                       fontSize: 13,
                       color: AppColors.primaryButtonColor,
