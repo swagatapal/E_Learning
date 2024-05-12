@@ -1,52 +1,14 @@
+import 'package:e_learning/Core/Utils/CommonWidget/common_button.dart';
+import 'package:e_learning/Core/Utils/CommonWidget/common_inputfield.dart';
 import 'package:e_learning/Core/Utils/Helper/app_colors.dart';
 import 'package:e_learning/Core/Utils/Helper/screen_utils.dart';
 import 'package:e_learning/Screens/Home/Home/Widgets/category_item.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-// class PaymentOverview extends StatefulWidget {
-//   const PaymentOverview({super.key});
-//
-//   @override
-//   State<PaymentOverview> createState() => _PaymentOverviewState();
-// }
-//
-// class _PaymentOverviewState extends State<PaymentOverview> {
-//
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: Padding(
-//         padding:
-//             const EdgeInsets.only(left: 20.0, right: 20.0, bottom: 20, top: 60),
-//         child: Column(
-//           children: [
-//             InkWell(
-//               onTap: () {
-//                 Navigator.pop(context);
-//               },
-//               child: Image.asset(
-//                 "assets/images/arrow-back.png",
-//                 height: 30,
-//                 width: 30,
-//               ),
-//             ),
-//             const FormPage(),
-//
-//
-//
-//
-//
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
 
 class PaymentOverview extends StatefulWidget {
-  const PaymentOverview({Key? key}) : super(key: key);
+  const PaymentOverview({super.key});
 
   @override
   _PaymentOverview createState() => _PaymentOverview();
@@ -90,40 +52,40 @@ class _PaymentOverview extends State<PaymentOverview> {
       Step(
         state: currentStep > 0 ? StepState.complete : StepState.indexed,
         isActive: currentStep >= 0,
-        title: const Text("Account Info"),
+        title: const Text("A"),
         content: const Column(
           children: [
-            CustomInput(
-              hint: "First Name",
-              inputBorder: OutlineInputBorder(),
-            ),
+            OverViewSection(),
           ],
         ),
       ),
       Step(
         state: currentStep > 1 ? StepState.complete : StepState.indexed,
         isActive: currentStep >= 1,
-        title: const Text("Address"),
-        content: Column(
-          children: const [
-            CustomInput(
-              hint: "City and State",
-              inputBorder: OutlineInputBorder(),
-            ),
-
+        title: const Text("A"),
+        content: const Column(
+          children: [
+            SelectPaymentMethod(),
           ],
         ),
       ),
       Step(
         state: currentStep > 2 ? StepState.complete : StepState.indexed,
         isActive: currentStep >= 2,
-        title: const Text("Misc"),
-        content: Column(
-          children: const [
-            CustomInput(
-              hint: "Bio",
-              inputBorder: OutlineInputBorder(),
-            ),
+        title: const Text("A"),
+        content: const Column(
+          children: [
+            AddCardSection(),
+          ],
+        ),
+      ),
+      Step(
+        state: currentStep > 3 ? StepState.complete : StepState.indexed,
+        isActive: currentStep >= 3,
+        title: const Text("M"),
+        content: const Column(
+          children: [
+            CompletedSection(),
           ],
         ),
       ),
@@ -131,11 +93,12 @@ class _PaymentOverview extends State<PaymentOverview> {
   }
 }
 
-class CustomInput extends StatelessWidget {
+class OverViewSection extends StatelessWidget {
   final ValueChanged<String>? onChanged;
   final String? hint;
   final InputBorder? inputBorder;
-  const CustomInput({super.key, this.onChanged, this.hint, this.inputBorder});
+  const OverViewSection(
+      {super.key, this.onChanged, this.hint, this.inputBorder});
 
   @override
   Widget build(BuildContext context) {
@@ -145,76 +108,121 @@ class CustomInput extends StatelessWidget {
       // color: Colors.blue,
       child: Column(
         children: [
-           Text("OverView", style: TextStyle(
-            fontSize:20,
-            fontFamily: 'Roboto',
-            fontWeight: FontWeight.w500,
-            color: Theme.of(context).colorScheme.onBackground
-          ),),
+          Text(
+            "Overview",
+            style: TextStyle(
+                fontSize: 30,
+                fontFamily: 'Roboto',
+                fontWeight: FontWeight.w500,
+                color: Theme.of(context).colorScheme.onBackground),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
           RichText(
-            text: const TextSpan(
+            text: TextSpan(
               text: "Course Name:",
               style: TextStyle(
-                  color: AppColors.primaryButtonColor,
-                  fontSize: 15.0,
+                  fontFamily: 'Roboto',
                   fontWeight: FontWeight.w700,
-                  fontFamily: 'Roboto'),
-              children: <TextSpan>[
+                  fontSize: 18,
+                  color: Theme.of(context).colorScheme.onBackground),
+              children: const <TextSpan>[
                 TextSpan(
-                  text: 'Typography and Layout Design',
+                  text: '  Typography and Layout Design',
                   style: TextStyle(
                       color: AppColors.primaryButtonColor,
-                      fontWeight: FontWeight.w600,
+                      fontWeight: FontWeight.w500,
                       fontSize: 14.0,
                       fontFamily: 'Roboto'),
                 ),
               ],
             ),
           ),
-
           const CourseItem(
             image: "assets/images/lecture.png",
-            leadingText: "Lectures",
+            leadingText: "50+ Lectures",
           ),
           const CourseItem(
-            image: "assets/images/lecture.png",
-            leadingText: "Lectures",
+            image: "assets/images/learning.png",
+            leadingText: "4 Weeks",
           ),
           const CourseItem(
-            image: "assets/images/lecture.png",
-            leadingText: "Lectures",
+            image: "assets/images/certification.png",
+            leadingText: "Online Certificate",
           ),
-
-          Text(
-            "Skills",
-            style: TextStyle(
-                fontFamily: 'Roboto',
-                fontWeight: FontWeight.bold,
-                fontSize: 18,
-                color: Theme.of(context).colorScheme.onBackground),
+          const SizedBox(
+            height: 15,
           ),
-          const Row(
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CategoryItem(text: "Typography"),
-              CategoryItem(text: "Layout composition"),
+              Text(
+                "Skills",
+                style: TextStyle(
+                    fontFamily: 'Roboto',
+                    fontWeight: FontWeight.w700,
+                    fontSize: 18,
+                    color: Theme.of(context).colorScheme.onBackground),
+              ),
+              const Row(
+                children: [
+                  CategoryItem(text: "Typography"),
+                  CategoryItem(text: "Layout composition"),
+                ],
+              ),
+              const Row(
+                children: [
+                  CategoryItem(text: "Visual communication"),
+                  CategoryItem(text: "Editorial design"),
+                ],
+              ),
             ],
           ),
-          const Row(
-            children: [
-              CategoryItem(text: "Visual communication"),
-              CategoryItem(text: "Editorial design"),
-            ],
+          const SizedBox(
+            height: 30,
           ),
-
           Row(
             children: [
-              Image.asset("assets/images/money-dollar-circle-fill.png", height: 20,width: 20,),
-              Text("Total Price"),
-              Text("35\$")
+              Image.asset(
+                "assets/images/money-dollar-circle-fill.png",
+                height: 30,
+                width: 30,
+              ),
+              const SizedBox(
+                width: 15,
+              ),
+              Expanded(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Total Price",
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: 20,
+                        color: Theme.of(context).colorScheme.onBackground,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    Text(
+                      "35\$",
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: 20,
+                        color: Theme.of(context).colorScheme.onBackground,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    )
+                  ],
+                ),
+              )
             ],
           ),
-
-
+          Container(
+            height: 1,
+            color: AppColors.primaryButtonColor,
+          )
         ],
       ),
       // TextField(
@@ -248,7 +256,7 @@ class CourseItem extends StatelessWidget {
           Text(
             leadingText,
             style: const TextStyle(
-                color: AppColors.black,
+                color: AppColors.colorSecondaryText2,
                 fontSize: 16.0,
                 fontWeight: FontWeight.w500,
                 fontFamily: 'Roboto'),
@@ -259,25 +267,292 @@ class CourseItem extends StatelessWidget {
   }
 }
 
-class CustomBtn extends StatelessWidget {
-  final Function? callback;
-  final Widget? title;
-  const CustomBtn({super.key, this.title, this.callback});
+class SelectPaymentMethod extends StatefulWidget {
+  // ignore: use_key_in_widget_constructors
+  const SelectPaymentMethod({Key? key});
+
+  @override
+  State<SelectPaymentMethod> createState() => _SelectPaymentMethodState();
+}
+
+class _SelectPaymentMethodState extends State<SelectPaymentMethod> {
+  int _selectedOption = 0;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(bottom: 10),
-      child: SizedBox(
-        width: double.infinity,
-        child: Container(
-          color: Colors.blue,
-          child: TextButton(
-            onPressed: () => callback!(),
-            child: title!,
+      width: ScreenUtils().screenWidth(context),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "Select Payment Method",
+            style: TextStyle(
+              fontSize: 20,
+              fontFamily: 'Roboto',
+              fontWeight: FontWeight.w500,
+              color: Theme.of(context).colorScheme.onBackground,
+            ),
           ),
-        ),
+          SizedBox(height: 10),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              RadioListTile<int>(
+                value: 0,
+                activeColor: AppColors.primaryButtonColor,
+                groupValue: _selectedOption,
+                onChanged: (value) {
+                  setState(() {
+                    _selectedOption = value!;
+                  });
+                },
+                title: const Text(
+                  "Credit / Debit Card",
+                  style: TextStyle(
+                    fontFamily: 'Roboto',
+                    fontWeight: FontWeight.w500,
+                    color: AppColors.colorSecondaryText2,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  SizedBox(
+                      height: 40,
+                      width: 70,
+                      child: Image.asset(
+                        "assets/images/Mastercard.png",
+                        fit: BoxFit.cover,
+                      )),
+                  SizedBox(
+                      height: 40,
+                      width: 70,
+                      child: Image.asset(
+                        "assets/images/Maestro.png",
+                        fit: BoxFit.contain,
+                      )),
+                  SizedBox(
+                      height: 40,
+                      width: 70,
+                      child: Image.asset(
+                        "assets/images/PayPal.png",
+                        fit: BoxFit.cover,
+                      )),
+                  SizedBox(
+                      height: 40,
+                      width: 70,
+                      child: Image.asset(
+                        "assets/images/Visa.png",
+                        fit: BoxFit.cover,
+                      )),
+                ],
+              ),
+            ],
+          ),
+          const SizedBox(height: 10),
+          RadioListTile<int>(
+            value: 1,
+            activeColor: AppColors.primaryButtonColor,
+            groupValue: _selectedOption,
+            onChanged: (value) {
+              setState(() {
+                _selectedOption = value!;
+              });
+            },
+            title: const Text(
+              'JazzCash / EasyPaisa ',
+              style: TextStyle(
+                fontFamily: 'Roboto',
+                fontWeight: FontWeight.w500,
+                color: AppColors.colorSecondaryText2,
+              ),
+            ),
+          ),
+
+          const SizedBox(
+            height: 30,
+          ),
+          Row(
+            children: [
+              Image.asset(
+                "assets/images/money-dollar-circle-fill.png",
+                height: 30,
+                width: 30,
+              ),
+              const SizedBox(
+                width: 15,
+              ),
+              Expanded(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Total Price",
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: 20,
+                        color: Theme.of(context).colorScheme.onBackground,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    Text(
+                      "35\$",
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: 20,
+                        color: Theme.of(context).colorScheme.onBackground,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    )
+                  ],
+                ),
+              )
+            ],
+          ),
+          Container(
+            height: 1,
+            color: AppColors.primaryButtonColor,
+          )
+        ],
       ),
     );
   }
 }
+
+class AddCardSection extends StatefulWidget {
+  const AddCardSection({super.key});
+
+  @override
+  State<AddCardSection> createState() => _AddCardSectionState();
+}
+
+class _AddCardSectionState extends State<AddCardSection> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.only(bottom: 10),
+      width: ScreenUtils().screenWidth(context),
+      child: Column(
+        children: [
+          Text(
+            "Add Card Details",
+            style: TextStyle(
+              fontSize: 20,
+              fontFamily: 'Roboto',
+              fontWeight: FontWeight.w500,
+              color: Theme.of(context).colorScheme.onBackground,
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          CommonTextFormField(
+            hintText: "Card Number",
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          CommonTextFormField(
+            hintText: "CVV Number",
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          CommonTextFormField(
+            hintText: "Expiry Date",
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          CommonTextFormField(
+            hintText: "Name on Card",
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          const Text(
+            "We will store and use your card details for smooth and secure future purchases.  ",
+            style: TextStyle(
+              fontFamily: 'Roboto',
+              fontSize: 11,
+              fontWeight: FontWeight.w500,
+              color: AppColors.colorSecondaryText2
+            ),
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          Row(
+            children: [
+              Image.asset(
+                "assets/images/money-dollar-circle-fill.png",
+                height: 30,
+                width: 30,
+              ),
+              const SizedBox(
+                width: 15,
+              ),
+              Expanded(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Total Price",
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: 20,
+                        color: Theme.of(context).colorScheme.onBackground,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    Text(
+                      "35\$",
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: 20,
+                        color: Theme.of(context).colorScheme.onBackground,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    )
+                  ],
+                ),
+              )
+            ],
+          ),
+          Container(
+            height: 1,
+            color: AppColors.primaryButtonColor,
+          )
+        ],
+      ),
+    );
+  }
+}
+
+
+class CompletedSection extends StatelessWidget {
+  const CompletedSection({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.only(bottom: 10),
+      width: ScreenUtils().screenWidth(context),
+      child: Column(
+        children: [
+          const SizedBox(height: 10,),
+          Image.asset("assets/images/correctImg.png", height: 60,width: 60,),
+          Image.asset("assets/images/congratsImg.png", height: 300,width: 250,),
+          Image.asset("assets/images/congratsText.png", height: 100,width: 250,),
+
+
+      ],),
+
+    );
+  }
+}
+

@@ -178,12 +178,12 @@ class _HomePageState extends State<HomePage> {
                             subtitle: 'Innovation and Design School',
                             rating: '4.9',
                             onTap: () {
-                              // Navigator.push(
-                              //   context,
-                              //   MaterialPageRoute(
-                              //     builder: (context) => const CourseDetails(),
-                              //   ),
-                              // );
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const CourseDetails(),
+                                ),
+                              );
                             },
                           );
                         },

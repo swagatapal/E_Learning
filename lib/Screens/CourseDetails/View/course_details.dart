@@ -182,8 +182,8 @@ class _CourseDetailsState extends State<CourseDetails> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            // builder: (context) => const PaymentOverview()),
-                            builder: (context) => const CourseContent()),
+                            builder: (context) => const PaymentOverview()),
+                            //builder: (context) => const CourseContent()),
                       );
                     },
                   ),
