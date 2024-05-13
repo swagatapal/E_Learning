@@ -2,9 +2,11 @@ import 'package:e_learning/Core/Utils/CommonWidget/common_button.dart';
 import 'package:e_learning/Core/Utils/CommonWidget/common_inputfield.dart';
 import 'package:e_learning/Core/Utils/Helper/app_colors.dart';
 import 'package:e_learning/Core/Utils/Helper/screen_utils.dart';
+import 'package:e_learning/Screens/CourseDetails/View/course_details.dart';
 import 'package:e_learning/Screens/Home/Home/Widgets/category_item.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 
 class PaymentOverview extends StatefulWidget {
@@ -54,18 +56,22 @@ class _PaymentOverview extends State<PaymentOverview> {
           }),
           steps: getSteps(),
           controlsBuilder: (BuildContext context, ControlsDetails? controlsDetails) {
-            return Row(
-              children: <Widget>[
-                ElevatedButton(
-                  onPressed: controlsDetails?.onStepContinue,
-                  child: Text('Continue'),
-                ),
-                SizedBox(width: 12),
-                TextButton(
-                  onPressed: controlsDetails?.onStepCancel,
-                  child: Text('Cancel'),
-                ),
-              ],
+            return Padding(
+              padding: const EdgeInsets.only(top: 40.0),
+              child: CommonButton(
+                onClicked: () {
+                  bool isLastStep = (currentStep == getSteps().length - 1);
+                  if (isLastStep) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const CourseDetails()),
+                    );
+                  } else {
+                    controlsDetails?.onStepContinue?.call();
+                  }
+                },
+                label: "Continue",
+              ),
             );
           },
 
@@ -81,6 +87,12 @@ class _PaymentOverview extends State<PaymentOverview> {
       Step(
         state: currentStep > 0 ? StepState.complete : StepState.indexed,
         isActive: currentStep >= 0,
+        label: Text("Overview",style: TextStyle(
+            fontWeight: FontWeight.w500,
+            fontFamily: 'Roboto',
+            fontSize: 10,
+          color: currentStep >= 0 ? AppColors.primaryButtonColor : AppColors.colorSecondaryText2,
+        ),),
         title: const Text(""),
         content: const Column(
           children: [
@@ -92,6 +104,12 @@ class _PaymentOverview extends State<PaymentOverview> {
         state: currentStep > 1 ? StepState.complete : StepState.indexed,
         isActive: currentStep >= 1,
         title: const Text(""),
+        label:  Text("Payment Method",style: TextStyle(
+fontWeight: FontWeight.w500,
+          fontFamily: 'Roboto',
+          fontSize: 10,
+          color: currentStep >= 1 ? AppColors.primaryButtonColor : AppColors.colorSecondaryText2,
+        ),),
         content: const Column(
           children: [
             SelectPaymentMethod(),
@@ -102,6 +120,12 @@ class _PaymentOverview extends State<PaymentOverview> {
         state: currentStep > 2 ? StepState.complete : StepState.indexed,
         isActive: currentStep >= 2,
         title: const Text(""),
+        label:  Text("Add Card Details",style: TextStyle(
+            fontWeight: FontWeight.w500,
+            fontFamily: 'Roboto',
+            fontSize: 10,
+          color: currentStep >= 2 ? AppColors.primaryButtonColor : AppColors.colorSecondaryText2,
+        ),),
         content: const Column(
           children: [
             AddCardSection(),
@@ -112,6 +136,12 @@ class _PaymentOverview extends State<PaymentOverview> {
         state: currentStep > 3 ? StepState.complete : StepState.indexed,
         isActive: currentStep >= 3,
         title: const Text(""),
+        label:  Text("Completed",style: TextStyle(
+            fontWeight: FontWeight.w500,
+            fontFamily: 'Roboto',
+            fontSize: 10,
+          color: currentStep >= 3 ? AppColors.primaryButtonColor : AppColors.colorSecondaryText2,
+        ),),
         content: const Column(
           children: [
             CompletedSection(),
@@ -131,6 +161,7 @@ class OverViewSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double wid = ScreenUtils().screenWidth(context);
     return Container(
       margin: const EdgeInsets.only(bottom: 10),
       width: ScreenUtils().screenWidth(context),
@@ -140,7 +171,7 @@ class OverViewSection extends StatelessWidget {
           Text(
             "Overview",
             style: TextStyle(
-                fontSize: 30,
+                fontSize: 20,
                 fontFamily: 'Roboto',
                 fontWeight: FontWeight.w500,
                 color: Theme.of(context).colorScheme.onBackground),
@@ -154,7 +185,7 @@ class OverViewSection extends StatelessWidget {
               style: TextStyle(
                   fontFamily: 'Roboto',
                   fontWeight: FontWeight.w700,
-                  fontSize: 18,
+                  fontSize: 15,
                   color: Theme.of(context).colorScheme.onBackground),
               children: const <TextSpan>[
                 TextSpan(
@@ -191,7 +222,7 @@ class OverViewSection extends StatelessWidget {
                 style: TextStyle(
                     fontFamily: 'Roboto',
                     fontWeight: FontWeight.w700,
-                    fontSize: 18,
+                    fontSize: 15,
                     color: Theme.of(context).colorScheme.onBackground),
               ),
               const Row(
@@ -208,15 +239,15 @@ class OverViewSection extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(
-            height: 30,
+           SizedBox(
+            height:wid*0.2,
           ),
           Row(
             children: [
               Image.asset(
                 "assets/images/money-dollar-circle-fill.png",
-                height: 30,
-                width: 30,
+                height: 20,
+                width: 20,
               ),
               const SizedBox(
                 width: 15,
@@ -229,7 +260,7 @@ class OverViewSection extends StatelessWidget {
                       "Total Price",
                       style: TextStyle(
                         fontFamily: 'Roboto',
-                        fontSize: 20,
+                        fontSize: 15,
                         color: Theme.of(context).colorScheme.onBackground,
                         fontWeight: FontWeight.w700,
                       ),
@@ -238,7 +269,7 @@ class OverViewSection extends StatelessWidget {
                       "35\$",
                       style: TextStyle(
                         fontFamily: 'Roboto',
-                        fontSize: 20,
+                        fontSize: 15,
                         color: Theme.of(context).colorScheme.onBackground,
                         fontWeight: FontWeight.w700,
                       ),
@@ -270,12 +301,12 @@ class CourseItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 20.0, left: 20),
+      padding: const EdgeInsets.only(top: 15.0, left: 30),
       child: Row(
         children: [
           Image.asset(
             image,
-            height: 20,
+            height: 15,
             width: 15,
             fit: BoxFit.cover,
           ),
@@ -286,7 +317,7 @@ class CourseItem extends StatelessWidget {
             leadingText,
             style: const TextStyle(
                 color: AppColors.colorSecondaryText2,
-                fontSize: 16.0,
+                fontSize: 12.0,
                 fontWeight: FontWeight.w500,
                 fontFamily: 'Roboto'),
           ),
@@ -309,11 +340,13 @@ class _SelectPaymentMethodState extends State<SelectPaymentMethod> {
 
   @override
   Widget build(BuildContext context) {
+    double wid = ScreenUtils().screenWidth(context);
+
     return Container(
       margin: const EdgeInsets.only(bottom: 10),
       width: ScreenUtils().screenWidth(context),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        // crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             "Select Payment Method",
@@ -343,6 +376,7 @@ class _SelectPaymentMethodState extends State<SelectPaymentMethod> {
                     fontFamily: 'Roboto',
                     fontWeight: FontWeight.w500,
                     color: AppColors.colorSecondaryText2,
+                    fontSize: 13
                   ),
                 ),
               ),
@@ -398,19 +432,20 @@ class _SelectPaymentMethodState extends State<SelectPaymentMethod> {
                 fontFamily: 'Roboto',
                 fontWeight: FontWeight.w500,
                 color: AppColors.colorSecondaryText2,
+                fontSize: 13
               ),
             ),
           ),
 
-          const SizedBox(
-            height: 30,
+           SizedBox(
+            height:wid*0.4,
           ),
           Row(
             children: [
               Image.asset(
                 "assets/images/money-dollar-circle-fill.png",
-                height: 30,
-                width: 30,
+                height: 20,
+                width: 20,
               ),
               const SizedBox(
                 width: 15,
@@ -423,7 +458,7 @@ class _SelectPaymentMethodState extends State<SelectPaymentMethod> {
                       "Total Price",
                       style: TextStyle(
                         fontFamily: 'Roboto',
-                        fontSize: 20,
+                        fontSize: 15,
                         color: Theme.of(context).colorScheme.onBackground,
                         fontWeight: FontWeight.w700,
                       ),
@@ -432,7 +467,7 @@ class _SelectPaymentMethodState extends State<SelectPaymentMethod> {
                       "35\$",
                       style: TextStyle(
                         fontFamily: 'Roboto',
-                        fontSize: 20,
+                        fontSize: 15,
                         color: Theme.of(context).colorScheme.onBackground,
                         fontWeight: FontWeight.w700,
                       ),
@@ -462,6 +497,8 @@ class AddCardSection extends StatefulWidget {
 class _AddCardSectionState extends State<AddCardSection> {
   @override
   Widget build(BuildContext context) {
+    double wid = ScreenUtils().screenWidth(context);
+
     return Container(
       margin: const EdgeInsets.only(bottom: 10),
       width: ScreenUtils().screenWidth(context),
@@ -512,8 +549,8 @@ class _AddCardSectionState extends State<AddCardSection> {
               color: AppColors.colorSecondaryText2
             ),
           ),
-          const SizedBox(
-            height: 30,
+           SizedBox(
+            height: wid*0.2,
           ),
           Row(
             children: [
@@ -576,7 +613,18 @@ class CompletedSection extends StatelessWidget {
           const SizedBox(height: 10,),
           Image.asset("assets/images/correctImg.png", height: 60,width: 60,),
           Image.asset("assets/images/congratsImg.png", height: 300,width: 250,),
-          Image.asset("assets/images/congratsText.png", height: 100,width: 250,),
+          Text("Congratulations!", style: TextStyle(
+            fontSize: 25,
+            fontFamily: 'Roboto',
+            fontWeight: FontWeight.w800,
+            color: Theme.of(context).colorScheme.onBackground
+          ),),
+          Text("Start Your Learning Today", style: TextStyle(
+              fontSize: 20,
+              fontFamily: 'Roboto',
+              fontWeight: FontWeight.w800,
+              color: Theme.of(context).colorScheme.onBackground
+          ),)
 
 
       ],),
