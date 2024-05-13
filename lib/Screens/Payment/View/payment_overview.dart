@@ -19,9 +19,7 @@ class _PaymentOverview extends State<PaymentOverview> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-          padding: const EdgeInsets.all(20),
-          child: Stepper(
+      body:  Stepper(
             type: StepperType.horizontal,
             currentStep: currentStep,
             onStepCancel: () => currentStep == 0
@@ -43,7 +41,7 @@ class _PaymentOverview extends State<PaymentOverview> {
               currentStep = step;
             }),
             steps: getSteps(),
-          )),
+          ),
     );
   }
 
@@ -52,7 +50,7 @@ class _PaymentOverview extends State<PaymentOverview> {
       Step(
         state: currentStep > 0 ? StepState.complete : StepState.indexed,
         isActive: currentStep >= 0,
-        title: const Text("A"),
+        title: const Text(""),
         content: const Column(
           children: [
             OverViewSection(),
