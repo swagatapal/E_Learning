@@ -9,7 +9,7 @@ class CourseContentHeading extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Container(
+        SizedBox(
             height: ScreenUtils().screenHeight(context) * 0.35,
             width: ScreenUtils().screenWidth(context),
             child: Image.asset(
@@ -40,10 +40,10 @@ class CourseContentHeading extends StatelessWidget {
                 ),
                 child: Center(
                     child: Image.asset(
-                  "assets/images/bookmark2.png",
-                  height: 25,
-                  width: 15,
-                )),
+                      "assets/images/bookmark2.png",
+                      height: 25,
+                      width: 15,
+                    )),
               ),
             ],
           ),

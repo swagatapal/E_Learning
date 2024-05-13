@@ -1,3 +1,4 @@
+import 'package:e_learning/Screens/CourseContent/Widgets/course_content_body_section.dart';
 import 'package:flutter/material.dart';
 import 'package:roundcheckbox/roundcheckbox.dart';
 
@@ -27,34 +28,26 @@ class CourseContentBody extends StatelessWidget {
               fontWeight: FontWeight.w500,
               fontFamily: 'Roboto'),
         ),
-        Row(
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  eachLectureHeading,
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontFamily: "Roboto",
-                      fontSize: 20,
-                      color: Theme.of(context).colorScheme.onBackground),
-                ),
-                Text(
-                  eachLectureContent,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
-                      color: AppColors.colorSecondaryText2,
-                      fontFamily: "Roboto",
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400),
-                ),
-              ],
+            Text(
+              eachLectureHeading,
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontFamily: "Roboto",
+                  fontSize: 20,
+                  color: Theme.of(context).colorScheme.onBackground),
             ),
-            RoundCheckBox(
-              onTap: (selected) {},
-              checkedColor: AppColors.primaryButtonColor,
+            Text(
+              eachLectureContent,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              style: const TextStyle(
+                  color: AppColors.colorSecondaryText2,
+                  fontFamily: "Roboto",
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400),
             ),
           ],
         ),

@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:readmore/readmore.dart';
 
 import '../../../Core/Utils/Helper/app_colors.dart';
+import '../../CourseContent/View/course_content.dart';
 
 class CourseDetails extends StatefulWidget {
   const CourseDetails({super.key});
@@ -160,8 +161,8 @@ class _CourseDetailsState extends State<CourseDetails> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const PaymentOverview()),
-                            //builder: (context) => const CourseContent()),
+                            // builder: (context) => const PaymentOverview()),
+                            builder: (context) => const CourseContent()),
                       );
                     },
                   ),
