@@ -19,29 +19,60 @@ class _PaymentOverview extends State<PaymentOverview> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:  Stepper(
-            type: StepperType.horizontal,
-            currentStep: currentStep,
-            onStepCancel: () => currentStep == 0
-                ? null
-                : setState(() {
-                    currentStep -= 1;
-                  }),
-            onStepContinue: () {
-              bool isLastStep = (currentStep == getSteps().length - 1);
-              if (isLastStep) {
-                //Do something with this information
-              } else {
-                setState(() {
-                  currentStep += 1;
-                });
+      body:  Padding(
+        padding: const EdgeInsets.only(top: 30.0),
+        child: Stepper(
+          type: StepperType.horizontal,
+          currentStep: currentStep,
+          elevation: 0,
+          connectorColor: MaterialStateProperty.resolveWith<Color>(
+                (Set<MaterialState> states) {
+              if (states.contains(MaterialState.selected)) {
+                return AppColors.primaryButtonColor; // Color for selected state
               }
+              return Colors.grey; // Color for default state
             },
-            onStepTapped: (step) => setState(() {
-              currentStep = step;
-            }),
-            steps: getSteps(),
           ),
+          connectorThickness: 5,
+          onStepCancel: () => currentStep == 0
+              ? null
+              : setState(() {
+            currentStep -= 1;
+          }),
+          onStepContinue: () {
+            bool isLastStep = (currentStep == getSteps().length - 1);
+            if (isLastStep) {
+              //Do something with this information
+            } else {
+              setState(() {
+                currentStep += 1;
+              });
+            }
+          },
+          onStepTapped: (step) => setState(() {
+            currentStep = step;
+          }),
+          steps: getSteps(),
+          controlsBuilder: (BuildContext context, ControlsDetails? controlsDetails) {
+            return Row(
+              children: <Widget>[
+                ElevatedButton(
+                  onPressed: controlsDetails?.onStepContinue,
+                  child: Text('Continue'),
+                ),
+                SizedBox(width: 12),
+                TextButton(
+                  onPressed: controlsDetails?.onStepCancel,
+                  child: Text('Cancel'),
+                ),
+              ],
+            );
+          },
+
+
+        ),
+
+      ),
     );
   }
 
@@ -60,7 +91,7 @@ class _PaymentOverview extends State<PaymentOverview> {
       Step(
         state: currentStep > 1 ? StepState.complete : StepState.indexed,
         isActive: currentStep >= 1,
-        title: const Text("A"),
+        title: const Text(""),
         content: const Column(
           children: [
             SelectPaymentMethod(),
@@ -70,7 +101,7 @@ class _PaymentOverview extends State<PaymentOverview> {
       Step(
         state: currentStep > 2 ? StepState.complete : StepState.indexed,
         isActive: currentStep >= 2,
-        title: const Text("A"),
+        title: const Text(""),
         content: const Column(
           children: [
             AddCardSection(),
@@ -80,7 +111,7 @@ class _PaymentOverview extends State<PaymentOverview> {
       Step(
         state: currentStep > 3 ? StepState.complete : StepState.indexed,
         isActive: currentStep >= 3,
-        title: const Text("M"),
+        title: const Text(""),
         content: const Column(
           children: [
             CompletedSection(),
