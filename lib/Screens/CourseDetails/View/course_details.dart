@@ -1,5 +1,4 @@
 import 'package:e_learning/Core/Utils/CommonWidget/common_button.dart';
-import 'package:e_learning/Screens/CourseContent/View/course_content.dart';
 import 'package:e_learning/Screens/CourseDetails/Widgets/course_details_body.dart';
 import 'package:e_learning/Screens/CourseDetails/Widgets/course_details_heading.dart';
 import 'package:e_learning/Screens/Home/Home/Widgets/category_item.dart';
@@ -94,27 +93,6 @@ class _CourseDetailsState extends State<CourseDetails> {
                   const SizedBox(
                     height: 10.0,
                   ),
-                  // RichText(
-                  //   text: TextSpan(
-                  //     text:
-                  //         "Visual Communication College's Typography and Layout Design course explores the art and science of typography and layout composition. Learn how to effectively use typefaces, hierarchy, alignment, and grid systems to create visually compelling designs. Gain hands-on experience in editorial design, branding, and digital layouts",
-                  //     style: const TextStyle(
-                  //         color: AppColors.colorSecondaryText2,
-                  //         fontSize: 13.0,
-                  //         fontWeight: FontWeight.w300,
-                  //         fontFamily: 'Roboto'),
-                  //     children: <TextSpan>[
-                  //       TextSpan(
-                  //         text: ' Read More...',
-                  //         style: TextStyle(
-                  //             color: Theme.of(context).colorScheme.onBackground,
-                  //             fontWeight: FontWeight.w600,
-                  //             fontSize: 13.0,
-                  //             fontFamily: 'Roboto'),
-                  //       ),
-                  //     ],
-                  //   ),
-                  // ),
                   const ReadMoreText(
                     "Visual Communication College's Typography and Layout Design course explores the art and science of typography and layout composition. Learn how to effectively use typefaces, hierarchy, alignment, and grid systems to create visually compelling designs. Gain hands-on experience in editorial design, branding, and digital layouts ",
                     style: TextStyle(
