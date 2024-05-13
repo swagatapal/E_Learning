@@ -1,55 +1,53 @@
+import 'package:e_learning/Core/Utils/Helper/screen_utils.dart';
 import 'package:e_learning/Screens/CourseContent/Widgets/course_content_body_section.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:roundcheckbox/roundcheckbox.dart';
 
 import '../../../Core/Utils/Helper/app_colors.dart';
 
 class CourseContentBody extends StatelessWidget {
   final String lectureHeading;
-  final String eachLectureHeading;
-  final String eachLectureContent;
 
-  const CourseContentBody(
-      {super.key,
-      required this.lectureHeading,
-      required this.eachLectureHeading,
-      required this.eachLectureContent});
+  const CourseContentBody({
+    super.key,
+    required this.lectureHeading,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
       children: [
-        Text(
-          lectureHeading,
-          style: const TextStyle(
-              color: AppColors.primaryButtonColor,
-              fontSize: 18.0,
-              fontWeight: FontWeight.w500,
-              fontFamily: 'Roboto'),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          child: Text(
+            lectureHeading,
+            style: const TextStyle(
+                color: AppColors.primaryButtonColor,
+                fontSize: 18.0,
+                fontWeight: FontWeight.w500,
+                fontFamily: 'Roboto'),
+          ),
         ),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              eachLectureHeading,
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontFamily: "Roboto",
-                  fontSize: 20,
-                  color: Theme.of(context).colorScheme.onBackground),
-            ),
-            Text(
-              eachLectureContent,
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-              style: const TextStyle(
-                  color: AppColors.colorSecondaryText2,
-                  fontFamily: "Roboto",
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400),
-            ),
-          ],
+        const SizedBox(height: 10.0),
+        Flexible(
+          child: Material(
+            color: AppColors.courseContentBackgroundColor,
+            child: ListView.builder(
+                itemCount: 4,
+                shrinkWrap: true,
+                padding: EdgeInsets.zero,
+                physics: const NeverScrollableScrollPhysics(),
+                itemBuilder: (context, index) {
+                  return const CourseContentBodySection(
+                      eachLectureHeading: "Legibility vs. Readability",
+                      eachLectureContent:
+                          "Legibility refers to the ease with which individual characters can be distinguished from one another, while readability is...");
+                }),
+          ),
         ),
       ],
     );

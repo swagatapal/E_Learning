@@ -1,8 +1,8 @@
-import 'package:e_learning/Screens/CourseContent/Widgets/course_content_body.dart';
 import 'package:e_learning/Screens/CourseContent/Widgets/course_content_heading.dart';
-import 'package:e_learning/Screens/CourseContent/Widgets/week.dart';
 import 'package:flutter/material.dart';
 import '../../../Core/Utils/Helper/app_colors.dart';
+import '../Widgets/course_content_body.dart';
+import '../Widgets/week.dart';
 
 class CourseContent extends StatefulWidget {
   const CourseContent({super.key});
@@ -15,13 +15,13 @@ class _CourseContentState extends State<CourseContent> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      body: ListView(
+        shrinkWrap: true,
+        padding: EdgeInsets.zero,
         children: [
           const CourseContentHeading(),
           Padding(
-            padding:
-            const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
+            padding: const EdgeInsets.only(top: 20.0, left: 15.0, right: 15.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -41,37 +41,37 @@ class _CourseContentState extends State<CourseContent> {
                       fontWeight: FontWeight.w400,
                       fontFamily: 'Roboto'),
                 ),
-                const SizedBox(height: 14.0),
-                // const Row(
-                //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                //   children: [
-                //     Week(weekNo: "Week 1"),
-                //     Week(weekNo: "Week 2"),
-                //     Week(weekNo: "Week 3"),
-                //     Week(weekNo: "Week 4"),
-                //   ],
-                // ),
-                const Week(),
-                const SizedBox(height: 20.0),
-                const Center(
-                  child: Text(
-                    "Course Contents",
-                    style: TextStyle(
-                        color: AppColors.primaryButtonColor,
-                        fontSize: 22.0,
-                        fontWeight: FontWeight.w700,
-                        fontFamily: 'Roboto'),
-                  ),
-                ),
-                const SizedBox(height: 20.0),
-                // const CourseContentBody(
-                //   lectureHeading: "Lecture 1: Principles of Typography",
-                //   eachLectureHeading: 'Legibility vs. Readability',
-                //   eachLectureContent:
-                //   'Legibility refers to the ease with which individual characters can be distinguished from one another, while readability is...',
-                // ),
+
               ],
             ),
+          ),
+
+          const SizedBox(height: 14.0),
+          const Week(weekNo: 'Week 1'),
+          const SizedBox(height: 20.0),
+          const Center(
+            child: Text(
+              "Course Contents",
+              style: TextStyle(
+                  color: AppColors.primaryButtonColor,
+                  fontSize: 22.0,
+                  fontWeight: FontWeight.w700,
+                  fontFamily: 'Roboto'),
+            ),
+          ),
+          const SizedBox(height: 20.0),
+          const CourseContentBody(
+            lectureHeading: "Lecture 1: Principles of Typography",
+          ),
+          const SizedBox(height: 20.0),
+
+          const CourseContentBody(
+            lectureHeading: "Lecture 1: Principles of Typography",
+          ),
+          const SizedBox(height: 20.0),
+
+          const CourseContentBody(
+            lectureHeading: "Lecture 1: Principles of Typography",
           ),
         ],
       ),
