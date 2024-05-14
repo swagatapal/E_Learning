@@ -8,7 +8,7 @@ class CourseDetailsHeading extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Container(
+        SizedBox(
           height: ScreenUtils().screenHeight(context)*0.35,
             width:ScreenUtils().screenWidth(context) ,
             child: Image.asset("assets/images/testImage4.png",fit: BoxFit.cover,)),

@@ -1,6 +1,5 @@
 import 'package:e_learning/Core/Utils/Helper/app_colors.dart';
 import 'package:e_learning/Core/Utils/Helper/screen_utils.dart';
-import 'package:e_learning/Screens/Payment/View/payment_overview.dart';
 import 'package:flutter/material.dart';
 
 import '../../CommonWidgets/normal_text.dart';
