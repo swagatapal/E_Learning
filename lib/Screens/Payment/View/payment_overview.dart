@@ -170,339 +170,8 @@ class _PaymentOverview extends State<PaymentOverview> {
   }
 }
 
-class OverViewSection extends StatelessWidget {
-  final ValueChanged<String>? onChanged;
-  final String? hint;
-  final InputBorder? inputBorder;
 
-  const OverViewSection(
-      {super.key, this.onChanged, this.hint, this.inputBorder});
 
-  @override
-  Widget build(BuildContext context) {
-    double wid = ScreenUtils().screenWidth(context);
-    return Container(
-      margin: const EdgeInsets.only(bottom: 10),
-      width: ScreenUtils().screenWidth(context),
-      // color: Colors.blue,
-      child: Column(
-        children: [
-          Text(
-            "Overview",
-            style: TextStyle(
-                fontSize: 20,
-                fontFamily: 'Roboto',
-                fontWeight: FontWeight.w500,
-                color: Theme.of(context).colorScheme.onBackground),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          RichText(
-            text: TextSpan(
-              text: "Course Name:",
-              style: TextStyle(
-                  fontFamily: 'Roboto',
-                  fontWeight: FontWeight.w700,
-                  fontSize: 15,
-                  color: Theme.of(context).colorScheme.onBackground),
-              children: const <TextSpan>[
-                TextSpan(
-                  text: '  Typography and Layout Design',
-                  style: TextStyle(
-                      color: AppColors.primaryButtonColor,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 14.0,
-                      fontFamily: 'Roboto'),
-                ),
-              ],
-            ),
-          ),
-          const CourseItem(
-            image: "assets/images/lecture.png",
-            leadingText: "50+ Lectures",
-          ),
-          const CourseItem(
-            image: "assets/images/learning.png",
-            leadingText: "4 Weeks",
-          ),
-          const CourseItem(
-            image: "assets/images/certification.png",
-            leadingText: "Online Certificate",
-          ),
-          const SizedBox(
-            height: 15,
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "Skills",
-                style: TextStyle(
-                    fontFamily: 'Roboto',
-                    fontWeight: FontWeight.w700,
-                    fontSize: 15,
-                    color: Theme.of(context).colorScheme.onBackground),
-              ),
-              const Row(
-                children: [
-                  CategoryItem(text: "Typography"),
-                  CategoryItem(text: "Layout composition"),
-                ],
-              ),
-              const Row(
-                children: [
-                  CategoryItem(text: "Visual communication"),
-                  CategoryItem(text: "Editorial design"),
-                ],
-              ),
-            ],
-          ),
-          SizedBox(
-            height: wid * 0.2,
-          ),
-          Row(
-            children: [
-              Image.asset(
-                "assets/images/money-dollar-circle-fill.png",
-                height: 20,
-                width: 20,
-              ),
-              const SizedBox(
-                width: 15,
-              ),
-              Expanded(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Total Price",
-                      style: TextStyle(
-                        fontFamily: 'Roboto',
-                        fontSize: 15,
-                        color: Theme.of(context).colorScheme.onBackground,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                    Text(
-                      "35\$",
-                      style: TextStyle(
-                        fontFamily: 'Roboto',
-                        fontSize: 15,
-                        color: Theme.of(context).colorScheme.onBackground,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    )
-                  ],
-                ),
-              )
-            ],
-          ),
-          Container(
-            height: 1,
-            color: AppColors.primaryButtonColor,
-          )
-        ],
-      ),
-      // TextField(
-      //   onChanged: (v) => onChanged!(v),
-      //   decoration: InputDecoration(hintText: hint!, border: inputBorder),
-      // ),
-    );
-  }
-}
-
-class CourseItem extends StatelessWidget {
-  final String image;
-  final String leadingText;
-
-  const CourseItem({super.key, required this.image, required this.leadingText});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 15.0, left: 30),
-      child: Row(
-        children: [
-          Image.asset(
-            image,
-            height: 15,
-            width: 15,
-            fit: BoxFit.cover,
-          ),
-          const SizedBox(
-            width: 10.0,
-          ),
-          Text(
-            leadingText,
-            style: const TextStyle(
-                color: AppColors.colorSecondaryText2,
-                fontSize: 12.0,
-                fontWeight: FontWeight.w500,
-                fontFamily: 'Roboto'),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class SelectPaymentMethod extends StatefulWidget {
-  // ignore: use_key_in_widget_constructors
-  const SelectPaymentMethod({Key? key});
-
-  @override
-  State<SelectPaymentMethod> createState() => _SelectPaymentMethodState();
-}
-
-class _SelectPaymentMethodState extends State<SelectPaymentMethod> {
-  int _selectedOption = 0;
-
-  @override
-  Widget build(BuildContext context) {
-    double wid = ScreenUtils().screenWidth(context);
-
-    return Container(
-      margin: const EdgeInsets.only(bottom: 10),
-      width: ScreenUtils().screenWidth(context),
-      child: Column(
-        // crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            "Select Payment Method",
-            style: TextStyle(
-              fontSize: 20,
-              fontFamily: 'Roboto',
-              fontWeight: FontWeight.w500,
-              color: Theme.of(context).colorScheme.onBackground,
-            ),
-          ),
-          const SizedBox(height: 10),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              RadioListTile<int>(
-                value: 0,
-                activeColor: AppColors.primaryButtonColor,
-                groupValue: _selectedOption,
-                onChanged: (value) {
-                  setState(() {
-                    _selectedOption = value!;
-                  });
-                },
-                title: const Text(
-                  "Credit / Debit Card",
-                  style: TextStyle(
-                      fontFamily: 'Roboto',
-                      fontWeight: FontWeight.w500,
-                      color: AppColors.colorSecondaryText2,
-                      fontSize: 13),
-                ),
-              ),
-              const SizedBox(height: 10),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  SizedBox(
-                      height: 40,
-                      width: 70,
-                      child: Image.asset(
-                        "assets/images/Mastercard.png",
-                        fit: BoxFit.cover,
-                      )),
-                  SizedBox(
-                      height: 40,
-                      width: 70,
-                      child: Image.asset(
-                        "assets/images/Maestro.png",
-                        fit: BoxFit.contain,
-                      )),
-                  SizedBox(
-                      height: 40,
-                      width: 70,
-                      child: Image.asset(
-                        "assets/images/PayPal.png",
-                        fit: BoxFit.cover,
-                      )),
-                  SizedBox(
-                      height: 40,
-                      width: 70,
-                      child: Image.asset(
-                        "assets/images/Visa.png",
-                        fit: BoxFit.cover,
-                      )),
-                ],
-              ),
-            ],
-          ),
-          const SizedBox(height: 10),
-          RadioListTile<int>(
-            value: 1,
-            activeColor: AppColors.primaryButtonColor,
-            groupValue: _selectedOption,
-            onChanged: (value) {
-              setState(() {
-                _selectedOption = value!;
-              });
-            },
-            title: const Text(
-              'JazzCash / EasyPaisa ',
-              style: TextStyle(
-                  fontFamily: 'Roboto',
-                  fontWeight: FontWeight.w500,
-                  color: AppColors.colorSecondaryText2,
-                  fontSize: 13),
-            ),
-          ),
-          SizedBox(
-            height: wid * 0.4,
-          ),
-          Row(
-            children: [
-              Image.asset(
-                "assets/images/money-dollar-circle-fill.png",
-                height: 20,
-                width: 20,
-              ),
-              const SizedBox(
-                width: 15,
-              ),
-              Expanded(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Total Price",
-                      style: TextStyle(
-                        fontFamily: 'Roboto',
-                        fontSize: 15,
-                        color: Theme.of(context).colorScheme.onBackground,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                    Text(
-                      "35\$",
-                      style: TextStyle(
-                        fontFamily: 'Roboto',
-                        fontSize: 15,
-                        color: Theme.of(context).colorScheme.onBackground,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    )
-                  ],
-                ),
-              )
-            ],
-          ),
-          Container(
-            height: 1,
-            color: AppColors.primaryButtonColor,
-          )
-        ],
-      ),
-    );
-  }
-}
 
 class AddCardSection extends StatefulWidget {
   const AddCardSection({super.key});
@@ -568,44 +237,48 @@ class _AddCardSectionState extends State<AddCardSection> {
           SizedBox(
             height: wid * 0.2,
           ),
-          Row(
-            children: [
-              Image.asset(
-                "assets/images/money-dollar-circle-fill.png",
-                height: 30,
-                width: 30,
-              ),
-              const SizedBox(
-                width: 15,
-              ),
-              Expanded(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Total Price",
-                      style: TextStyle(
-                        fontFamily: 'Roboto',
-                        fontSize: 20,
-                        color: Theme.of(context).colorScheme.onBackground,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                    Text(
-                      "35\$",
-                      style: TextStyle(
-                        fontFamily: 'Roboto',
-                        fontSize: 20,
-                        color: Theme.of(context).colorScheme.onBackground,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    )
-                  ],
+          Padding(
+            padding: const EdgeInsets.only(left: 15.0, right: 15),
+            child: Row(
+              children: [
+                Image.asset(
+                  "assets/images/money-dollar-circle-fill.png",
+                  height: 20,
+                  width: 20,
                 ),
-              )
-            ],
+                const SizedBox(
+                  width: 15,
+                ),
+                Expanded(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Total Price",
+                        style: TextStyle(
+                          fontFamily: 'Roboto',
+                          fontSize: 15,
+                          color: Theme.of(context).colorScheme.onBackground,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      Text(
+                        "35\$",
+                        style: TextStyle(
+                          fontFamily: 'Roboto',
+                          fontSize: 15,
+                          color: Theme.of(context).colorScheme.onBackground,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      )
+                    ],
+                  ),
+                )
+              ],
+            ),
           ),
           Container(
+            width: ScreenUtils().screenWidth(context),
             height: 1,
             color: AppColors.primaryButtonColor,
           )
