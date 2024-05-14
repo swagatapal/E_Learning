@@ -18,7 +18,7 @@ class _WeekState extends State<Week> {
       height: ScreenUtils().screenHeight(context) * 0.06,
       width: ScreenUtils().screenWidth(context) * 1.0,
       child: ListView.builder(
-        itemCount: 5,
+        itemCount: 4,
         scrollDirection: Axis.horizontal,
         itemBuilder: (BuildContext context, index) {
           return Container(

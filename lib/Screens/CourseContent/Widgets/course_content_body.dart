@@ -1,9 +1,5 @@
-import 'package:e_learning/Core/Utils/Helper/screen_utils.dart';
 import 'package:e_learning/Screens/CourseContent/Widgets/course_content_body_section.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:roundcheckbox/roundcheckbox.dart';
 
 import '../../../Core/Utils/Helper/app_colors.dart';
 
@@ -37,7 +33,7 @@ class CourseContentBody extends StatelessWidget {
           child: Material(
             color: AppColors.courseContentBackgroundColor,
             child: ListView.builder(
-                itemCount: 4,
+                itemCount: 3,
                 shrinkWrap: true,
                 padding: EdgeInsets.zero,
                 physics: const NeverScrollableScrollPhysics(),

@@ -41,13 +41,15 @@ class _CourseContentState extends State<CourseContent> {
                       fontWeight: FontWeight.w400,
                       fontFamily: 'Roboto'),
                 ),
-
               ],
             ),
           ),
 
           const SizedBox(height: 14.0),
-          const Week(weekNo: 'Week 1'),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.0),
+            child: Week(weekNo: 'Week 1'),
+          ),
           const SizedBox(height: 20.0),
           const Center(
             child: Text(
@@ -66,13 +68,14 @@ class _CourseContentState extends State<CourseContent> {
           const SizedBox(height: 20.0),
 
           const CourseContentBody(
-            lectureHeading: "Lecture 1: Principles of Typography",
+            lectureHeading: "Lecture 2: Typography in Design ",
           ),
           const SizedBox(height: 20.0),
 
           const CourseContentBody(
             lectureHeading: "Lecture 1: Principles of Typography",
           ),
+          const SizedBox(height: 40.0),
         ],
       ),
     );

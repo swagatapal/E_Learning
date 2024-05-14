@@ -21,7 +21,7 @@ class _CourseContentBodySectionState extends State<CourseContentBodySection> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 30.0, right: 20.0, top: 10.0),
+      padding: const EdgeInsets.only(left: 30.0, right: 20.0, top: 15.0),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -40,6 +40,7 @@ class _CourseContentBodySectionState extends State<CourseContentBodySection> {
                           fontSize: 20,
                           color: Theme.of(context).colorScheme.onBackground),
                     ),
+                    const SizedBox(height: 5.0),
                     Text(
                       widget.eachLectureContent,
                       maxLines: 2,
@@ -64,7 +65,8 @@ class _CourseContentBodySectionState extends State<CourseContentBodySection> {
           Container(
             height: 2,
             color: Theme.of(context).colorScheme.onBackground,
-          )
+          ),
+          const SizedBox(height: 5.0),
         ],
       ),
     );
