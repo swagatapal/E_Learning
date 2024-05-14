@@ -34,7 +34,7 @@ class _PaymentOverview extends State<PaymentOverview> {
               return Colors.grey; // Color for default state
             },
           ),
-          connectorThickness: 5,
+          connectorThickness: 0,
           onStepCancel: () => currentStep == 0
               ? null
               : setState(() {
