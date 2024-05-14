@@ -3,12 +3,13 @@ import 'package:e_learning/Core/Utils/Helper/screen_utils.dart';
 import 'package:e_learning/Screens/Payment/View/payment_overview.dart';
 import 'package:flutter/material.dart';
 
+import '../../CommonWidgets/normal_text.dart';
+
 class OverViewSection extends StatelessWidget {
   final String? hint;
   final InputBorder? inputBorder;
 
-  const OverViewSection(
-      {super.key, this.hint, this.inputBorder});
+  const OverViewSection({super.key, this.hint, this.inputBorder});
 
   @override
   Widget build(BuildContext context) {
@@ -82,7 +83,7 @@ class OverViewSection extends StatelessWidget {
               Wrap(
                 children: List<Widget>.generate(
                   5,
-                      (int idx) {
+                  (int idx) {
                     return Padding(
                       padding: const EdgeInsets.only(right: 8.0),
                       child: Chip(
@@ -90,25 +91,21 @@ class OverViewSection extends StatelessWidget {
                             text: "Dart css javascript",
                             fontSize: 13,
                             fontWeight: FontWeight.w500,
-                            color: AppColors.white
-                        ),
+                            color: AppColors.white),
                         shape: const RoundedRectangleBorder(
-                            borderRadius: BorderRadius.all(
-                                Radius.circular(20))),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(20))),
                         padding: const EdgeInsets.symmetric(
                             vertical: 11, horizontal: 5),
                         backgroundColor: AppColors.primaryButtonColor,
-
                       ),
                     );
                   },
                 ).toList(),
               ),
-
               SizedBox(
                 height: wid * 0.2,
               ),
-
             ],
           ),
           Padding(
@@ -156,13 +153,12 @@ class OverViewSection extends StatelessWidget {
             height: 1,
             color: AppColors.primaryButtonColor,
           )
-
         ],
       ),
-
     );
   }
 }
+
 class CourseItem extends StatelessWidget {
   final String image;
   final String leadingText;
@@ -172,7 +168,9 @@ class CourseItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 15.0,),
+      padding: const EdgeInsets.only(
+        top: 15.0,
+      ),
       child: Row(
         children: [
           Image.asset(
@@ -194,34 +192,6 @@ class CourseItem extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-}
-
-class NormalTextWidget extends StatelessWidget {
-  NormalTextWidget(
-      {super.key,
-        required this.text,
-        this.fontWeight = FontWeight.normal,
-        required this.fontSize,
-        this.maxLines = 1,
-        required this.color});
-  String text;
-  Color color;
-  FontWeight fontWeight ;
-  double fontSize = 10;
-  int maxLines;
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      text.toString(),maxLines: maxLines,
-      overflow: TextOverflow.ellipsis,
-      style: TextStyle(
-          color: color,
-          fontFamily: 'Roboto',
-          fontSize: fontSize,
-          fontWeight: fontWeight),
     );
   }
 }

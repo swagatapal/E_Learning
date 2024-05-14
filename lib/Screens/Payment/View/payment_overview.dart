@@ -2,10 +2,11 @@ import 'package:e_learning/Core/Utils/CommonWidget/common_button.dart';
 import 'package:e_learning/Core/Utils/CommonWidget/common_inputfield.dart';
 import 'package:e_learning/Core/Utils/Helper/app_colors.dart';
 import 'package:e_learning/Core/Utils/Helper/screen_utils.dart';
-import 'package:e_learning/Screens/Home/Home/Widgets/category_item.dart';
 import 'package:flutter/material.dart';
 
 import '../../CourseContent/View/course_content.dart';
+import '../Widgets/overview_section.dart';
+import '../Widgets/select_payment_method.dart';
 
 class PaymentOverview extends StatefulWidget {
   const PaymentOverview({super.key});
@@ -169,9 +170,6 @@ class _PaymentOverview extends State<PaymentOverview> {
     ];
   }
 }
-
-
-
 
 class AddCardSection extends StatefulWidget {
   const AddCardSection({super.key});

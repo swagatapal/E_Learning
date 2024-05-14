@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:readmore/readmore.dart';
 
 import '../../../Core/Utils/Helper/app_colors.dart';
+import '../../CommonWidgets/normal_text.dart';
 import '../../CourseContent/View/course_content.dart';
 
 class CourseDetails extends StatefulWidget {
@@ -139,18 +140,29 @@ class _CourseDetailsState extends State<CourseDetails> {
                         fontWeight: FontWeight.bold,
                         fontFamily: 'Roboto'),
                   ),
-                  const Row(
-                    children: [
-                      CategoryItem(text: "Typography"),
-                      CategoryItem(text: "Layout composition"),
-                      CategoryItem(text: "Branding"),
-                    ],
-                  ),
-                  const Row(
-                    children: [
-                      CategoryItem(text: "Visual communication"),
-                      CategoryItem(text: "Editorial design"),
-                    ],
+                  Wrap(
+                    children: List<Widget>.generate(
+                      5,
+                      (int idx) {
+                        return Padding(
+                          padding: const EdgeInsets.only(right: 8.0),
+                          child: Chip(
+                            label: NormalTextWidget(
+                                text: "Visual communication",
+                                fontSize: 13,
+                                fontWeight: FontWeight.w500,
+                                color: AppColors.white),
+                            shape: const RoundedRectangleBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(20)),
+                            ),
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 11, horizontal: 5),
+                            backgroundColor: AppColors.primaryButtonColor,
+                          ),
+                        );
+                      },
+                    ).toList(),
                   ),
                   const SizedBox(
                     height: 30.0,
