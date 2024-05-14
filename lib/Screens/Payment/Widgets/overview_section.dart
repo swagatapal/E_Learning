@@ -92,9 +92,7 @@ class OverViewSection extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(
-            height: 30,
-          ),
+          const SizedBox(height: 30),
           Row(
             children: [
               Image.asset(
@@ -126,7 +124,7 @@ class OverViewSection extends StatelessWidget {
                         color: Theme.of(context).colorScheme.onBackground,
                         fontWeight: FontWeight.w700,
                       ),
-                    )
+                    ),
                   ],
                 ),
               )

@@ -4,9 +4,10 @@ import 'package:flutter/material.dart';
 class ProfileDetails extends StatelessWidget {
   final String image;
   final String categoryName;
+  final Function()? onTap;
 
   const ProfileDetails(
-      {super.key, required this.categoryName, required this.image});
+      {super.key, required this.categoryName, required this.image, this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -36,10 +37,13 @@ class ProfileDetails extends StatelessWidget {
               ),
             ],
           ),
-          const Icon(
-            Icons.arrow_forward_ios_outlined,
-            size: 18.0,
-            color: AppColors.primaryButtonColor,
+          InkWell(
+            onTap: onTap,
+            child: const Icon(
+              Icons.arrow_forward_ios_outlined,
+              size: 18.0,
+              color: AppColors.primaryButtonColor,
+            ),
           ),
         ],
       ),

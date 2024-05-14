@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 
 import '../../../Core/Utils/Helper/app_colors.dart';
 import '../../../Core/Utils/Helper/screen_utils.dart';
+import '../../Payment/View/payment_overview.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -59,9 +60,18 @@ class _ProfilePageState extends State<ProfilePage> {
                 color: AppColors.primaryButtonColor,
               ),
               const SizedBox(height: 50.0),
-              const ProfileDetails(
+              ProfileDetails(
                 categoryName: "Payment Method",
                 image: "assets/images/payment.png",
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          const PaymentOverview(), //const EditProfilePage(),
+                    ),
+                  );
+                },
               ),
               const ProfileDetails(
                 categoryName: "My Certificates",
