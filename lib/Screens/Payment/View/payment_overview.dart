@@ -11,7 +11,7 @@ class PaymentOverview extends StatefulWidget {
   const PaymentOverview({super.key});
 
   @override
-  _PaymentOverview createState() => _PaymentOverview();
+  State<PaymentOverview> createState() => _PaymentOverview();
 }
 
 class _PaymentOverview extends State<PaymentOverview> {
@@ -377,7 +377,7 @@ class _SelectPaymentMethodState extends State<SelectPaymentMethod> {
               color: Theme.of(context).colorScheme.onBackground,
             ),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
