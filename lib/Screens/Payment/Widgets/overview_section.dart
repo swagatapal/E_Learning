@@ -127,7 +127,7 @@ class OverViewSection extends StatelessWidget {
                     ),
                   ],
                 ),
-              )
+              ),
             ],
           ),
           Container(
