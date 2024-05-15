@@ -8,16 +8,17 @@ import 'package:flutter/material.dart';
 
 import '../../../Core/Utils/Helper/app_colors.dart';
 import '../../../Core/Utils/Helper/screen_utils.dart';
+import '../../../Services/Auth/auth_service.dart';
 import '../../Payment/View/payment_overview.dart';
 
-class ProfilePage extends StatefulWidget {
+class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
 
-  @override
-  State<ProfilePage> createState() => _ProfilePageState();
-}
+  void logout() {
+    final _auth = AuthService();
+    _auth.signOut();
+  }
 
-class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -85,9 +86,10 @@ class _ProfilePageState extends State<ProfilePage> {
                 categoryName: "Invite Friends",
                 image: "assets/images/invite_friend-fill.png",
               ),
-              const ProfileDetails(
+              ProfileDetails(
                 categoryName: "Log out",
                 image: "assets/images/logout-fill.png",
+                onTap: logout,
               ),
               const Spacer(),
               Padding(
