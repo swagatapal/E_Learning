@@ -3,6 +3,7 @@ import 'package:e_learning/Core/Utils/CommonWidget/common_inputfield.dart';
 import 'package:e_learning/Core/Utils/Helper/app_colors.dart';
 import 'package:e_learning/Core/Utils/Helper/screen_utils.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 import '../../CourseContent/View/course_content.dart';
 import '../Widgets/overview_section.dart';
@@ -299,16 +300,7 @@ class CompletedSection extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          Image.asset(
-            "assets/images/correctImg.png",
-            height: 60,
-            width: 60,
-          ),
-          Image.asset(
-            "assets/images/congratsImg.png",
-            height: 300,
-            width: 250,
-          ),
+          Lottie.asset("assets/animations/congrats.json", height: 200, width: 300),
           Text(
             "Congratulations!",
             style: TextStyle(
