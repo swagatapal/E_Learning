@@ -11,17 +11,19 @@ class SignUpPage extends StatelessWidget {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _pwController = TextEditingController();
   final TextEditingController _confirmPwController = TextEditingController();
+  final TextEditingController _name = TextEditingController();
   final void Function()? onTap;
+
   SignUpPage({super.key, this.onTap});
 
   void register(BuildContext context) async {
     //get auth service
-    final _auth = AuthService();
+    final auth = AuthService();
 
     //passwords match -> create user
     if (_pwController.text == _confirmPwController.text) {
       try {
-        _auth.signUpWithEmailPassword(
+        auth.signUpWithEmailPassword(
           _emailController.text,
           _pwController.text,
         );
@@ -97,6 +99,7 @@ class SignUpPage extends StatelessWidget {
             CommonTextFormField(
               hintText: " *************************",
               controller: _pwController,
+              obscureText: true,
             ),
             const SizedBox(height: 10),
             const CommonHeadingText(
@@ -106,6 +109,7 @@ class SignUpPage extends StatelessWidget {
             CommonTextFormField(
               hintText: " *************************",
               controller: _confirmPwController,
+              obscureText: true,
             ),
             const SizedBox(
               height: 20,
@@ -117,7 +121,7 @@ class SignUpPage extends StatelessWidget {
               //       MaterialPageRoute(
               //           builder: (context) => const HomeConfig()));
               // },
-              onClicked: ()=> register(context),
+              onClicked: () => register(context),
               label: "SIGN UP",
               buttonHeight: containerWidth * 0.06,
               buttonWidth: containerWidth * 0.8,

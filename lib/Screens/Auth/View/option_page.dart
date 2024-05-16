@@ -50,11 +50,11 @@ class OptionPage extends StatelessWidget {
                 CommonButton(
                   onClicked: () {
                     Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => LogIn(),
-                  ),
-                );
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => LogIn(),
+                      ),
+                    );
                   },
                   label: 'SIGN IN',
                   buttonHeight: containerWidth * 0.13,
