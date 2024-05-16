@@ -17,7 +17,7 @@ class LogIn extends StatelessWidget {
 
   LogIn({super.key, this.onTap});
 
-  void login(BuildContext context) async {
+  void  login(BuildContext context) async {
     //auth service
     final authService = AuthService();
 
@@ -47,8 +47,8 @@ class LogIn extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Padding(
-        padding: const EdgeInsets.only(
-            left: 20.0, right: 20.0, bottom: 20, top: 80),
+        padding:
+            const EdgeInsets.only(left: 20.0, right: 20.0, bottom: 20, top: 80),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -87,6 +87,7 @@ class LogIn extends StatelessWidget {
             CommonTextFormField(
               hintText: " *************************",
               controller: _pwController,
+              obscureText: true,
             ),
             const SizedBox(height: 5),
             Align(
@@ -121,7 +122,7 @@ class LogIn extends StatelessWidget {
               //       MaterialPageRoute(
               //           builder: (context) => const HomeConfig()));
               // },
-              onClicked: ()=> login(context),
+              onClicked: () => login(context),
               label: "SIGN IN ",
               buttonHeight: containerWidth * 0.06,
               buttonWidth: containerWidth * 0.8,
@@ -143,7 +144,9 @@ class LogIn extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            Image.asset("assets/images/facebook.png", ),
+            Image.asset(
+              "assets/images/facebook.png",
+            ),
             const SizedBox(
               height: 10,
             ),
@@ -170,7 +173,8 @@ class LogIn extends StatelessWidget {
                       TextSpan(
                         text: 'Sign Up here',
                         style: TextStyle(
-                            color: Theme.of(context).colorScheme.onBackground,
+                            color:
+                                Theme.of(context).colorScheme.onBackground,
                             fontWeight: FontWeight.w800,
                             fontSize: 14,
                             fontFamily: 'Roboto'),
@@ -178,7 +182,7 @@ class LogIn extends StatelessWidget {
                     ])),
               ),
             ),
-            const SizedBox(height: 20),
+            // const SizedBox(height: 20),
           ],
         ),
       ),
