@@ -12,6 +12,7 @@ class CourseContent extends StatefulWidget {
 }
 
 class _CourseContentState extends State<CourseContent> {
+  int _selectedWeek = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +30,7 @@ class _CourseContentState extends State<CourseContent> {
                   "Typography and Layout Design",
                   style: TextStyle(
                       color: Theme.of(context).colorScheme.onBackground,
-                      fontSize: 22.0,
+                      fontSize: 21.0,
                       fontWeight: FontWeight.w700,
                       fontFamily: 'Roboto'),
                 ),
@@ -37,47 +38,100 @@ class _CourseContentState extends State<CourseContent> {
                   "Visual Communication College",
                   style: TextStyle(
                       color: AppColors.primaryButtonColor,
-                      fontSize: 18.0,
-                      fontWeight: FontWeight.w400,
+                      fontSize: 14.0,
+                      fontWeight: FontWeight.w500,
                       fontFamily: 'Roboto'),
                 ),
               ],
             ),
           ),
 
-          const SizedBox(height: 14.0),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.0),
-            child: Week(weekNo: 'Week 1'),
-          ),
           const SizedBox(height: 20.0),
-          const Center(
+           Week(weekNo: "Week ${_selectedWeek + 1}",
+            onWeekSelected: (int week) {
+              setState(() {
+                _selectedWeek = week;
+              });
+            },),
+          const SizedBox(height: 20.0),
+           Center(
             child: Text(
               "Course Contents",
               style: TextStyle(
-                  color: AppColors.primaryButtonColor,
-                  fontSize: 22.0,
+                  color: Theme.of(context).colorScheme.onBackground,
+                  fontSize: 18.0,
                   fontWeight: FontWeight.w700,
                   fontFamily: 'Roboto'),
             ),
           ),
           const SizedBox(height: 20.0),
-          const CourseContentBody(
-            lectureHeading: "Lecture 1: Principles of Typography",
+          // const CourseContentBody(
+          //   lectureHeading: "Lecture 1: Principles of Typography",
+          // ),
+          // const SizedBox(height: 20.0),
+          //
+          // const CourseContentBody(
+          //   lectureHeading: "Lecture 2: Typography in Design ",
+          // ),
+          // const SizedBox(height: 20.0),
+          //
+          // const CourseContentBody(
+          //   lectureHeading: "Lecture 1: Principles of Typography",
+          // ),
+          // const SizedBox(height: 40.0),
+          Expanded(
+            child: _buildContentForWeek(_selectedWeek),
           ),
-          const SizedBox(height: 20.0),
-
-          const CourseContentBody(
-            lectureHeading: "Lecture 2: Typography in Design ",
-          ),
-          const SizedBox(height: 20.0),
-
-          const CourseContentBody(
-            lectureHeading: "Lecture 1: Principles of Typography",
-          ),
-          const SizedBox(height: 40.0),
         ],
       ),
     );
   }
+
+  Widget _buildContentForWeek(int week) {
+    switch (week) {
+      case 0:
+        return const Column(
+          children: [
+            CourseContentBody(
+              lectureHeading: "Lecture 1: Principles of Typography",
+            ),
+            SizedBox(height: 20.0),
+            CourseContentBody(
+              lectureHeading: "Lecture 2: Typography in Design",
+            ),
+            SizedBox(height: 20.0),
+          ],
+        );
+      case 1:
+        return const Column(
+          children: [
+            CourseContentBody(
+              lectureHeading: "Lecture 1: Advanced Typography",
+            ),
+            SizedBox(height: 20.0),
+            CourseContentBody(
+              lectureHeading: "Lecture 2: Modern Typography Trends",
+            ),
+            SizedBox(height: 20.0),
+          ],
+        );
+      case 2:
+        return const Column(
+          children: [
+            CourseContentBody(
+              lectureHeading: "Lecture 1: History of Typography",
+            ),
+            SizedBox(height: 20.0),
+            CourseContentBody(
+              lectureHeading: "Lecture 2: Typography in Different Cultures",
+            ),
+            SizedBox(height: 20.0),
+          ],
+        );
+    // Add more cases for other weeks
+      default:
+        return Container();
+    }
+  }
+
 }
