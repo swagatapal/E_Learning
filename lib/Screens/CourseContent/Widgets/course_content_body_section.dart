@@ -35,9 +35,9 @@ class _CourseContentBodySectionState extends State<CourseContentBodySection> {
                     Text(
                       widget.eachLectureHeading,
                       style: TextStyle(
-                          fontWeight: FontWeight.bold,
+                          fontWeight: FontWeight.w500,
                           fontFamily: "Roboto",
-                          fontSize: 20,
+                          fontSize: 13,
                           color: Theme.of(context).colorScheme.onBackground),
                     ),
                     const SizedBox(height: 5.0),
@@ -48,7 +48,7 @@ class _CourseContentBodySectionState extends State<CourseContentBodySection> {
                       style: const TextStyle(
                           color: AppColors.colorSecondaryText2,
                           fontFamily: "Roboto",
-                          fontSize: 14,
+                          fontSize: 8,
                           fontWeight: FontWeight.w400),
                     ),
                   ],
@@ -57,13 +57,13 @@ class _CourseContentBodySectionState extends State<CourseContentBodySection> {
               Icon(
                 isChecked ? Icons.check_circle : Icons.check_circle_outline,
                 color: AppColors.primaryButtonColor,
-                size: 40.0,
+                size: 25.0,
               ),
             ],
           ),
           const SizedBox(height: 10.0),
           Container(
-            height: 2,
+            height: 1,
             color: Theme.of(context).colorScheme.onBackground,
           ),
           const SizedBox(height: 5.0),
