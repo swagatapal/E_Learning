@@ -7,16 +7,39 @@ import 'package:e_learning/Screens/Auth/View/sign_up_page.dart';
 import 'package:e_learning/core/utils/helper/app_colors.dart';
 import 'package:flutter/material.dart';
 
-import '../../Home/Home/View/home_config.dart';
+import '../../../Services/Auth/auth_service.dart';
 
-class LogIn extends StatefulWidget {
-  const LogIn({super.key});
+class LogIn extends StatelessWidget {
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _pwController = TextEditingController();
 
-  @override
-  State<LogIn> createState() => _LogInState();
-}
+  final void Function()? onTap;
 
-class _LogInState extends State<LogIn> {
+  LogIn({super.key, this.onTap});
+
+  void login(BuildContext context) async {
+    //auth service
+    final authService = AuthService();
+
+    //try login
+    try {
+      await authService.signInWithEmailPassword(
+        _emailController.text,
+        _pwController.text,
+      );
+    }
+
+    //catch any errors
+    catch (e) {
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text(e.toString()),
+        ),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
@@ -52,6 +75,7 @@ class _LogInState extends State<LogIn> {
             const SizedBox(height: 5),
             CommonTextFormField(
               hintText: " youremail@gmail.com",
+              controller: _emailController,
             ),
             const SizedBox(
               height: 10,
@@ -62,6 +86,7 @@ class _LogInState extends State<LogIn> {
             const SizedBox(height: 5),
             CommonTextFormField(
               hintText: " *************************",
+              controller: _pwController,
             ),
             const SizedBox(height: 5),
             Align(
@@ -90,12 +115,13 @@ class _LogInState extends State<LogIn> {
               height: 20,
             ),
             CommonButton(
-              onClicked: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const HomeConfig()));
-              },
+              // onClicked: () {
+              //   Navigator.push(
+              //       context,
+              //       MaterialPageRoute(
+              //           builder: (context) => const HomeConfig()));
+              // },
+              onClicked: ()=> login(context),
               label: "SIGN IN ",
               buttonHeight: containerWidth * 0.06,
               buttonWidth: containerWidth * 0.8,
@@ -129,7 +155,7 @@ class _LogInState extends State<LogIn> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const SignUpPage(),
+                      builder: (context) => SignUpPage(),
                     ),
                   );
                 },

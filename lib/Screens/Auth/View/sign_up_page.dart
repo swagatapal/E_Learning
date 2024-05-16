@@ -3,12 +3,48 @@ import 'package:flutter/material.dart';
 import '../../../Core/Utils/CommonWidget/common_button.dart';
 import '../../../Core/Utils/CommonWidget/common_inputfield.dart';
 import '../../../Core/Utils/Helper/app_colors.dart';
-import '../../Home/Home/View/home_config.dart';
+import '../../../Services/Auth/auth_service.dart';
 import '../../CommonWidgets/common_heading_text.dart';
 import '../../CommonWidgets/common_title_text.dart';
 
 class SignUpPage extends StatelessWidget {
-  const SignUpPage({super.key});
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _pwController = TextEditingController();
+  final TextEditingController _confirmPwController = TextEditingController();
+  final void Function()? onTap;
+  SignUpPage({super.key, this.onTap});
+
+  void register(BuildContext context) async {
+    //get auth service
+    final _auth = AuthService();
+
+    //passwords match -> create user
+    if (_pwController.text == _confirmPwController.text) {
+      try {
+        _auth.signUpWithEmailPassword(
+          _emailController.text,
+          _pwController.text,
+        );
+      } catch (e) {
+        showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: Text(e.toString()),
+          ),
+        );
+      }
+    }
+
+    //passwords don't match -> tell user to fix
+    else {
+      showDialog(
+        context: context,
+        builder: (context) => const AlertDialog(
+          title: Text("Passwords don't match!"),
+        ),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,6 +87,7 @@ class SignUpPage extends StatelessWidget {
             const SizedBox(height: 5),
             CommonTextFormField(
               hintText: "youremail@gmail.com ",
+              controller: _emailController,
             ),
             const SizedBox(height: 10),
             const CommonHeadingText(
@@ -59,6 +96,7 @@ class SignUpPage extends StatelessWidget {
             const SizedBox(height: 5),
             CommonTextFormField(
               hintText: " *************************",
+              controller: _pwController,
             ),
             const SizedBox(height: 10),
             const CommonHeadingText(
@@ -67,18 +105,20 @@ class SignUpPage extends StatelessWidget {
             const SizedBox(height: 5),
             CommonTextFormField(
               hintText: " *************************",
+              controller: _confirmPwController,
             ),
             const SizedBox(
               height: 20,
             ),
             CommonButton(
-              onClicked: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const HomeConfig()));
-              },
-              label: "SIGN IN",
+              // onClicked: () {
+              //   Navigator.push(
+              //       context,
+              //       MaterialPageRoute(
+              //           builder: (context) => const HomeConfig()));
+              // },
+              onClicked: ()=> register(context),
+              label: "SIGN UP",
               buttonHeight: containerWidth * 0.06,
               buttonWidth: containerWidth * 0.8,
               fontSize: 20,
@@ -107,7 +147,7 @@ class SignUpPage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const LogIn(),
+                      builder: (context) => LogIn(),
                     ),
                   );
                 },
