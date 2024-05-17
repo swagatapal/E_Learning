@@ -4,14 +4,20 @@ import 'package:e_learning/Screens/CommonWidgets/common_heading_text.dart';
 import 'package:e_learning/Screens/CommonWidgets/common_title_text.dart';
 import 'package:e_learning/Screens/Auth/View/reset_password.dart';
 import 'package:e_learning/Screens/Auth/View/sign_up_page.dart';
+import 'package:e_learning/Screens/Home/Home/View/home_config.dart';
 import 'package:e_learning/core/utils/helper/app_colors.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bounce/flutter_bounce.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 import '../../../Services/Auth/auth_service.dart';
 
 class LogIn extends StatelessWidget {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _pwController = TextEditingController();
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final GoogleSignIn googleSignIn = GoogleSignIn();
 
   final void Function()? onTap;
 
@@ -37,6 +43,39 @@ class LogIn extends StatelessWidget {
           title: Text(e.toString()),
         ),
       );
+    }
+  }
+  Future<void> signInWithGoogle(BuildContext context) async {
+    try {
+      final GoogleSignInAccount? googleSignInAccount = await googleSignIn.signIn();
+      if (googleSignInAccount != null) {
+        final GoogleSignInAuthentication googleSignInAuthentication =
+        await googleSignInAccount.authentication;
+
+        final OAuthCredential credential = GoogleAuthProvider.credential(
+          accessToken: googleSignInAuthentication.accessToken,
+          idToken: googleSignInAuthentication.idToken,
+        );
+
+        final UserCredential authResult = await _auth.signInWithCredential(credential);
+        final User? user = authResult.user as User?;
+
+        Navigator.pushReplacement(
+          // ignore: use_build_context_synchronously
+          context,
+          MaterialPageRoute(
+            builder: (context) => HomeConfig(
+              user: User(
+                email: user?.email??"",
+                fullName: user?.fullName ?? '',
+                photoUrl: user?.photoUrl??"",
+              ),
+            ),
+          ),
+        );
+      }
+    } catch (error) {
+      print("Error signing in with Google: $error");
     }
   }
 
@@ -144,7 +183,12 @@ class LogIn extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            Image.asset("assets/images/google.png"),
+            Bounce(
+              onPressed: (){
+                signInWithGoogle(context);
+              },
+                duration:const Duration(milliseconds: 500),
+                child: Image.asset("assets/images/google.png")),
             const Spacer(),
             Center(
               child: GestureDetector(
@@ -182,4 +226,15 @@ class LogIn extends StatelessWidget {
       ),
     );
   }
+}
+class User {
+  final String email;
+  final String fullName;
+  final String? photoUrl; // Profile image URL
+
+  User({
+    required this.email,
+    required this.fullName,
+    this.photoUrl,
+  });
 }
