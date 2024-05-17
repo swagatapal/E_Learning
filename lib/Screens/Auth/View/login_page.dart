@@ -116,12 +116,6 @@ class LogIn extends StatelessWidget {
               height: 20,
             ),
             CommonButton(
-              // onClicked: () {
-              //   Navigator.push(
-              //       context,
-              //       MaterialPageRoute(
-              //           builder: (context) => const HomeConfig()));
-              // },
               onClicked: () => login(context),
               label: "SIGN IN ",
               buttonHeight: containerWidth * 0.06,

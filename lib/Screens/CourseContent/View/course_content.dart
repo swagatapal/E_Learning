@@ -13,6 +13,7 @@ class CourseContent extends StatefulWidget {
 
 class _CourseContentState extends State<CourseContent> {
   int _selectedWeek = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,16 +46,17 @@ class _CourseContentState extends State<CourseContent> {
               ],
             ),
           ),
-
           const SizedBox(height: 20.0),
-           Week(weekNo: "Week ${_selectedWeek + 1}",
+          Week(
+            weekNo: "Week ${_selectedWeek + 1}",
             onWeekSelected: (int week) {
               setState(() {
                 _selectedWeek = week;
               });
-            },),
+            },
+          ),
           const SizedBox(height: 20.0),
-           Center(
+          Center(
             child: Text(
               "Course Contents",
               style: TextStyle(
@@ -65,20 +67,6 @@ class _CourseContentState extends State<CourseContent> {
             ),
           ),
           const SizedBox(height: 20.0),
-          // const CourseContentBody(
-          //   lectureHeading: "Lecture 1: Principles of Typography",
-          // ),
-          // const SizedBox(height: 20.0),
-          //
-          // const CourseContentBody(
-          //   lectureHeading: "Lecture 2: Typography in Design ",
-          // ),
-          // const SizedBox(height: 20.0),
-          //
-          // const CourseContentBody(
-          //   lectureHeading: "Lecture 1: Principles of Typography",
-          // ),
-          // const SizedBox(height: 40.0),
           Expanded(
             child: _buildContentForWeek(_selectedWeek),
           ),
@@ -128,10 +116,9 @@ class _CourseContentState extends State<CourseContent> {
             SizedBox(height: 20.0),
           ],
         );
-    // Add more cases for other weeks
+      // Add more cases for other weeks
       default:
         return Container();
     }
   }
-
 }
