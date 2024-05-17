@@ -60,6 +60,7 @@ class LogIn extends StatelessWidget {
         final UserCredential authResult = await _auth.signInWithCredential(credential);
         final User? user = authResult.user as User?;
 
+
         Navigator.pushReplacement(
           // ignore: use_build_context_synchronously
           context,

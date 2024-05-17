@@ -1,4 +1,5 @@
 import 'package:e_learning/Core/Utils/Helper/screen_utils.dart';
+import 'package:e_learning/Screens/Auth/View/login_page.dart';
 import 'package:e_learning/Screens/CourseDetails/View/course_details.dart';
 import 'package:e_learning/Screens/Home/Categories/View/see_all_categories.dart';
 import 'package:e_learning/Screens/Home/SuggestionsForYou/View/see_all_suggestions.dart';
@@ -13,7 +14,8 @@ import '../Widgets/home_heading_text.dart';
 import '../Widgets/suggestions_item.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+   User? user;
+   HomePage({super.key, required this.user});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -46,7 +48,7 @@ class _HomePageState extends State<HomePage> {
                                       fontFamily: 'Roboto'),
                                   children: <TextSpan>[
                                 TextSpan(
-                                  text: ' Sidara',
+                                  text: '${widget.user?.fullName}',
                                   style: TextStyle(
                                       color: Theme.of(context)
                                           .colorScheme

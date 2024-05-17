@@ -1,22 +1,49 @@
+import 'package:e_learning/Screens/Auth/View/login_page.dart';
 import 'package:e_learning/Screens/EditProfile/View/edit_profile_page.dart';
 import 'package:e_learning/Screens/PolicyAndTermsAndConditions/View/policy.dart';
 import 'package:e_learning/Screens/PolicyAndTermsAndConditions/View/terms_and_conditions.dart';
 import 'package:e_learning/Screens/Profile/Widgets/profile_details.dart';
 import 'package:e_learning/Screens/Profile/Widgets/profile_information.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 import '../../../Core/Utils/Helper/app_colors.dart';
 import '../../../Core/Utils/Helper/screen_utils.dart';
 import '../../../Services/Auth/auth_service.dart';
 import '../../Payment/View/payment_overview.dart';
 
-class ProfilePage extends StatelessWidget {
+class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
 
+  @override
+  State<ProfilePage> createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage> {
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final GoogleSignIn googleSignIn = GoogleSignIn();
   void logout() {
     final _auth = AuthService();
     _auth.signOut();
+  }
+
+  Future<void> _handleSignOut() async {
+    try {
+      await googleSignIn.signOut();
+      // Optionally clear local user data
+    } catch (error) {
+      print('Error signing out: $error');
+    }
+  }
+
+  void _logout() async {
+    await _handleSignOut();
+    Navigator.of(context).pushAndRemoveUntil(
+      MaterialPageRoute(builder: (context) =>  LogIn()),
+          (Route<dynamic> route) => false,
+    );
   }
 
   @override
@@ -89,7 +116,7 @@ class ProfilePage extends StatelessWidget {
               ProfileDetails(
                 categoryName: "Log out",
                 image: "assets/images/logout-fill.png",
-                onTap: logout,
+                onTap: _logout,
               ),
               const Spacer(),
               Padding(
