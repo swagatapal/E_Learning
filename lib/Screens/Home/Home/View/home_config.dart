@@ -22,7 +22,7 @@ class _HomeConfigState extends State<HomeConfig> {
 
   List<Widget> _buildScreens() {
     return [
-      const HomePage(),
+      HomePage(user: widget.user),
       const MyCourseTab(),
       const InboxPage(),
       const ProfilePage(),
