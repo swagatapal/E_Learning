@@ -23,7 +23,7 @@ class LogIn extends StatelessWidget {
 
   LogIn({super.key, this.onTap});
 
-  void  login(BuildContext context) async {
+  void login(BuildContext context) async {
     //auth service
     final authService = AuthService();
 
@@ -45,19 +45,22 @@ class LogIn extends StatelessWidget {
       );
     }
   }
+
   Future<void> signInWithGoogle(BuildContext context) async {
     try {
-      final GoogleSignInAccount? googleSignInAccount = await googleSignIn.signIn();
+      final GoogleSignInAccount? googleSignInAccount =
+          await googleSignIn.signIn();
       if (googleSignInAccount != null) {
         final GoogleSignInAuthentication googleSignInAuthentication =
-        await googleSignInAccount.authentication;
+            await googleSignInAccount.authentication;
 
         final OAuthCredential credential = GoogleAuthProvider.credential(
           accessToken: googleSignInAuthentication.accessToken,
           idToken: googleSignInAuthentication.idToken,
         );
 
-        final UserCredential authResult = await _auth.signInWithCredential(credential);
+        final UserCredential authResult =
+            await _auth.signInWithCredential(credential);
         final User? user = authResult.user as User?;
 
         Navigator.pushReplacement(
@@ -66,9 +69,9 @@ class LogIn extends StatelessWidget {
           MaterialPageRoute(
             builder: (context) => HomeConfig(
               user: User(
-                email: user?.email??"",
+                email: user?.email ?? "",
                 fullName: user?.fullName ?? '',
-                photoUrl: user?.photoUrl??"",
+                photoUrl: user?.photoUrl ?? "",
               ),
             ),
           ),
@@ -151,9 +154,7 @@ class LogIn extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(
-              height: 20,
-            ),
+            const SizedBox(height: 20),
             CommonButton(
               onClicked: () => login(context),
               label: "SIGN IN ",
@@ -184,10 +185,10 @@ class LogIn extends StatelessWidget {
               height: 10,
             ),
             Bounce(
-              onPressed: (){
-                signInWithGoogle(context);
-              },
-                duration:const Duration(milliseconds: 500),
+                onPressed: () {
+                  signInWithGoogle(context);
+                },
+                duration: const Duration(milliseconds: 500),
                 child: Image.asset("assets/images/google.png")),
             const Spacer(),
             Center(
@@ -211,8 +212,7 @@ class LogIn extends StatelessWidget {
                       TextSpan(
                         text: 'Sign Up here',
                         style: TextStyle(
-                            color:
-                                Theme.of(context).colorScheme.onBackground,
+                            color: Theme.of(context).colorScheme.onBackground,
                             fontWeight: FontWeight.w800,
                             fontSize: 14,
                             fontFamily: 'Roboto'),
@@ -227,6 +227,7 @@ class LogIn extends StatelessWidget {
     );
   }
 }
+
 class User {
   final String email;
   final String fullName;

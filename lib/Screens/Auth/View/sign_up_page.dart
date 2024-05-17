@@ -11,7 +11,7 @@ class SignUpPage extends StatelessWidget {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _pwController = TextEditingController();
   final TextEditingController _confirmPwController = TextEditingController();
-  final TextEditingController _name = TextEditingController();
+  final TextEditingController _fullName = TextEditingController();
   final void Function()? onTap;
 
   SignUpPage({super.key, this.onTap});
@@ -81,6 +81,7 @@ class SignUpPage extends StatelessWidget {
             const SizedBox(height: 5),
             CommonTextFormField(
               hintText: "Sidra Idrees ",
+              controller: _fullName,
             ),
             const SizedBox(height: 10),
             const CommonHeadingText(
