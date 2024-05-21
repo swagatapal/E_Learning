@@ -7,6 +7,7 @@ import 'package:e_learning/Screens/Auth/View/sign_up_page.dart';
 import 'package:e_learning/Screens/Home/Home/View/home_config.dart';
 import 'package:e_learning/core/utils/helper/app_colors.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bounce/flutter_bounce.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -78,7 +79,9 @@ class LogIn extends StatelessWidget {
         );
       }
     } catch (error) {
-      print("Error signing in with Google: $error");
+      if (kDebugMode) {
+        print("Error signing in with Google: $error");
+      }
     }
   }
 

@@ -40,7 +40,7 @@ class _MyCourseTabState extends State<MyCourseTab>
             children: [
               const MyCourseHeading(),
               const SizedBox(height: 15),
-              TabBar(
+                TabBar(
                 controller: tabController,
                 padding: const EdgeInsets.symmetric(
                     horizontal: 20.0, vertical: 10.0),
@@ -48,7 +48,7 @@ class _MyCourseTabState extends State<MyCourseTab>
                 indicatorSize: TabBarIndicatorSize.label,
                 indicator: const BoxDecoration(
                   color: AppColors.primaryButtonColor,
-                  borderRadius:  BorderRadius.all(Radius.circular(30)),
+                  borderRadius: BorderRadius.all(Radius.circular(30)),
                 ),
                 labelColor: Colors.white,
                 unselectedLabelColor: Colors.black,

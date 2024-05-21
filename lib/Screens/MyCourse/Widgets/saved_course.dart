@@ -28,13 +28,10 @@ class _SavedCourseState extends State<SavedCourse> {
         child: Container(
           width: ScreenUtils().screenWidth(context) * 0.8,
           decoration: BoxDecoration(
-            borderRadius: const BorderRadius.all(
-              Radius.circular(15.0),
-            ),
+            borderRadius: const BorderRadius.all(Radius.circular(15.0)),
             color: Colors.white,
             boxShadow: [
               BoxShadow(
-                  // color:  Colors.blueGrey.withOpacity(0.4),
                   color: AppColors.colorSecondaryText2.withOpacity(0.2),
                   offset: const Offset(0.0, 3.0),
                   blurRadius: 8.0)
