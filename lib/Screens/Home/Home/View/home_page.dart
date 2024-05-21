@@ -14,8 +14,9 @@ import '../Widgets/home_heading_text.dart';
 import '../Widgets/suggestions_item.dart';
 
 class HomePage extends StatefulWidget {
-   User? user;
-   HomePage({super.key, required this.user});
+  User? user;
+
+  HomePage({super.key, required this.user});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -40,7 +41,7 @@ class _HomePageState extends State<HomePage> {
                         children: [
                           RichText(
                               text: TextSpan(
-                                  text: 'Welcome',
+                                  text: 'Welcome ',
                                   style: const TextStyle(
                                       color: AppColors.black,
                                       fontSize: 20.0,
@@ -48,7 +49,8 @@ class _HomePageState extends State<HomePage> {
                                       fontFamily: 'Roboto'),
                                   children: <TextSpan>[
                                 TextSpan(
-                                  text: '${widget.user?.fullName}',
+                                  text:
+                                      '${widget.user?.fullName == null ? "Ramesh" : widget.user?.fullName}',
                                   style: TextStyle(
                                       color: Theme.of(context)
                                           .colorScheme
