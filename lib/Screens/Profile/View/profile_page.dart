@@ -24,6 +24,7 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final GoogleSignIn googleSignIn = GoogleSignIn();
+
   void logout() {
     final _auth = AuthService();
     _auth.signOut();
@@ -41,8 +42,8 @@ class _ProfilePageState extends State<ProfilePage> {
   void _logout() async {
     await _handleSignOut();
     Navigator.of(context).pushAndRemoveUntil(
-      MaterialPageRoute(builder: (context) =>  LogIn()),
-          (Route<dynamic> route) => false,
+      MaterialPageRoute(builder: (context) => LogIn()),
+      (Route<dynamic> route) => false,
     );
   }
 
@@ -117,7 +118,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 categoryName: "Log out",
                 image: "assets/images/logout-fill.png",
                 //onTap: _logout,
-                onTap:logout,
+                onTap: logout,
               ),
               const Spacer(),
               Padding(

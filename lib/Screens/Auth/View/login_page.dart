@@ -7,10 +7,8 @@ import 'package:e_learning/Screens/Auth/View/sign_up_page.dart';
 import 'package:e_learning/Screens/Home/Home/View/home_config.dart';
 import 'package:e_learning/core/utils/helper/app_colors.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bounce/flutter_bounce.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
@@ -95,8 +93,8 @@ class LogIn extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       body: SingleChildScrollView(
         child: Padding(
-          padding:
-              const EdgeInsets.only(left: 20.0, right: 20.0, bottom: 20, top: 80),
+          padding: const EdgeInsets.only(
+              left: 20.0, right: 20.0, bottom: 20, top: 80),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -196,7 +194,9 @@ class LogIn extends StatelessWidget {
                   },
                   duration: const Duration(milliseconds: 500),
                   child: Image.asset("assets/images/google.png")),
-               SizedBox(height: containerWidth*0.1,),
+              SizedBox(
+                height: containerWidth * 0.1,
+              ),
               Center(
                 child: GestureDetector(
                   onTap: () {

@@ -6,6 +6,7 @@ import '../../../Core/Utils/Helper/app_colors.dart';
 import '../../../Services/Auth/auth_service.dart';
 import '../../CommonWidgets/common_heading_text.dart';
 import '../../CommonWidgets/common_title_text.dart';
+import '../../Home/Home/View/home_config.dart';
 
 class SignUpPage extends StatelessWidget {
   final TextEditingController _emailController = TextEditingController();
@@ -26,6 +27,10 @@ class SignUpPage extends StatelessWidget {
         auth.signUpWithEmailPassword(
           _emailController.text,
           _pwController.text,
+        );
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => const HomeConfig()),
         );
       } catch (e) {
         showDialog(
