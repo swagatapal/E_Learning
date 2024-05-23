@@ -116,7 +116,8 @@ class _ProfilePageState extends State<ProfilePage> {
               ProfileDetails(
                 categoryName: "Log out",
                 image: "assets/images/logout-fill.png",
-                onTap: _logout,
+                //onTap: _logout,
+                onTap:logout,
               ),
               const Spacer(),
               Padding(
